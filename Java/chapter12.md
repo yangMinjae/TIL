@@ -22,6 +22,7 @@ class Child extends Parent{}
 * 어노테이션 "@Override"를 붙이면 개발자의 실수를 줄일 수 있다.  
 	(동일한 원형이 아니면 에러 발생시켜준다.)  
 <br>
+
 ### 2. Annotation
 <br>
 
