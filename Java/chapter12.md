@@ -8,7 +8,7 @@
 ``` java
 class Child extends Parent{}
 ```
-* <span style="color:#883333">접근 제한이 private인 멤버(필드, 메서드)는 상속대상에서 제외된다.</span>
+* <span style="color:#883333">**접근 제한이 private인 멤버(필드, 메서드)는 상속대상에서 제외된다.**</span>
 
 <br><br>1.2 상속 특징  
 * c++과 달리 다중상속이 불가능하다.
