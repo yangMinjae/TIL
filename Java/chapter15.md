@@ -1,6 +1,6 @@
 # chapter 15
 
-### 1. Abstract class(추상 클래스)
+### 1. 추상 클래스 (Abstract class)
  1.1 추상 메소드(abstract method)
 - 본문이( { } ) 없는 메소드이다.
 - 형식: `abstract public 리턴타입 메소드명 ();`

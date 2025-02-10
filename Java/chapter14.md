@@ -1,5 +1,5 @@
 # chapter14
-### 1. Polymorphism(다형성)
+### 1. 다형성 (Polymorphism)
 <br>
 
 1.1 다형성(Polymorphism)  
