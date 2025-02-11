@@ -2,7 +2,7 @@
 
 ### 1. 예외 (Exception)
 
-#### 1.1 예외 (exception)  
+1.1 예외 (exception)  
 - 오류의 일종이며, 프로그램 실행 시 또는 컴파일 시 발생하는 **불능 상태**를 의미.  
 
   1) **오류**: 에러, 개발자가 손댈 수 없는 수준  
@@ -15,7 +15,7 @@
 
 <br>
 
-#### 1.2 예외 처리 형식  
+1.2 예외 처리 형식  
 ```java
 try {
     ...
@@ -29,7 +29,7 @@ try {
 ```
 <br>
 
-#### 1.3 예외 처리 팁  
+1.3 예외 처리 팁  
 - 어떤 exception인지 모를때 `e.printStackTrace();`로 확인 가능  
 ```java
 try {
@@ -43,7 +43,7 @@ try {
 
 <br>
 
-#### 1.4 throws(예외 떠넘기기)  
+1.4 throws(예외 떠넘기기)  
 - 메소드를 호출한 곳으로 예외를 떠넘긴다.  
 - 떠넘길 예외 클래스를 쉼표(`,`)로 구분해서 나열할 수 있다.  
 - `throws` 키워드가 붙어있는 메소드는 반드시 `try` 블록 내에서 호출되어야 한다.  
@@ -71,15 +71,15 @@ public class Ex06_exception {
 - Exception 클래스를 상속해야한다.
 - 다음과 같은 형식으로 정의
 ``` java
-class MyException extends Exception{
+    class MyException extends Exception{
 	// 경고 없애려고 넣은거니까 신경 안써도 된다.
 	private static final long serialVersionUID = 1L;
 	public MyException(String msg) {
 		super(msg);
 	}
-```
+ ```
 - 다음과 같이 활용
-``` java
+ ``` java
 		try {
 			throw new MyException("내가 만든 예외");	// 예외 강제 발생
 		} catch (MyException e) {
