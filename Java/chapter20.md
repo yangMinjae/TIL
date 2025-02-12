@@ -1,4 +1,4 @@
-# Chapter 20
+# chapter 20
 
 ## 1. 제네릭 (Generic)
 

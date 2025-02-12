@@ -1,6 +1,6 @@
 # chapter 04
 
-### 1. 제어문(Control Statement)
+### 1. 제어문 (Control Statement)
 
 1.1 코드 실행 흐름 제어
 - 개발자가 원하는 흐름으로 코드 실행 순서를 변경할 수 있음.
