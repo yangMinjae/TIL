@@ -18,8 +18,8 @@
 
 1.3 스레드 생성 주기
 
-				         Start()				    Run()
- 	스레드 객체 생성(new)	→	실행 대기(Runnable)	  →		실행(Running)	        →종료(Dead)
+			     Start()				 Run()
+ 	스레드 객체 생성(new)	→	실행 대기(Runnable)	  →		실행(Running)	  →	종료(Dead)
  					        ↑						  ↓
  						    ↖					     ↙
  								    중단(Blocked)
