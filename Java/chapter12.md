@@ -1,5 +1,5 @@
 # chapter12
-### 1. 상속 (Inheritance)
+## 상속 (Inheritance)
 <br>
 
 1.1 상속   

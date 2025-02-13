@@ -1,6 +1,6 @@
 # chapter 13
 
-### 1. 접근 제어자 (Access Modifier)
+## 접근 제어자 (Access Modifier)
 
 1.1 정보 은닉 (Information Hiding)
 - 내부 정보를 숨기고 필요한 정보만 노출.

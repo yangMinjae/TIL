@@ -1,6 +1,6 @@
 # chapter 11
 
-### 1. 난수 생성 (Random)
+## 난수 생성 (Random)
 
 1.1 `Math.random()` 사용
 - 0.0 이상 1.0 미만의 난수를 생성.

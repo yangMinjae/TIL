@@ -1,6 +1,6 @@
 # chapter 10
 
-### 1. static 키워드
+## static 키워드
 
 1.1 static이란?
 - **클래스에 속하는 고정된 멤버**.

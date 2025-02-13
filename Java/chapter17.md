@@ -1,6 +1,6 @@
 # chapter 17
 
-### 1. 예외 (Exception)
+##  예외 (Exception)
 
 1.1 예외 (exception)  
 - 오류의 일종이며, 프로그램 실행 시 또는 컴파일 시 발생하는 **불능 상태**를 의미.  
