@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+  /*
+    내부 함수
+    1. function 내부에 포함된 function을 의미
+    2. function 외부에서 호출할 수 없다.
+  */
+  // 외부 함수
+  function circleArea(r){
+    // 내부 함수
+    function square(r){
+      return Math.pow(r,2);
+    }
+    return Math.PI*square(r);
+  }
+  let area = circleArea(3);
+  console.log(`원의 넓이 : ${area}`);
+</script>
+</html>

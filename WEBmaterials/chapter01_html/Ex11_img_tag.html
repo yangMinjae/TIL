@@ -1,0 +1,37 @@
+<!--
+	<img>태그
+	
+	1. 이미지를 삽입한다.
+	2. 속성
+		1) src : 이미지의 위치(경로)
+		2) alt : 이미지 대신 표시할 텍스트
+	3. 경로 표시
+		1) 절대 경로 : C:/workspace/workspace_web/
+              chapter01_html/images/google.jpg
+  		2) 상대 경로 : images/google.jpg	
+            (/로 시작하면 컨텍스트 루트부터 시작)
+  		3) 주요 폴더 
+  			(1) .  : 현재폴더
+  			(2) .. : 상위 폴더
+  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>이미지 표시</h1>
+  <img src="./images/google.jpg" alt="구글 이미지">
+  <!-- 
+    alt 속성을 써야하는 이유
+    -> 이미지를 제대로 가져오지 못할 경우 alt 값 출력
+  -->
+  <h1>서버에 저장된 이미지</h1>
+  <img src="https://cdn.dailyvet.co.kr/wp-content/uploads/2024/05/15231647/20240515ceva_experts4.jpg" alt="이미지 없음">
+  <h1>크기를 조정한 이미지</h1>
+  <img src="./images/google.jpg" alt="구글 이미지" width = "300">
+  <!-- 비율을 유지하며 조정 -> width height중 하나만 조정해도 함께 조정-->
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!-- 
+   1. <b></b> : bold text, 굵은 글씨
+   2. <i></i> : italic text, 기울임꼴 
+   3. <sup></sup> : super script, 윗 첨자 (제곱근)
+   4. <sub></sub> : sub script, 아랫 첨자
+   5. <ins></ins> : insert text, 밑줄 생김
+   6. <del></del> : delete text, 취소선 생김
+   7. <div></div> : Group text, 블록레벨, css 적용을 위해 사용
+   8. <span></span> : Group text, 인라인레벨, css 적용을 위해 사용
+   
+   * 블록레벨 : 글자 수 상관없이 한 줄 전체
+   * 인라인레벨 : 블록레벨 안에 포함되는 문자열
+   
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>이 곳은 <b>첫 번째</b> 문단</p>
+  <p>이 곳은 <i>두 번째</i> 문단</p>
+  <p>이 곳은 <sup>세 번째</sup> 문단</p>
+  <p>이 곳은 <sub>네 번째</sub> 문단</p>
+  <p>이 곳은 <ins>네 번째</ins> 문단</p>
+  <p>이 곳은 <del>네 번째</del> 문단</p>
+  <div align="right">이곳은 일곱 번째 문단</div>
+  <p>이 곳은 <span style = "color: pink">여덟 번째</span> 문단</p>
+  <p>이 곳은 <span align = "left">아홉 번째</span> 문단</p>
+  <!-- 기본적으로 인라인 레벨에서는 정렬 x -->
+
+  <!-- span과 div차이 -->
+   <span>first span</span>
+   &nbsp;&nbsp;
+   <span>second span</span>
+   <!-- p와 달리 div와 span은 마진이나 패딩이 없이 콘텐츠 크기만큼을 점유 -->
+   <div>first div</div>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <div>second div</div>
+</body>
+</html>

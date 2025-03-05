@@ -1,0 +1,35 @@
+Q1.
+Car.java				필드 -String model, String color, int year, booleans isNewCar
+						메소드 - Constructor, output
+CarMain.java
+★
+생성자(모델, 색상, 연식) / 생성자(모델, 색상)
+Calendar calendar = Calendar.getInstance();
+calendar.get(Calendar.YEAR);
+
+
+Q2.
+Song.java				필드 - String title, String country
+						메소드 - Constructor, output
+Singer.java				필드 - String name, Song song 
+						메소드 - Constructor, setSong(s), output
+SingerSongMain.java										
+				
+Q3.
+Grade.java				필드 - int kor, int eng, int mat, double average, char grade
+						메소드 - Constructor, getAverage : 평균을 리턴, getGrade : 학점을 리턴
+						** 학점 : 90이상 A, 80이상 B, 70이상 C, 60이상 D, 60미만 F 
+						
+Student.java			필드 - String name, String dept, Grade grade
+						메소드 - Constructor, output
+StudentGradeMain.java			
+						
+Q4.
+Coordinate.java			필드 - int x, int y
+						메소드 - Constructor, output
+Circle.java				필드 - Coordinate center, double radius
+						메소드 - Constructor, output
+Ring.java				필드 - Circle inner, Circle outer
+						메소드 - Constructor, output
+CoordinateCircleRingMain.java						
+

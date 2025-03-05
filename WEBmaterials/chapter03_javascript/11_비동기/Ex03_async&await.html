@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /*
+    async
+    1. 비동기 처리를 위해 사용하는 문법
+    2. async 키워드를 함수 앞에 붙인다.
+    3. async 함수는 프로미스를 반환하게 된다.
+     (일반데이터를 리턴할 시 프로미스 객체로 감싼다.)
+  */
+
+  // 기존 함수
+  function addOne(n){
+    return n+1;
+  }
+  console.log(addOne(2));
+  
+  // async 함수
+  async function addTwo(n){
+    return n+2;
+  }
+  addTwo(2).then(n=> console.log(n));
+  // console.log(addTwo(2));
+
+  /*
+    await
+    1. async 함수 안에서만 동작(일반 함수 사용 불가)
+    2. 프로미스의 then() 부분을 대신할 수 있다.
+    3. await 키워드를 만나면 프로미스가 끝날때까지 기다린다.
+  */
+  function myProm(){
+    return new Promise(resolve=>{
+      resolve('완료1');
+    })
+  }
+  async function print(){
+    // await 사용 x
+    // myProm().then(result => console.log(result));
+    // myProm().then(console.log);     // 줄인 버전
+
+    // await 사용 o
+    const result = await myProm();
+    console.log(result);
+  }
+  print();
+</script>
+</html>

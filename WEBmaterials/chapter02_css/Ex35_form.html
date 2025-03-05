@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body{
+    background-color: grey;
+  }
+  .container{
+    margin: auto;
+    width: 400px;
+    height: 300px;
+    background-color: rgb(222, 220, 217);
+    border-radius: 10px;
+  }
+  .login{
+    width: 95%;
+    margin: auto;
+    display: block;
+    /* input은 기본적으로 inlne-block 요소 이고,
+     inline-block은 중앙정렬이 되지 않는다. */
+    box-sizing: border-box;
+    /* 이 속성때문에 애먹음. 
+    기본 값은 content-box인데 이러면
+    width 에는 border의 값이 포함이 안되므로 
+    중앙정렬이 자꾸 삑남*/
+    height: 50%;
+  }
+  .login-con{
+    padding: 5px 5px 30px;
+    height: 40%;
+  }
+  input[value="로그인"]{
+    width: 90%;
+    background-color: grey;
+    border-radius: 5px;
+    border: none;
+    height: 20%;
+    box-sizing: border-box;
+    margin: auto;
+    display: block;
+  }
+  input[value="로그인"]:hover{
+    background-color: rgb(107, 100, 100);
+  }
+  input[value="로그인"]:active{
+    background-color: rgb(80, 150, 155);
+  }
+  .maint{
+    padding-top: 20px;
+    text-align: center;
+    width: 33%;
+    display: block;
+    float: left;
+    box-sizing: border-box;
+  }
+  .etc-con{
+    padding-top: 20px;
+    width: 66%;
+    display: block;
+    float: left;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .etc{
+    display: inline-block;
+    margin: auto;
+    box-sizing: border-box;
+  }
+  #find-id:active{
+    color: blue;
+  }
+  #find-pw:active{
+    color: blue;
+  }
+</style>
+<body>
+  <form action="#" method="get">
+    <div class="container">
+      <div class="login-con">
+        <input type="email" placeholder="example@naver.com" class="login">
+        <input type="password" placeholder="password" class="login">
+      </div>
+      <input type="button" value="로그인">  
+      <div class="bottom-menu">
+        <div class="maint">
+          <label><input type="checkbox" >로그인 유지</label>  
+        </div>
+        <div class="etc-con">
+          <div class="etc" id="find-id">아이디 찾기 / </div>
+          <div class="etc" id="find-pw">비밀번호 찾기</div>
+        </div>
+      </div>
+    </div>
+  </form>
+</body>
+</html>

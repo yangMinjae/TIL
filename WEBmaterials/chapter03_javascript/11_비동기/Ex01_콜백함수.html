@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  const print = function(){
+    console.log('3초뒤에 실행');
+  }
+  setTimeout(print,3000);
+  /*
+    콜백이 필요한 이유
+    - 프로그래밍 언어는 원칙상 위에서 아래로 코드가 실행
+    하지만 코드의 특성이나 환경들 때문에 코드의 순서대로 실행되지 않는경우가
+    있고, 특히나 비동기환경이 그렇다.
+
+    *그렇기 때문에 특정 함수가 끝나고 난 뒤 다른 함수가 실행되어야 하는 상황 
+    등에서 실행의 흐름을 제어할 때 콜백이 사용
+  */
+ const print2 = function(n, callback){
+  setTimeout(()=>{
+    let val = n+1;
+    console.log(val);
+    callback(val);
+    
+  },1000);
+ }
+ print2(2,(n)=>{
+   print2(n,(n)=>{
+    print2(n,(n)=>{
+      print2(n,(n)=>{
+        print2(n,(n)=>{                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+  
+        })
+      })
+    })
+   })
+ });
+</script>
+</html>

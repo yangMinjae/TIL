@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+  // 1. if 문
+  let val = 10;
+  if(val<11){
+    console.log(`val이 11보다 작습니다.`);
+  }
+  val = 1;
+  if(val<11){
+    let val = 2;
+    // 범위(생명주기) 가 다르므로 사용 가능
+    // 여기서 val은 지역변수다.
+    console.log(`if 내부 값 : ${val}`);
+  }
+  console.log(`if 외부 값 : ${val}`);
+
+  val =10;
+  if(val>11){
+    console.log(`val이 11보다 큽니다.`);
+  }else{
+    console.log(`val이 11보다 작습니다.`);
+  }
+
+  if(val>0){
+    console.log(`양수`);
+  }else if(val<0){
+    console.log(`음수`);
+  }else{
+    console.log(`0`);
+  }
+
+  /*
+    Q1. 국어, 영어, 수학 점수를 입력받아
+    평균과 학점을 콘솔에 출력
+    - 변수명 : kor, eng, mat, avg, grade
+    - 학점 90 이상 A, 80 이상 B...60 미만 F
+  */
+
+  let kor = Number(prompt("국어 : "));
+  let eng = Number(prompt("영어 : "));
+  let mat = Number(prompt("수학 : "));
+
+  let avg = (kor+ eng+ mat)/3;
+  let grade;
+  if(avg>=90){
+    grade = 'A';
+  }else if(avg>=80){
+    grade = 'B';
+  }else if(avg>=70){
+    grade = 'C';
+  }else if(avg>=60){
+    grade = 'D';
+  }else{
+    grade = 'F';
+  }
+  console.log('평균 : ' + parseInt(avg));
+  console.log('학점 : ' + grade);
+
+  const gender = '남';
+  switch(gender){
+    case '남' : console.log('남자입니다.');
+    break;
+    case '여' : console.log('여자입니다.');
+    break;
+    default : console.log('남자입니다.');
+    break;
+  }
+</script>
+</html>

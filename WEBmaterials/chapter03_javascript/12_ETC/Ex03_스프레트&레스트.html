@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /*
+    spread
+    - 펼치다, 퍼뜨리다 의미
+    - 배열, 객체 등을 펼치는 기능
+    - 기존 데이터를 재활용
+  */
+  const slime = {
+    name : '슬라임'
+  }
+  const cuteSlime = {
+    ...slime,
+    attribute : 'cute'
+  }
+  const purpleSlime = {
+    ...cuteSlime,
+    color:'purple'
+  }
+
+  console.log(slime);
+  console.log(cuteSlime);
+  console.log(purpleSlime);
+  
+  // 배열에도 사용가능
+  const animals = ['개', '고양이', '참새'];
+  const other = [...animals, '비둘기'];
+  console.log(animals);
+  console.log(other);
+  
+  /*
+    rest
+    - spread와 생김새 즉 문법이 같다
+    - 객체, 배열에서 사용
+  */
+  const purpleCuteSlime = {
+    name : '슬라임',
+    attribute : 'cute',
+    color : 'purple'
+  };
+  const {color, ...rest} = purpleCuteSlime;
+  console.log(color);
+  console.log(rest);
+  
+</script>
+</html>

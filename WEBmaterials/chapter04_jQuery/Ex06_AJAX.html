@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./js/jquery-3.4.1.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /*
+    AJAX ( Asynchronous Javascript and XML)
+    - 비동기적인 자바스크립트와 xml을 의미
+    - 프로그래밍 언어가 아닌 데이터 교환 기술
+    - 전체 페이지를 로드함이 아닌 웹페이지의 일부를 업데이트 가능
+    - 동적인 대화형 웹페이지를 만드는데 목적
+  */
+
+  $.ajax({
+    type : 'get',       // 요청 메소드 방식
+    url : 'https://jsonplaceholder.typicode.com/posts',           // 요청 경로
+    data : JSON.stringify({
+      title : 'foo',
+      body : 'bar',
+      userId : 1
+    }),
+    dataType : 'json',                        // 응답 데이터의 타입
+    success : function(result){
+        // 응답 성공 시 발생하는 콜백 함수
+        result.forEach(element => {
+          console.log(element);
+        });
+      },
+      error : function(err){
+        // 응답 실패 시 발생하는 콜백 함수
+        console.log(err);
+      }
+  })
+</script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box{
+      width: 100px;
+      height: 100px;
+      color: white;
+      background-color: red;
+      text-align: center;
+      display: table-cell;
+      vertical-align: middle;
+    }
+    #text{
+      font-size: 2em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+    <p id = "text">빨</p>
+  </div>
+</body>
+<script>
+  let colors = ["red", "orange", "yellow", "green", "blue", "navy", "purple"];
+  let contents = ["빨", "주", "노", "초", "파", "남" ,"보"]; 
+  
+  let box = document.querySelector('#box');
+  let text = document.querySelector('#text');
+  let key = 1;
+
+  // let rainbow = function(){
+  //   // 구현
+  //   setInterval(()=>{
+  //     box.style['background-color']=`${colors[key]}`;  
+  //     text.innerHTML=`${contents[key]}`;
+  //     key++;
+  //     if(key==colors.length){
+  //       key=0;
+  //     }
+  //   },1000)
+  // }
+  // rainbow();
+  
+  let a = [];
+  let tmp;
+  let rainbow2 = function(){
+    tmp = setTimeout(()=>{
+        box.style['background-color']=`${colors[key]}`;  
+        text.innerHTML=`${contents[key]}`;
+        key++;
+        if(key==colors.length){
+          key=0;
+        }   
+        rainbow2();
+      },1000)
+  }
+  rainbow2();
+</script>
+</html>

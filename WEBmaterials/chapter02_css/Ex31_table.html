@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+     table{
+      border: 1px solid black;
+      border-collapse: collapse;
+      /* collapse 이중선이 아닌 단일선으로 표시 */
+      font-size: 1.5rem;
+      width: 400px;
+      margin: 30px;
+     }
+     th, td{/*두가지 이상의 선택자는 콤마로 표현*/
+      border: 1px solid black;
+      padding: 40px 0;
+      /* 수직 정렬 : top, middle, bottom */
+      vertical-align: middle;
+     }
+     td{
+      text-align: center;
+     }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>이름</th>
+        <th>나이</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>김씨</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>이씨</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>박씨</td>
+        <td>30</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

@@ -1,0 +1,64 @@
+Q1. Test01.java
+Score 클래스 					필드 : int kor, eng, mat
+							메소드 : Constructor, toString(), equals()
+Score 인스턴스를 2개 생성하고, 동등 비교(세과목이 모두 같으면 동등) 결과 출력
+각 인스턴스 정보는 toString 메소드를 통해 출력
+							
+Q2. Test02.java
+User 클래스 					필드 : String id, password
+							메소드 : Constructor, toString(), equals()
+User 인스턴스를 2개 생성하고, 동등 비교(id, password 모두 같으면 동등) 결과 출력
+각 인스턴스 정보는 toString 메소드를 통해 출력													
+							
+Q3. Test03. java							
+					
+Coordinate 클래스				필드 : int x, int y;
+							메소드 : Constructor, equals()							
+Circle 클래스					필드 : Coordinate center, double radius	
+							메소드 : Constructor, equals()	
+new Circle(0, 0, 1.5) // 중심 좌표[0,0], 반지름 : 1.5										
+
+Q4. Test04.java
+
+Student 클래스				필드 : String no(학번), String name, int[] scores(국,영,수)
+							     double average, char grade, 상수 int COURSE_COUNT(과목수)
+							메소드 : Student(String no, String name)
+								   setter{
+									setScores(int kor, int eng, int mat) - 직접 입력
+									setScores(int[] scores) - 랜덤 입력
+									setAverage()
+									setGrade()
+									}
+								   toString() 학번, 성명, 평균, 학점 출력
+								   equals() 학번이 같으면 같은 학생으로 비교   
+								   
+Q5.Test05.java
+성(lastName), 이름(firstName)을 각각 입력 받아
+하나의 이름(fullName)을 완성하시오. StringBuffer 클래스를 이용하시오.
+위의 방식으로 두 이름을 입력 받아 두 이름(fullName)의 동등 비교를 진행하시오.
+
+
+ Q6.Test06.java
+1! ~ 99! 까지 전체 결과를 출력하시오.
+1! (1 팩토리얼) = 1
+2! (2 팩토리얼) = 1 * 2 = 2
+3! (3 팩토리얼) = 1 * 2 * 3 = 6
+4! (4 팩토리얼) = 1 * 2 * 3 * 4 = 24
+...
+n!: (n-1) * n
+
+ex)
+1! = 1
+2! = 2
+3! = 6
+4! = 24
+5! = 120
+...
+99!
+
+
+Q7.Test07.java
+현재 날짜를 StringBuffer, Calendar 클래스를 이용하여
+"2019년 10월 21일 월요일 오후 1시 10분" 과 같은 형식으로 완성하고 출력하시오.
+StringBuffer.append() 이용
+String[] weeks = {"","일","월","화","수","목","금","토"};

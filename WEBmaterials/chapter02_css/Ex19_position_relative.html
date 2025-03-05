@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      /* 
+      relative
+      1. 기존 요소를 참고해서 알아서 배치
+      2. 기존 요소를 기준으로 top, bottom, left, right 값을 사용
+      - 부모를 기준으로
+      */
+      margin: 0;
+      padding: 0;
+    }
+    .box{
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      position: relative;
+      top: 100px;
+      left: 100px;
+    }
+    #red{background-color: red;}
+    #orange{background-color: orange;}
+    #yellow{background-color: yellow;}
+    #green{background-color: green;}
+  </style>
+</head>
+<body>
+  <div class="box" id="red">
+    <div class="box" id="orange">
+      <div class="box" id="yellow">
+        <div class="box" id="green">
+    
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

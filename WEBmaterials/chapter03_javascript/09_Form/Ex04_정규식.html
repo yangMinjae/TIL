@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  const regExp = /^[0-9]+$/;
+  const target = 10;
+  // 1. 정규식.test(데이터) - 정보를 가지고 있는지 여부를 true, false로 반환
+  if(regExp.test(target)){
+    console.log('숫자가 맞습니다.');
+  }else{
+    console.log('숫자가 아닙니다.');
+  }
+
+  // 2. 정규식.exec(데이터) - 정보를 가지고 있는 배열 반환
+  // 문자열을 못 찾으면 null 반환
+
+  if(regExp.exec(target)){
+    console.log('숫자가 맞습니다.');
+  }else{
+    console.log('숫자가 아닙니다.');
+  }
+
+  // 3. 문자열.search(정규식) - 인덱스 번호 반환
+  // 문자열에서 사용
+  // 대응되는 문자열을 찾지 못하면 -1 반환
+  if(String(target).search(regExp)!=-1){
+    console.log('숫자가 맞습니다.');
+  }else{
+    console.log('숫자가 아닙니다.');
+  }
+
+  // 4. 문자열.match(정규식) - 정보로 가지고 있는 배열 반환
+  // 대응되는 문자열을 찾지 못하면 null 반환
+  if(String(target).match(regExp)!=null){
+    console.log('숫자가 맞습니다.');
+  }else{
+    console.log('숫자가 아닙니다.');
+  }
+</script>
+</html>

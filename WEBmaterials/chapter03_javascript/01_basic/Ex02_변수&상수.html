@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /*
+    특징
+    1. 선언 시 자료형을 명시하지 않는다.
+    2. 저장되는 값에 의해서 자료형이 결정
+    3. 선언 방법
+      키워드 변수명
+      ex) let name;
+    4. 문자 + 숫자 + 특수문자(_, $) 조합 가능
+    5. 공백 문자는 사용x
+    6. 선언하지 않은 변수도 사용할 수 있다. -> var
+  */
+  // 1. 변수
+  let val1 = 10;
+  console.log(val1);
+  val1 = 20;
+  console.log(val1);
+  // * 변수를 선언할때에 let, var 두 가지
+  // 키워드를 사용할 수 있으나,
+  // ES6 이후 문법인 let을 주로 사용한다.
+
+  // 2. 상수
+  //  상수 선언 시 const 키워드 사용
+  const val2=10;
+  console.log(val2);
+  // val2=20;    // 에러 발생
+  // confirm.log(val2);
+
+  // 3. var, let, const 차이
+  /*
+    var
+    - ES6 이전에 사용하던 변수 키워드
+    - 변수 중복 선언 및 재 할당 가능
+    - 변수 선언 전 변수를 참조하면 undefined반환
+  */
+  var varAge;   // 아직 어떤자료형인지 모름. 자료가 안들어 갔으므로 - undefined
+  console.log(varAge);
+  varAge = 20;
+  console.log(varAge);
+  var varAge = 30;    // 오류가 안남 - 가장 큰 문제
+  console.log(varAge);
+  /*
+    let
+    - ES6 버전에서 추가
+    - 변수 재 할당은 가능, 재 선언은 불가능
+  */
+  let letAge;  
+  console.log(letAge);    // 마찬가지로 undefined
+  letAge = 20;
+  console.log(letAge);
+  // let letAge = 30;  // 이런식으로 오류가 난다.
+  console.log(letAge);
+  /*
+    const
+    - ES6 버전에서 추가
+    - **반드시 선언과 동시에 초기화가 이루어져야 함**
+  */
+  /*
+  const constAge;
+  console.log(constAge);
+  const constAge = 20;
+  console.log(constAge);
+  constAge = 30;
+  이렇게 안됨
+  */
+  const constAge = 10;
+  console.log(constAge);
+</script>
+</html>

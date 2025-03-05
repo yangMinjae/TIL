@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin-left: 100px;
+        }
+        .rotate_box{
+            transform: rotate(10deg);           /* 크롬 */
+            -ms-transform: rotate(10deg);       /*ie 9.0*/
+            -webkit-transform: rotate(10deg);   /*safari*/
+        }
+        .translate_box{
+            /* x방향 100px 이동, y방향 100px 이동 */
+            transform: translate(100px, 100px);
+        }
+        .scale_box{
+            /* 너비, 높이 1.2배 */
+            transform: scale(1.2, 1.2);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>회전 : rotate</h1>
+    <div class="rotate_box"></div>
+    <br><br>
+
+    <h1>이동 : translate</h1>
+    <div class="translate_box"></div>
+    <br><br>
+
+    <h1>크기 : scale</h1>
+    <div class="scale_box"></div>
+    <br><br>
+
+
+</body>
+</html>

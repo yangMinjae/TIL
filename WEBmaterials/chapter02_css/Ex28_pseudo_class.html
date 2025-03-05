@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 
+        <a> 태그의 가상 클래스
+        
+        1. a:link		  : 방문하기 전 
+        2. a:visited	: 방문한 적이 있음 ( 쿠키 삭제 하면 다시 돌아감 )
+        3. a:hover		: 마우스 오버(올려놓기)
+        4. a:active		: 마우스 누를 때(클릭아님)  
+    */
+    div{width: 100px;}
+    div a.btn1:link{
+      /* div 아래의 a의 btn1클래스 */
+      display: block;
+      padding: 10px;
+      text-align: center;
+      text-align: center;
+      background-color: red;
+      text-decoration: none;
+    }
+    div a.btn1:visited{
+      background-color: pink;
+      color: black;
+    }
+    div a.btn1:hover{
+      background-color: black;
+      color: white;
+    }
+    div a.btn1:active{
+      background-color: gold;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <a href="http://www.google.com" class="btn1">버튼</a>
+  </div>
+
+</body>
+</html>

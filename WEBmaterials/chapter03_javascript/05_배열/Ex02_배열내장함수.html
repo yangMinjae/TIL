@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // 1. push
+  // 배열 마지막에 값 추가하기
+  const arr = [1,5,3,4,2];
+  arr.push(6);
+  console.log(arr);
+  console.log(`${arr}`);
+
+  // 2. pop
+  // 배열 마지막 요소 삭제 - 반환 가능
+  // let a = arr.pop();
+  arr.pop();
+  console.log(arr);
+
+  // 3. unshift
+  // 배열 첫번째 요소에 값 추가하기
+  arr.unshift(0);
+  console.log(arr);
+
+  // 4. shift
+  // 배열 첫 번째 요소 삭제하기
+  arr.shift();
+  console.log(arr);
+
+  // 5. forEach
+  // 기존에 배웠던 여러 배열 관련 for문들을 대체할 수 있는
+  // 반복문 함수
+  const animals = ['dog','cat','bird','eagle'];
+  animals.forEach(function(animal){
+    console.log(animal);
+  });
+  console.log('=================')
+  animals.forEach(animal => {
+    console.log(animal);
+  });
+  
+  // 6. *** map ***
+  // 배열 안의 각 요소의 데이터를 변화하려고 할 때 사용
+  // map 함수의 파라미터 부분에는 변경함수가 들어가면 된다.
+  
+  // Q. 배열 내 요소들의 제곱을 구해 다른 배열로 저장
+  let arr2 = [1,5,3,4,2];
+  let resultArr1 = [];
+  let resultArr2 = [];
+  let resultArr3 = [];
+
+  // for-each
+  arr2.forEach(arg => {
+    resultArr1.push(Math.pow(arg,2))
+  })
+  console.log(arr2);
+  console.log(resultArr1);
+  console.log('=================')
+  // for-of
+  for (const element of arr2) {
+    resultArr2.push(Math.pow(element,2));
+  }
+  console.log(arr2);
+  console.log(resultArr2);
+  console.log('=================')
+  
+  // map
+  resultArr3 = arr2.map(n=>n*n);
+  // 배열을 리턴한다.
+  console.log(resultArr3);
+  
+  // 배열 내 요소들의 제곱을 구해 구분자를 가지는
+  // 문자열로 저장
+  const resultArr4 = arr2.map(n=>n*n).join('-');
+  console.log(resultArr4);
+  
+  // 객체 내 데이터와 형식을 가지고 있는 문자열을 만들고자 할때
+  
+  const params = {
+    cmd : 'validateId',
+    mId : 1234
+  };
+
+  const qu = Object.keys(params).map(key=>encodeURIComponent(key)+"="+encodeURIComponent(params[key]))
+  .join('&');
+  console.log(qu);
+  console.log('=================')
+  
+  // 7. indexOf
+  // 특정 데이터가 배열의 몇 번 인덱스에 있는지 찾을 때 사용
+  console.log(animals.indexOf('cat'));
+  // 없으면 -1 반환
+  
+  // 8. findIndex
+  // indexOf 함수와 비슷하나, 단일 데이터를 찾는것이 아니라
+  // 객체 내의 프로퍼티 값이나,
+  // 배열의 요소 값을 찾으려고 할 때 사용
+  const people = [
+    {
+      name : '김',
+      age : 30,
+      married : true
+    },
+    {
+      name : '이',
+      age : 40,
+      married : false
+    },
+    {
+      name : '박',
+      age : 50,
+      married : true
+    },
+  ];
+  const result2 = people.findIndex(person => person.name === '박');
+  console.log('=================')
+  console.log(result2);
+
+  // 9. *** filter ***
+  // 특정 조건에 해당하는 값들을 모아서
+  // 새로운 배열로 만들 수 있다.
+  const result3 = people.filter(person => !person.married);
+  // 결혼 안한사람들만
+  const result4 = people.filter(person => person.married);
+  // 결혼 한사람들만
+  console.log('=================')
+  console.log(result3);
+  console.log(result4);
+  
+  // 10. *** splice ***
+  // splice(삭제할 인덱스, 개수)
+  // 배열에서 항목을 삭제할 때 사용하는 함수
+  arr2 = [1,5,3,4,2];
+  console.log('=================')
+  arr2.splice(arr2.indexOf(3),2);
+  console.log(arr2);
+  // 결과 3,4 삭제
+  
+  // 11. slice
+  // slice(추출할 인덱스, 추출할 끝 다음 인덱스)
+  // 배열에서 항목을 삭제할 때 사용하는 함수
+  // splice와 비슷하지만 몇가지 차이점이 있다.
+  // 1. *** 기존 함수 배열에 영향을 주지 않는다. ***
+  //    -> 자료 수정이 아닌 뽑아내는데 이용
+  // 2. 함수의 두번째 인자 값이 끝나는 인덱스 이전 번호
+  
+  arr2 = [1,5,3,4,2];
+  const resultSlice = arr2.slice(1,3);
+  console.log('=================')
+  console.log('slice');
+  
+  console.log(arr2);
+  console.log(resultSlice);
+  console.log('=================')
+  // 12. sort
+  // 배열 내 데이터를 정렬하는 함수
+  // 12-1 오름차순
+  arr2 = [1,5,3,4,2];
+  arr2.sort();
+  console.log(arr2);
+  // 12-2 내림차순
+  arr2.sort((a,b)=>b-a);
+  console.log(arr2);
+  console.log('=================')
+  
+  // 13. concat
+  // 두 개 이상의 배열 합치기
+  const conArr1 = [1,2,3];
+  const conArr2 = [4,5,6];
+  const conResult = conArr1.concat(conArr2);
+  console.log(conResult);
+  console.log('=================')
+  
+  // 14. join
+  // 배열 안의 값들을 특정 구분자를 포함한
+  // 문자열로 합치기
+  console.log(conResult.join());
+  // 디폴트는 쉼표로 구분
+  console.log(conResult.join('-'));
+  console.log(conResult.join('/'));
+  console.log(conResult.join(' '));
+  console.log('=================')
+  
+  // 15. every, some
+  // every : 배열의 모든 요소가 true를 리턴해야 true
+  // some : 배열의 요소 중 하나라도 true 리턴하면 true
+  // => every는 and 개념, some은 or 개념
+  const lastArr = [1,2,3,4,5];
+  const tmp = 5;
+  
+  const even = ele =>ele %2 ===0;
+  console.log(lastArr.every(even));
+  console.log(lastArr.some(even));
+  console.log('=================')
+  
+  const lastResult1 = lastArr.every(index => index===tmp);
+  const lastResult2 = lastArr.some(index => index===tmp);
+
+  console.log(lastResult1);
+  console.log(lastResult2);
+</script>
+</html>

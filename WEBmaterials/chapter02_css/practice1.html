@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .top{
+    background-color: rgb(104, 186, 186);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  }
+  .menu{
+    background-color: rgb(87, 87, 160);
+    height: 40px;
+    padding: 0 0 0 20px;
+  }
+  .menu a{
+    padding: 10px 20px;
+    display: inline-block;
+    color: aliceblue;
+    text-decoration: none;
+  }
+  .menu a:hover{
+    color: blue;
+  }
+  .menu a:active{
+    color: black;
+  }
+  .bottom{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: stretch;
+  }
+  .bottom div{
+    background-color: rgb(218, 218, 179);
+  }
+  .content{
+    width: 75%;
+    border-style: solid;
+    border-color: white;
+    box-sizing: border-box;
+    border-width: 5px 5px 5px 0;
+  }
+  .content1{
+    padding: 15px;
+  }
+  .content2{
+    padding: 15px;
+    border-style: solid;
+    border-color: white;
+    box-sizing: border-box;
+    border-width: 5px 0 0 0;
+  }
+  .right-menu{
+    width: 25%;
+    border-style: solid;
+    border-color: white;
+    box-sizing: border-box;
+    border-width: 5px 0 5px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .right-menu> div{
+    padding: 15px;
+  }
+  .about-me{
+    border-style: solid;
+    border-color: white;
+    box-sizing: border-box;
+    border-width: 0 0 5px 0;
+    flex: none;
+  }
+  .popular-post{
+    flex: none;
+    
+  }
+  .img-contain{
+    width: 100%;
+    height: 200px;
+    background-image: url(images/fruit2.jpg);
+    background-size: auto 100%;
+  }
+  .follow-me{
+    flex: 1;
+    border-style: solid;
+    border-color: white;
+    border-width: 5px 0 0 0;
+  }
+  .footer{
+    background-color: rgb(218, 218, 179);
+    display: flex;
+    font-weight: 600;
+    justify-content: center;    /*가로 중앙 정렬*/
+    height: 80px;
+    align-items: center;        /*세로 중앙 정렬*/
+    /* 두 속성은 display: flex 켜져있을때 가능 */
+  }
+</style>
+<body>
+  <div class="top"> My Website</div>
+  <div class="menu">
+    <a href="#" class="menu1">Menu1</a>
+    <a href="#" class="menu2">Menu2</a>
+    <a href="#" class="menu3">Menu3</a>
+    <a href="#" class="menu4">Menu4</a>
+  </div>
+  <div class="bottom">
+    <div class="content">
+      <div class="content1">
+        <h3 >Title Heading</h3>
+        <p>Title description1</p>
+        <img src="images/hot.jpg" alt="이미지 경로 오류" style="width: 50%;">
+        <p>content 1</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et. Non tellus orci ac auctor augue. Elit at imperdiet dui accumsan sit. Ornare arcu dui vivamus arcu felis. Egestas integer eget aliquet nibh praesent. In hac habitasse platea dictumst quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac. </p>
+      </div>
+      <div class="content2">
+        <h3 >Title Heading2</h3>
+        <p>Title description2</p>
+        <div class="img-contain"></div>
+        <p>content 2</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et. Non tellus orci ac auctor augue. Elit at imperdiet dui accumsan sit. Ornare arcu dui vivamus arcu felis. Egestas integer eget aliquet nibh praesent. In hac habitasse platea dictumst quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac. </p>
+      </div>
+    </div>
+    <div class="right-menu">
+      <div class="about-me">
+        <h3>About Me</h3>
+        <img src="images/fruit1.jpg" alt="" style="width: 100%;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et. Non tellus orci ac auctor augue. Elit at imperdiet dui accumsan sit. Ornare arcu dui vivamus arcu felis. Egestas integer eget aliquet nibh praesent. In hac habitasse platea dictumst quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac. </p>
+      </div>
+      <div class="popular-post">
+        <h3>Popular Post</h3>
+        <img src="images/fruit1.jpg" alt="" style="width: 100%;">
+      </div>
+      <div class="follow-me">
+        <h3>Follow Me</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et. Non tellus orci ac auctor augue. Elit at imperdiet dui accumsan sit. Ornare arcu dui vivamus arcu felis. Egestas integer eget aliquet nibh praesent. In hac habitasse platea dictumst quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac. </p>
+      </div>
+    </div>
+  </div>  
+  <div class="footer">Footer</div>
+</body>
+</html>

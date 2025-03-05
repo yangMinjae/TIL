@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>버튼</button>
+</body>
+<script>
+  let btn = document.querySelector('button');
+  // 이벤트 함수들은 비동기 함수다
+  btn.addEventListener('click', function(){
+    alert('clicked1');
+  });
+  // btn.removeEventListener('click', '익명이 아닌함수');
+  btn.addEventListener('click', function(){
+    // 여러개가 이벤트리스너로 추가됨
+    alert('clicked1');
+  });
+
+  btn.onclick = function(){
+    alert('clicked2');
+  }
+  btn.onclick = function(){
+    // 덮어씌워짐
+    // 마지막에 대입된 함수만 작동
+    alert('clicked2');
+  }
+
+  /*
+    대표적인 이벤트
+    1. onclick : 객체를 클릭 했을 때
+    2. onchange: 객체의 내용이 변경되었을 때
+    3. onload : 객체(문서)가 로딩 되었을 때
+    4. onmouseover : 마우스가 객체 위로 올라왔을때
+    5. onmouseout : 마우스가 객체 바깥으로 나갔을때
+    6. onkeyup : 키를 눌렀다가 뗴어졌을때
+    7. onkeydown : 키를 눌렀을 때
+  */
+</script>
+</html>

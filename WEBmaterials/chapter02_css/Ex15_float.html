@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 
+      아래 Element들에 스타일 적용
+      1. 가로, 세로 값 200px
+      2. 외곽선 1px 검정색 실선
+      3. 바깥 여백 10px
+      4. 글자 가운데 정렬
+    */
+    div{
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+      margin: 10px;
+      text-align: center;
+      line-height: 200px;   /*줄의 높이- 세로 정렬*/
+    }
+    .left{
+      float: left;
+    }
+    .right{
+      float: right;
+    }
+    /* 블록 레벨을 부수고 한줄에 오게끔 */
+  </style>
+</head>
+<body>
+  <div style="background-color: red;" class="left">빨강</div>
+  <div style="background-color: orange;"class="left">주황</div>
+  <div style="background-color: yellow;"class="left">노랑</div>
+  <div style="background-color: green;"class="left">초록</div>
+  <div style="background-color: blue;"class="right">파랑</div>
+  <div style="background-color: navy;"class="right">남색</div>
+  <div style="background-color: purple;"class="right">보라</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  const object = {
+    a:1,
+    b:2,
+  }
+  function print(obj){
+    console.log(obj.a);
+    console.log(obj.b);
+    console.log('========');
+  }
+  print(object);
+  
+  function print2(obj){
+    const{a,b}=obj;
+    console.log(a);
+    console.log(b);
+    console.log('========');
+    
+  }
+  print2(object);
+  function print3({a,b, c=3}){
+    console.log(a);
+    console.log(b);
+    console.log(c);
+    console.log('========');
+  }
+  print3(object);
+
+  // 비구조화 할당 시 이름 바꾸기
+  const animal = {
+    name : '멍멍이',
+    type : '강아지'
+  }
+  const{name : nickname} = animal;
+  console.log(nickname);
+
+  // 배열 비구조화 할당
+  const array = [1,2];
+  const[one, two] = array;
+  console.log(one);
+  console.log(two);
+  
+</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // 특정 값이 여러 값 중 하나인지 확인할 때
+  function isAnimal(val){
+    return(
+      val === '고양이' ||
+      val === '강아지' ||
+      val === '거북이' ||
+      val === '너구리'
+    )
+  }
+  console.log(isAnimal('강아지'));
+  console.log(isAnimal('노트북'));
+  console.log('====================');
+  
+  function isAnimal2(val){
+    const animals = ['강아지', '고양이', '거북이'];
+    return animals.includes(val);
+  }
+  console.log(isAnimal2('강아지'));
+  console.log(isAnimal2('노트북'));
+  console.log('====================');
+
+  // 값에 따라 다른 결과물을 반환해야 할 떄
+  function getSound(animal){
+    if(animal === '강아지') return '멍멍';
+    if(animal === '고양이') return '야옹'; 
+    if(animal === '참새') return '짹쨱'; 
+    return '...?';
+  }
+
+  console.log(getSound('강아지'));
+  console.log(getSound('노트북'));
+  console.log('====================');
+  
+  function getSound2(animal){
+    const sounds = {
+      강아지 : '멍멍',
+      고양이 : '야옹',
+      참새 : '짹짹',
+    };
+    return sounds[animal] || '...?';
+  }
+  console.log(getSound2('고양이'));
+  console.log(getSound2('노트북'));
+  console.log(getSound2('참새'));
+  console.log('====================');
+  
+</script>
+</html>

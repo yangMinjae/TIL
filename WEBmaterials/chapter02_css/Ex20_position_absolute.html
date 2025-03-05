@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 
+    position : absolute
+    1. 기준 위치에서 원하는 위치를 직접 지정
+      (top, bottom, left, right)
+    2. 기준 위치
+      1) 가장 가까운 부모중에 position:relative인 요소
+      2) 1)번 요소가 없으면 화면 전체로 인식
+    */
+    .container{
+      width: 500px;
+      height: 500px;
+      border: 1px solid black;
+      position: relative
+    }
+    .box{
+      width: 100px;
+      height: 100px;
+      position: absolute;
+    }
+    .red{
+      background-color: red;
+      top: 0;
+      left: 0;
+    }
+    .orange{
+      background-color: orange;
+      top: 0;
+      right: 0;
+    }
+    .yellow{
+      background-color: yellow;
+      bottom: 0;
+      left: 0;
+    }
+    .green{
+      background-color: green;
+      bottom: 0;
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box red">빨강</div>
+    <div class="box orange">주황</div>
+    <div class="box yellow">노랑</div>
+    <div class="box green">초록</div>
+  </div>
+</body>
+</html>

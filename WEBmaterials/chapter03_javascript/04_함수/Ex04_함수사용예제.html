@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body> 
+  <h1 id="title">함수 사용해보기</h1>
+  <button onclick="welcome();">함수 실행</button>
+  <button onclick="alert('click');">경고창</button>
+  <button onclick="modify();">값 수정</button>
+
+</body>
+<script>
+  function welcome(){
+    console.log(`안녕하세요.`);
+  }
+  let modify = function(){
+    // 요소 가져오기
+    let title = document.getElementById('title');
+    console.log(title);
+    console.log(typeof title);
+    // 요소 내부 값 변경
+    title.innerHTML = '함수 사용 완료';
+  }
+</script>
+</html>

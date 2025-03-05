@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input[type=radio]{
+      width: 50px;
+    }
+    input[type=checkbox]{
+      width: 250px;
+    }
+  </style>
+</head>
+<body>
+  <form action="#" method="get">
+    <fieldset>
+      <legend>취미 선택(1개만 선택 가능)</legend>
+      <label>
+        <input type="radio" name="hobby" value="운동">운동
+      </label>
+      <label>
+        <input type="radio" name="hobby" value="독서">독서
+      </label>
+    </fieldset>
+    <fieldset>
+      <legend>관심 분야(다중 선택 가능)</legend>
+      <label>
+        <input type="checkbox" name="inter" value="경제">경제
+      </label>
+      <label>
+        <input type="checkbox" name="inter" value="과학">과학
+      </label>
+      <label>
+        <input type="checkbox" name="inter" value="정치">정치
+      </label>
+    </fieldset>
+  </form>
+</body>
+</html>

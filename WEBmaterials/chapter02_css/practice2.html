@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      box-sizing: border-box;
+    }
+    body, html{
+      margin: 0;
+      padding: 0;
+    }
+    .cont-1{
+      padding: 5px;
+      background-color: rgb(192, 190, 190);
+      width: 100%;
+      min-width: 1000px;
+    }
+    .fl{
+      width: 100%;
+      min-width: 1000px;
+      display: flex;
+      padding: 5px;
+    }
+    
+    .fl div{
+      font-weight: 900;
+      margin: 5px;
+    }
+    
+    .fl div:nth-child(1):hover{
+      color: blue;
+    }
+    .fl div:nth-child(1):active{
+      color: white;
+    }
+    .fl div:nth-child(2):hover{
+      color: blue;
+    }
+    .fl div:nth-child(2):active{
+      color: white;
+    }
+    .fl div:nth-child(3){
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .fl div:nth-child(4){
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .top-menu{
+      width: 100%;
+      min-width: 1000px;
+      background-color: black;
+      padding: 5px;
+    }
+    .top-menu a{
+      color: white;
+      text-decoration: none;
+      padding: 5px;
+    }
+    .top-menu a:hover{
+      color: blue;
+    }
+    .top-menu a:active{
+      color: wheat;
+    }
+    .main{
+      display: flex;
+      padding: 30px 0 10px;
+      box-sizing: border-box;
+    }
+    .main>div{
+      width: 25%;
+      min-width: 250px;
+    }
+    .main>div>img{
+      width: 100%; 
+      padding: 20px;
+    }
+    ul li{
+      list-style: square;
+    }
+    .bt_ty1{
+      display: flex;
+      justify-content: right;
+    }
+    .footer{
+      width: 100%;
+      min-width: 1000px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(189, 187, 187);
+      padding: 10px;
+    }
+    .footer div{
+      border-style: solid;
+      margin: 10px;
+      border-width: 0 1px 0;
+    }
+    .footer div:active{
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="cont-1">
+    <div class="fl">
+      <div>회원가입</div>
+      <div> 로그인 </div>
+      <div><input type="search" placeholder="Search"></div>
+      <div><input type="button" value="검색"></div>
+    </div>
+    <div class="logo">
+      <img src="images/logo.png" style="width: 150px; margin:15px 40px;">
+    </div>
+  </div>
+  <div class="top-menu">
+    <a href="#">베스트</a>
+    <a href="#">세일중</a>
+    <a href="#">기획전</a>
+    <a href="#">이벤트</a>
+    <a href="#">스토어</a>
+  </div>
+  <div class="main">
+    <div class="dryer">
+      <h3>건조기</h3>
+      <img src="images/product-1.jpg">
+      <ul>
+        <li>트롬의류건조기</li>
+        <li>히트펌프식</li>
+        <li>16kg</li>
+        <li>모던스테인리스</li>
+        <li>1,669,000원</li>
+      </ul>
+      <div class="bt_ty1">
+        <input type="button" value="바로구매">
+        <input type="button" value="장바구니">
+      </div>
+    </div>
+    <div class="laundrM">
+      <h3>일반세탁기</h3>
+      <img src="images/product-2.jpg">
+      <ul>
+        <li>통돌이</li>
+        <li>DD모터</li>
+        <li>16kg</li>
+        <li>미드프리실버</li>
+        <li>574,500원</li>
+      </ul>
+      <div class="bt_ty1">
+        <input type="button" value="바로구매">
+        <input type="button" value="장바구니">
+      </div>
+    </div>
+    <div class="cloth">
+      <h3>의류관리기</h3>
+      <img src="images/product-3.jpg">
+      <ul>
+        <li>트롬스타일러</li>
+        <li>히트펌프식</li>
+        <li>상의5벌,하의1벌</li>
+        <li>린넨블랙</li>
+        <li>1,504,000원</li>
+      </ul>
+      <div class="bt_ty1">
+        <input type="button" value="바로구매">
+        <input type="button" value="장바구니">
+      </div>
+    </div>
+    <div class="drum">
+      <h3>드럼세탁기</h3>
+      <img src="images/product-4.jpg">
+      <ul>
+        <li>트윈워시</li>
+        <li>DD모터</li>
+        <li>21kg+4kg</li>
+        <li>모던스테인리스</li>
+        <li>1,546,000원</li>
+      </ul>
+      <div class="bt_ty1">
+        <input type="button" value="바로구매">
+        <input type="button" value="장바구니">
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div>회사소개</div>
+    <div>이용약관</div>
+    <div>전자금융거래약관</div>
+    <div>개인정보처리방침</div>
+    <div>고객센터</div>
+  </div>
+</body>
+</html>

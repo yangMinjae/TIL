@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="#" name="myForm">
+    <table>
+      <tr>
+        <td>성명</td>
+        <td><input type="text" name="name"></td>
+      </tr>
+      <tr>
+        <td>이메일</td>
+        <td><input type="text" name="email"></td>
+      </tr>
+      <tr>
+        <td>우편번호</td>
+        <td><input type="text" name="zipCode"></td>
+      </tr>
+      <tr>
+        <td>지역</td>
+        <td>
+          <select name="region">
+            <option value="0">::지역선택::</option>
+            <option value="1">서울</option>
+            <option value="2">경기</option>
+            <option value="3">인천</option>
+          </select>
+        </td>
+      </tr>      
+      <tr>
+        <th colspan="2">
+          <input type="button" value="전송" onclick="sendData();">
+        </th>
+      </tr>
+    </table>
+  </form>
+</body>
+<script>
+  function sendData(){
+    /*
+      데이터 검증 조건
+      1. 이름은 필수로 입력되어야 하며, 2~6자리로 입력한다.
+      2. 이메일은 @를 포함해야 한다.
+        * 첫 글자가 @ 인지, 마지막 글자가 @인지 확인
+      3. 우편 번호는 5자리 숫자로 입력되어야한다.
+        * 숫자 확인 : isNaN(값) ->
+          숫자가 아닌 데이터면 true 리턴
+      4. 지역은 필수로 선택되어야한다.
+    */
+   let form = document.forms.myForm;
+   let nameV = form.name.value;
+   let emailV = form.email.value;
+   let zipCodeV = form.zipCode.value;
+   let regionV = form.region.value;
+
+   // 이름 검증
+   if(nameV.length>6||nameV.length<2){
+    alert('2~6자리 이름을 입력해 주세요');
+    return;
+   }
+
+   // 이메일 검증
+   if(emailV.indexOf("@")==-1){
+    alert("이메일 형식: @를 포함해야합니다.");
+    return;
+   }
+   if(emailV.indexOf("@")==0 ||emailV.indexOf("@")==emailV.length-1){
+    alert("@를 끝과 처음이 아닌 부분에 입력해주세요.");
+    return;
+   }
+
+   // 우편번호 검증
+   if(zipCodeV.length!=5|| isNaN(zipCodeV)){
+    alert("우편번호는 5자리 숫자여야합니다.")
+    return;
+   }
+
+   // 지역선택 검증
+   if(regionV==0){
+    alert("지역을 선택해주세요");
+    return;
+   }
+   form.submit();
+   console.log(form);
+  }
+</script>
+</html>

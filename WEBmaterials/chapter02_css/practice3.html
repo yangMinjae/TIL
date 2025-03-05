@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      background-color: gainsboro;
+    }
+    .main h1{
+      text-align: center;
+    }
+    .main{
+      min-width: 700px;
+      width: 700px;
+      margin: auto;
+    }
+    .main>h4{
+      color: red;
+      margin-top: 50px;
+    }
+    .btn_div{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .pi{
+      border: 1px solid black;
+    }
+    .pi>div{
+      display: flex;
+      margin: 20px;
+    }
+    .pi>div div:nth-child(1){
+      width: 25%;
+      display: flex;
+      justify-content: center;
+      font-weight: 900;
+    }
+    .pi>div div:nth-child(2){
+      width: 75%;
+      display: flex;
+      justify-content: center;
+    }
+    .pi input{
+      width: 65%;
+      padding-left:10px;
+    }
+    .di{
+      border: 1px solid black;
+    }
+    .di>div{
+      display: flex;
+      margin: 20px;
+    }
+    .di>div div:nth-child(1){
+      width: 25%;
+      display: flex;
+      justify-content: center;
+      font-weight: 900;
+    }
+    .di>div div:nth-child(2){
+      width: 75%;
+      display: flex;
+      justify-content: center;
+    }
+    .di input{
+      width: 65%;
+      padding-left:10px;
+    }
+    .di textarea{
+      width: 65%;
+      padding-left:10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <h1>상품 주문서</h1>
+    <h4>개인 정보</h4>
+    <div class="pi">
+      <div>
+        <div>이름</div>
+        <div><input type="text" placeholder="필수"></div>
+      </div>
+      <div>
+        <div>연락처</div>
+        <div><input type="text" placeholder="필수"></div>
+      </div>
+      <div>
+        <div>주소</div>
+        <div><input type="text" placeholder="필수"></div>
+      </div>
+    </div>
+    <h4>배송지 정보</h4>
+    <label><input type="checkbox">주문자 정보와 같음</label>
+    <div class="di">
+      <div>
+        <div>이름</div>
+        <div><input type="text" ></div>
+      </div>
+      <div>
+        <div>연락처</div>
+        <div><input type="text" ></div>
+      </div>
+      <div>
+        <div>주소</div>
+        <div><input type="text" ></div>
+      </div>
+      <div>
+        <div>메모</div>
+        <div><textarea placeholder="경비실에 맡겨주세요. 2층에 맡겨주세요"rows="8" cols="100" style="resize: none;"></textarea></div>
+      </div>
+    </div>
+    <div class="btn_div">
+      <input type="button" value="주문하기">
+      <input type="button" value="다시작성">
+    </div>
+  </div>
+</body>
+</html>

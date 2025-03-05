@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="#" name="myForm" onsubmit="return goLogin()">
+    <label for="uId">아이다</label>
+    <input type="text" name="id" id="uId"><br>
+    <label for="uPw">비밀번호</label>
+    <input type="password" name="pw" id="uPw"><br>
+    <input type="submit" value="로그인">
+  </form>
+</body>
+<script>
+ function goLogin(){
+    let form = document.forms.myForm; 
+    if(!form.id.value){
+      alert("아이디는 반드시 입력하세요");
+      return false;
+    }
+
+    if(form.pw.value.length>16||form.pw.value.length<8){
+      alert("비밀번호는 8~16자로 입력해주세요");
+      return false;
+    }
+    return true;
+    // true가 리턴돼야 submit 됨
+  }
+</script>
+</html>

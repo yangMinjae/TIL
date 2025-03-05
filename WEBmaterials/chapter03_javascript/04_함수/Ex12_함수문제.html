@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="clock">0000-00-00 00:00:00</h1>
+  <button id="btn_print">현재 시간 출력</button>
+  <button id="btn_halt">중지</button>
+  <button id="btn_reset">초기화</button>
+</body>
+<script>
+  const h1=document.getElementById('clock');
+  const btn_print=document.getElementById('btn_print');
+  const btn_halt=document.getElementById('btn_halt');
+  const btn_reset=document.getElementById('btn_reset');
+  const getTime = ()=>{
+    let date = new Date();
+    // **중요** date를 함수 내에서 생성하도록 해요 getTime이 
+    // 호출될때 마다 현재 시간이 바뀜
+    let time='';
+    function format(a){
+      if(a<10){
+        return '0'+a;
+      }
+      return a;
+    }
+    time+=date.getFullYear()+'-';
+    time+=format(date.getMonth()+1)+'-';
+    time+=format(date.getDate())+' ';
+    time+=format(date.getHours())+':';
+    time+=format(date.getMinutes())+':';
+    time+=format(date.getSeconds());
+    return time;
+  }
+  let interval;
+  btn_print.addEventListener('click',function(){
+    if(!interval){
+      // js에서는 조건문에 변수를 넣게 되면
+      // (null, undefined, 0, -0 "", NaN, false)(=falsy)이 아닐 시 true
+      // falsy 일 시 false 반환한다.
+      interval = setInterval(function(){      // setInterval()함수는 number를 반환
+      h1.innerHTML=getTime();
+      console.log(interval);
+    },1000);
+    }
+  });
+  btn_halt.addEventListener('click',function(){
+    if(interval){
+      clearInterval(interval);
+      // clearInterval로 스레드를 중지 시키고
+      interval=null;
+      // interval 값에 null을 넣어 중지, 초기화 버튼이 interval 객체가 존재하지 않을때에만
+      // clearInterval 함수를 수행하도록 한다.
+    }
+  });
+  btn_reset.addEventListener('click',function(){
+    if(interval){
+      clearInterval(interval);
+      interval=null;
+    }
+    h1.innerHTML='0000-00-00 00:00:00';
+  });
+
+</script>
+</html>

@@ -1,0 +1,27 @@
+Q1. 
+클래스 Car 를 정의하시오.
+- 필드 : String model,String color, int year
+- 메소드 : setFields(model, color) : 올해를 year로 처리, 
+		 setFields(model, color, year),
+		 output()
+클래스 CarMain을 정의 하시오.
+★
+Calendar calendar = Calendar.getInstance();
+calendar.get(Calendar.YEAR);	 // 현재 년도
+
+Q2.
+클래스 Dog을 정의하시오.
+- 필드 : String name, String breed, int age
+- 메소드 : setDog(name, age) : 품종은 푸들
+		setDog(name, age, breed) 
+		info() - name, age, breed 출력
+클래스 DogMain을 정의하시오.
+
+Q3.
+클래스 RecursiveCall 을 정의하시오.
+- 필드  : X
+- 메소드 : recursive(n) -> n번 "Hello" 출력하기
+		 main
+★
+if-else 사용 - else 일 때 재귀 호출
+

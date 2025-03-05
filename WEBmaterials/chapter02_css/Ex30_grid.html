@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: pink;
+            width: 500px;
+            padding: 20px;
+
+            /* <화면 표기> */
+			    display: grid;
+
+            /* <열의 배치> */
+			/* 
+				비율 및 개수 
+				- fr은 fraction으로, 숫자 비율대로 트랙의 크기를 나눈다.
+				- 1fr 1fr 1fr은 균일하게 1:1:1 비율인 3개의 column을 만듦
+				- 1fr 대신 px 을 사용해도 된다.
+				- 여러번을 사용하는 대신 repeat( ) 함수를 사용해도 된다.
+			*/
+            /* grid-template-columns: 30px 1fr 1fr; */
+			/* 4번을 각각 1fr로 나눔 */
+			grid-template-columns: repeat(3, 1fr);
+			/* 100px 200px 나머지 */
+			/* grid-template-columns: 10px 20px auto; */
+
+            /* <행의 배치> */
+			/* grid-template-rows: 200px 200px 500px; */
+			/* grid-template-rows: 1fr 1fr 1fr; */
+			/* grid-template-rows: repeat(3, 1fr); */
+			/* grid-template-rows: 200px 1fr; */
+			/* grid-template-rows: 100px 200px auto; */
+
+            /* 
+				<아이템의 간격> 
+				개별 아이템의 margin을 이용해도 되지만, 특수 옵션을 이용할 수 있다.
+			*/
+			/* 행(수평) 간 간격 */
+			/* row-gap: 10px; */
+			/* 열(수직) 간 간격 */
+			/* column-gap: 20px; */
+			/* 행&열 간격 == row-gap: 10px; column-gap: 20px; */
+			/* gap: 10px 20px; */
+			/* 전체 간격 */
+			gap: 20px;
+        }
+        .item{
+            height: 100px;
+            border: 1px solid black;
+            background-color: gray;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="item">A</div>
+      <div class="item">B</div>
+      <div class="item">C</div>
+      <div class="item">D</div>
+      <div class="item">E</div>
+      <div class="item">F</div>
+      <div class="item">G</div>
+      <div class="item">H</div>
+      <div class="item">I</div>
+    </div>
+</body>
+</html>

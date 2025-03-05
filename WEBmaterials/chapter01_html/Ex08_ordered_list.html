@@ -1,0 +1,41 @@
+<!--
+   <ol>목록태그
+
+   1. 순서가 있는 태그이다.
+   2. type 속성
+      1) type = "1" : 1, 2, 3
+      2) type = "I" : Ⅰ,Ⅱ,Ⅲ
+      3) type = "i" : ⅰ,ⅱ,ⅲ
+      4) type = "A" : A, B, C
+      5) type = "a" : a, b, c
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1> &lt; 순서 있는 목록 &gt;</h1>
+  <ol type = "1"> <!-- ordered list -->
+    <li>호랑이</li>
+    <li>사자</li>
+    <li>햄스터</li>
+    <li>원숭이</li> <!--줄바꿈이 된다면 블록 영역-->
+  </ol>
+  <hr>
+  <ol type = "I"> 
+    <li>호랑이</li>
+    <li>사자</li>
+    <li>햄스터</li>
+    <li>원숭이</li> 
+  </ol>
+  <ol type = "1" start = "100"> 
+    <li>호랑이</li>
+    <li>사자</li>
+    <li>햄스터</li>
+    <li>원숭이</li> 
+  </ol>
+</body>
+</html>

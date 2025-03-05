@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+  /*
+    자기 호출 함수
+    1. 만들면 바로 호출되는 함수
+    2. 익명 함수를 ()로 묶는 형태
+    3. 다른 개발자와 충돌을 방지하기 위해 사용
+  */
+
+  (function(a, b){
+    console.log(`자기 호출 함수${a+b}`);
+  })(3,4);
+
+</script>
+</html>

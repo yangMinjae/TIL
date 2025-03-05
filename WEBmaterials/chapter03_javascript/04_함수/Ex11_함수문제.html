@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn" style="display:block; margin:auto;">클릭</button>
+  <h1 id="header" style="text-align: center;">??현재시간??</h1>
+</body>
+<script>
+  /*
+    현재 날짜와 시간을 다음과 같은
+    형식으로 출력하는 함수 to12Times를 작성하시오.
+    ex) 2019-7-15 오후 3:24
+  */
+  function to12Times(){
+    let date = new Date();
+    let ampmhour;
+    if(date.getHours()<12){
+      ampmhour='오전 '+date.getHours();
+      if(date.getHours()==0){
+        ampmhour='오전 12';
+      }
+    }else{
+      ampmhour='오후 '+date.getHours();
+      if(date.getHours()==12){
+        ampmhour='오후 12';
+      }
+    }
+    return `${date.getFullYear()}-${Number(date.getMonth())+1}-${date.getDate()}`
+    +` ${ampmhour}:`
+    +`${date.getMinutes()}`;
+  }
+  console.log(to12Times());
+  const btn = document.getElementById('btn');
+  const header = document.getElementById('header');
+  let isShowingtime = false;
+  btn.addEventListener('click', function(){
+    if(isShowingtime){
+      header.innerHTML="??현재시간??"
+    }else{
+      header.innerHTML=`${to12Times()}`;
+    }
+    isShowingtime= !isShowingtime;
+  })
+</script>
+</html>

@@ -1,0 +1,143 @@
+<!--  
+	<form>태그
+	
+	1. 사용자로부터 정보를 입력 받을 때 사용하는 태그
+	2. 주요속성
+		1) action : 정보를 받아서 어디서 처리할 것인지
+     처리할 장소(위치, 경로)를 지정
+		2) method : 정보를 전달하는 방식
+			(1) get :	default, 정보를 header에 포함시켜서 보냄
+						정보가 노출됨(보안 처리가 안됨)
+						빠름 (ex: 검색)
+						
+			(2) post :	정보를 body에 포함시켜서 보냄
+						정보가 보안처리됨 
+						느림(ex:회원가입, 로그인)
+		3) enctype : 파일 업로드 할때 사용
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- method 속성은 작성하지 않으면 기본값은 get -->
+  <form action="#" method="get">
+    <!-- 1. 텍스트 상자 -->
+     <h3>텍스트상자</h3>
+     일반 텍스트 상자 : 
+     <input type="text" placeholder="일반 텍스트 상자"><br>
+     비밀번호 텍스트 상자:
+     <input type="text" placeholder="비밀번호"><br>
+     숫자용 텍스트 상자 : <input type="number"><br>
+     이메일 텍스트 상자 : <input type="email"><br>
+     url 텍스트 상자 : <input type="url"><br>
+     전화번호 텍스트 상자 : <input type="tel"><br>
+     날짜 텍스트 상자 : <input type="date"><br>
+     시간 텍스트 상자 : <input type="time"><br>
+     <hr>
+     <!-- 1. label이 없는 경우 -->
+     아이디 <input type="text"/><br>
+     <!-- 2.1 label이 있는경우 -->
+      <label>아이디 <input type="text"/></label><br>
+     <!-- 2.2 label이 있는경우 -->
+     <label for="uId">아이디</label>
+     <input type="text" id = "uId"/><br>
+     <hr>
+     <!-- 2. 버튼 -->
+      <h3>버튼</h3>
+      일반 버튼 : <input type="button" value="전송1"><br>
+      일반 버튼 : <button>전송2</button><br>
+      전송 버튼 : <input type="submit" value = "전송"><br>
+      <!-- submit : 폼에 입력된 모든데이터를 action으로 전송 -->
+      초기화 버튼 : <input type="reset" value = "초기화"><br>
+      이미지 버튼 :
+      <input type="image" src="images/bart.jpg" width="200"><br>
+      숨김 버튼 : <input type="hidden" name="age" value="20"><br>
+      <!-- age 변수에 20 저장 -->
+      <hr>
+      <!-- 3. 라디오 버튼 -->
+      <!-- 여러 선택중 하나만 선택하는 경우에 사용 -->
+      <!-- 라디오 버튼은 name 속성을 같은 값으로 설정 -->
+      <h3>라디오 버튼</h3>
+      <input type="radio" name="gender" value="남">남자
+      <input type="radio" name="gender" value="여">여자
+      <!-- checked 속성으로 초기 값 설정 가능  -->
+
+      <!-- 4. 체크박스-->
+      <!-- 여러 선택 중 자유롭게 선택하는 경우에 사용 
+          (다중 선택 가능) 
+      -->
+      <!-- name 속성을 같은 값으로 설정 -->
+      <h3>체크박스</h3>
+      <input type="checkbox" name="hobbies" value = "영화">영화
+      <input type="checkbox" name="hobbies" value = "음악">음악
+      <input type="checkbox" name="hobbies" value = "독서">독서
+      
+      <hr>
+      <!-- 5. 필드 셋 -->
+      <h3>필드 셋</h3>
+      <fieldset>
+        <legend>지역</legend> <!--필드 셋의 제목-->
+        <input type="checkbox" name = "region" value="강남">강남
+        <input type="checkbox" name = "region" value="강동">강동
+        <input type="checkbox" name = "region" value="강북">강북
+        <input type="checkbox" name = "region" value="강서">강서
+      </fieldset>
+      <hr>
+
+      <!-- 6. textarea -->
+      <!-- 많은 양의 텍스트를 처리할 때 사용 -->
+      <!-- 행 : rows, 열 : cols -->
+      <h3>textarea</h3>
+      <textarea rows="10" cols="100" placeholder="자기소개" style="resize: none;"></textarea>
+      <!-- 태그 사이의 공간으로 문자열이 입력되므로 저기안에 아무것도 넣으면안된다. 사이에 엔터, 공백 금지 -->
+      <!-- ui 뭉게질 수 있으니 resize none으로 설정해주기 -->
+
+      <hr>
+      <!-- 7. 목록 상자(선택만 가능) -->
+      <!-- select 태그로 목록을 만들고 option 태그로 값 추가 -->
+
+      <h3>목록 상자</h3>
+      <select name="arr1">
+        <option value="s">서울</option>
+        <option value="g">경기</option>
+        <option value="i">인천</option>
+      </select>
+      <select name="arr2" size="4" multiple>
+        <option value="강남">강남</option>
+        <option value="강동">강동</option>
+        <option value="강북">강북</option>
+        <option value="강서">강서</option>
+      </select>
+
+      <hr>
+      <!-- 8. 콤보 상자 (목록상자+직접입력) -->
+      <h3>콤보상자</h3>
+      <input type="text" list="animals">
+      <datalist id = "animals">
+        <option value="강아지">강아지</option>
+        <option value="고라니">고라니</option>
+        <option value="앵무새">앵무새</option>
+        <option value="랍스터">랍스터</option>
+      </datalist>
+      <br>
+      <!-- 9. 기타 -->
+      <!-- 진행바 : 전체 100중 50 진행 상태 -->
+      50% 진행 : <progress value="50" max="100"></progress>
+      <br>
+      <!-- 색상표 -->
+      색상표 : <input type="color"><br>
+      <!-- 범위바 : 0~100 사이 10 단위로 표시 -->
+      범위 : <input type="range" min="0" max="100" step="10">
+      <br>
+      <!-- 파일 첨부 -->
+      첨부 파일 : <input type="file">
+      <br>
+      <hr>
+
+  </form>
+</body>
+</html>

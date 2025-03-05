@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 
+        1. E:nth-child(n) 		: n번째 요소
+        2. E:nth-child(odd)		: 홀수번째 요소
+        3. E:nth-child(even) 	: 짝수번째 요소
+        4. E:nth-child(an+b)	: b번째부터 a단위 요소
+        5. E:nth-of-type(n)		: E 타입 요소 중에서 n번째 요소 
+    */
+    body p:nth-child(2){
+      /* body 아래 두 번째 자식(div, p,p,...) */
+      color: red;
+    }
+    body p:nth-of-type(2n+0){
+      /* body 아래 p태그 중 2의 배수들 === even */
+    font-weight: 900;
+    }
+    body p:nth-of-type(odd){
+      /* body 아래 p태그 중 2의 배수들 === odd */
+    background-color: aquamarine;
+    }
+  </style>
+</head>
+<body>
+  <div>이 곳은 div</div>
+  <p>이 곳은 첫 번째</p>
+  <p>이 곳은 두 번째</p>
+  <p>이 곳은 세 번째</p>
+  <p>이 곳은 네 번째</p>
+  <div>이 곳은 두번째 div</div>
+  <div>이 곳은 세번째 div</div>
+  <div>이 곳은 네번째 div</div>
+</body>
+</html>

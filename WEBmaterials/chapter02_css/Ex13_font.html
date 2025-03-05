@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html{
+      font-size: 16px;
+    }
+    body{
+      font-size: 1.1rem;
+    }
+    div{
+      /* 글자 모양 : none(없음), italic(기울임)... */
+      font-style: none;
+      /* 글자 굵기 : bold(굵게), 100. 200, 300...900 */
+      font-weight: bold;
+      font-size: 1.5rem;
+      /* 
+      rem-상대크기 html 요소의 font-size를 기준
+      16px * 1.5 = 24px 
+      */
+    }
+    #t-div{
+      font-family: "굴림", sans-serif;
+      /* 굴림 체가 없으면 뒤에께 대체 */
+    }
+  </style>
+</head>
+<body>
+  부모 body <br>
+  <div>
+    1차 자식 div <br>
+    <div>
+      2차 자식 div <br>
+      <div id="t-div">
+        3차 자식
+      </div>
+    </div>
+  </div> 
+</body>
+</html>

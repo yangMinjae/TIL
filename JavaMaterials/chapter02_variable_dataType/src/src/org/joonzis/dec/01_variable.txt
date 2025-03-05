@@ -1,0 +1,41 @@
+1.1 변수
+ - 프로그램이 사용하는 데이터를 일시적으로 저장할 목적으로 사용하는 메모리 공간
+ - 변수마다 타입과 이름을 가지고 있다.
+ - 변수는 다양한 타입의 값을 저장할 수 없고, 한 가지 타입의 값만 저장할 수 있다.
+ - 선언 시 같은 타입의 변수는 콤마(,)를 이용해서 한꺼번에 선언할 수 있다.
+
+1.2 변수 선언 및 저장
+ - 변수에 값을 저장할 때에는 대입 연산자(=)를 사용한다. 수학에서는 같다는 의미지만,
+     자바에서는 우측의 값을 좌측 변수에 저장한다는 의미를 갖는다.
+ - 초깃값은 변수를 선언함과 동시에 줄 수도 있다.
+ - 소스 코드 내에서 직접 입력된 값을 리터럴(literal)이라고 부른다.
+ 
+1.3 변수 선언 규칙
+ - 첫 번째 글자는 문자이거나 '$', '_'이어야 하고 숫자로 시작할 수 없다(필수)
+ 	ex)price, $price, _company
+ - 영어 대소문자가 구분된다(필수)
+ 	ex)name과 Name은 다른 변수
+ - 첫 문자는 영어 소문자로 시작하되, 다른 단어가 붙을 경우 첫 문자를 대문자로 한다(관례)
+ 	ex)maxSpeed, firstName
+ - 문자 수(길이)의 제한은 없다
+ - 자바 예약어는 사용할 수 없다(필수)
+ 
+1.4 자바 예약어
+ - 기본 데이터 타입
+  (boolean, byte, char, short, int, long, float, double)
+ - 접근 지정자
+  (private, protected, public)
+ - 클래스와 관련된 것
+  (class, abstract, interface, extends, implements, enum)
+ - 객체와 관련된 것
+  (new, instanceof, this, super, null)
+ - 메소드와 관련된 것
+  (void, return)
+ - 제어문과 관련된 것
+  (if, else, switch, case, default, for, do, while, break, continue)
+ - 논리값
+  (true, false)
+ - 예외 처리와 관련된 것
+  (try, catch, finally, throw, throws)
+ - 기타
+  (package, import, synchronized, native, final, static, strictfp, assert, transient, volatile)

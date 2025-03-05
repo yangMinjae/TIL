@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./js/jquery-3.4.1.js"></script>
+  <title>Document</title>
+  <style>
+    .red{
+      color: red;
+    }
+    .important{
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>jQuery css 변경 방법</h1>
+  <p id="set-css">jQuery CSS</p>
+  <hr>
+  <button id="add-class">클래스 추가</button>
+  <button id="remove-class">클래스 제거</button>
+  <button id="toggle-class">클래스 토글</button>
+</body>
+<script>
+  /*
+    javascript의 classList.add(), remove()와 같은 기능
+  */
+  $("#add-class").click(function(){
+    $("#set-css").addClass('red');
+  });
+  $("#remove-class").click(function(){
+    $("#set-css").removeClass('red');
+  });
+  $("#toggle-class").click(function(){
+    $("#set-css").toggleClass('important');
+  });
+</script>
+</html>

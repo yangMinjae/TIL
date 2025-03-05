@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="#" name="myForm">
+    <p>아이디 <input type="text" name="id" id="id"></p>
+    <p>비밀번호 <input type="password" name="pw" id="pw"></p>
+    <input type="button" value="로그인" onclick="goLogin();">
+    <button type="button" onclick="goLogin()">로그인</button>
+    <!-- button 태그의 type="button" 이 생략되면 submit버튼이 된다. -->
+    <input type="submit" value="전송">
+  </form>
+</body>
+<script>
+  /*
+    폼(form)
+    - form 데이터를 전송하기 전 스크립트에서 데이터를 가공하거나, 
+    검증을 거쳐야 하는 경우가 있다. 그러기 위해서 form 요소 및 내부 요소들에 접근
+    해서 데이터를 스크립트로 가져와야한다.
+
+    폼 요소에 접근
+    1. id 속성 접근
+    2. class 속성 접근
+    3. name 속성 접근
+      - .표기법 : document.forms.폼name.요소name
+      - []표기법 : document.forms['폼name']['요소name']
+
+      *주로 name 속성을 사용한다.
+  */
+
+  function goLogin(){
+    // 아이디는 반드시 입력되어야 한다.
+    // 비밀번호는 8~16자만 입력되어야 한다.
+
+    let form = document.forms.myForm; // name 값
+    let form1 = document.forms[0];    // 이렇게도 가능
+    if(!form.id.value){
+      alert("아이디는 반드시 입력하세요");
+      return;
+    }
+
+    if(form.pw.value.length>16||form.pw.value.length<8){
+      alert("비밀번호는 8~16자로 입력해주세요");
+      return;
+    }
+    console.log(form.id.value);   // form.id 의 id는 form 태그의 name값
+    form.submit();
+  }
+</script>
+</html>

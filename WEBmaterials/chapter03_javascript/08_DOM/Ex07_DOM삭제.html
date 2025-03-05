@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id ="dom">DOM삭제</h1>  <!-- 삭제 -->
+  <div id="box">
+    <p id="p1">첫 번째 문단</p> <!-- 삭제 -->
+    <p>두 번째 문단</p>
+  </div>
+  <button id="btn">버튼 삭제</button>
+</body>
+<script>
+  let box = document.querySelector('#box');
+  let p1 = document.getElementById('p1');
+
+  // 제거 : 부모.removeChild(자식);
+  box.removeChild(p1);
+
+  // h1 삭제 - 태그 이름으로 가져와서 삭제
+  let dom = document.querySelector('#dom');
+  let body = document.getElementsByTagName(`body`);
+  body[0].removeChild(dom);
+  // getElementsByTagName()는 배열로 가져옴
+  let btn = document.querySelector('#btn');
+  btn.addEventListener('click',function(){
+    this.remove();  // 화살표 함수는 this 못씀, btn을 가리키지 않음
+  })
+</script>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /*
+    클래스 (Class)
+    - 객체 지향 프로그램에서 특정 객체를 생성하기 위해 필드와 메소드를 정의해 놓은 틀
+    - 동적으로 여러 객체를 생성하는 것이 목적
+    - 클래스 작성 시 이름은 대문자로 시작하며, 앞에 class 키워드를 사용한다.
+  */
+  class Person{
+    constructor(name){
+      this.name = name;
+    }
+    print(){
+      console.log(`이름은 ${this.name} 입니다.`);
+    }
+  }
+  let kim = new Person('김씨');
+  kim.print();
+  /*
+      클래스와 생성자 함수의 차이
+      - 클래스와 일반 함수(생성자) 둘 다 객체를 
+      생성할 수 있고,
+      특정 기능을 가진 메소드를 만들 수도 있지만
+       몇 가지 차이점이 있다.
+
+      1. 클래스 내부 프로퍼티에
+       [[IsclassConstructor]] : true 가 대표적
+          -> 클래스 생성자를 new로 호출하지 
+          않으면 에러가 발생하게 된다.
+      2. **클래스의 메소드는 나열할 수 없다.**
+          -> for-in 문으로 객체를 순회할 때 
+          메소드를 제외하고자 하는 경우가 있다.
+          일반 데이터를 출력하듯 메소드를 
+          출력하면 메소드 코드가 문자열로 출력된다.
+  */  
+  class Human{
+    constructor(age){
+      this._age = age;
+    }
+    set name(name){
+      if(name){
+        this._name = name;
+        // this.name = name;
+        // 이라고 하면 함수의 이름과 같아져, this.name이 무한으로 호출되게 된다.
+      }
+    }
+    get name(){
+      return this._name.toUpperCase();
+    }
+  };
+
+  let lee = new Human();
+  lee.name = 'lee';
+  console.log(lee.name);
+  console.log(lee._name);
+
+  class Animal{
+    constructor(type, name, sound){
+      this.type = type;
+      this.name = name;
+      this.sound = sound;
+    }
+    say(){
+      console.log(this.sound);
+    }
+  };
+
+  class Dog extends Animal{
+    constructor(name, sound){
+      super('강아지',name, sound);
+    }
+  };
+
+  class Cat extends Animal{
+    constructor(name, sound){
+      super('고양이',name, sound);
+    }
+  };
+  const ani = new Animal('코끼리', "뿌뿌", "뿌우우우우");
+  const dog = new Dog('멍멍이', '멍멍');
+  const cat = new Cat('야옹이', '야옹');
+  
+  console.log(ani);
+  console.log(dog);
+  console.log(cat);
+
+  dog.say();
+  cat.say();
+</script>
+</html>

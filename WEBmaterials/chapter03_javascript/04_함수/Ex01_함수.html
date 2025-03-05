@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /*
+    함수 (function)
+    - 특정 기능을 수행할 수 있는 코드의 집합
+    - 형식
+      function 함수명(매개변수1, 매개변수2){
+        실행 코드
+        return 반환 데이터
+      }
+  */
+  // 특정 두 값을 더해서 결과를 알고자 할 때
+  let val1 = 10;
+  let val2 = 20;
+  let result = val1 + val2;
+  console.log(result);
+
+  // 하지만 한 번만 사용하고 끝나는 내용이 아니거나,
+  // 혹은 동적으로 데이터를 변경해줘야 하는 경우에는
+  // 코드를 계속 바꿔줘야 하는 문제가 생긴다.
+  // 그렇기 때문에 특정 기능을 함수로 만들어서
+  // 재활용 할 수 있게 한다.
+
+  function add(a, b){
+    return a+b;
+  }
+  let sum = add(10, 20);
+  console.log(sum);
+  
+</script>
+</html>

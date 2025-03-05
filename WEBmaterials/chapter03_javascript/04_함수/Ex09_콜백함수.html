@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+  // 콜백 함수 : 함수의 매개변수로 전달되는 함수
+
+  // 1. 함수 정의
+  function callback(){
+    console.log('callback 함수 호출');
+  }
+
+  // 2. 또 다른 함수 정의
+  function callTenTimes(func){
+    for(let i = 0; i<10; i++){
+      func()
+    }
+  }
+  
+  callTenTimes(callback);
+  // 괄호를 뺀다.
+  // 바로 부르는게 아니고 callTenTimes안에 쓰라고 던져주는것이므로
+</script>
+</html>

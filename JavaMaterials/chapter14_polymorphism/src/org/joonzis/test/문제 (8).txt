@@ -1,0 +1,41 @@
+Q1.Test01.java
+
+Employee 클래스			필드 : String name, String dept
+						메소드 : Constructor, int pay(), void output()
+SalaryWorker 클래스		필드 : int salary
+						메소드 : Constructor, int pay(), void output()
+SalesWorker 클래스		필드 : int salesVolume, 
+							double salesIncentive --> 
+							인센티브 비율(1000이상 10%, 500이상 5% 나머지 1%)
+						메소드 : Constructor, int pay(), void output(),
+								 int salesPay(),
+								 void setSalesVolume(salesVolume), 
+								 void setSalesIncentive(salesIncentive)
+PartTimeWorker 클래스	필드 : int workTime, int payPerHour
+						메소드 : Constructor, int pay(), void output()
+★
+필드는 전부 private
+SalaryWorker extends Employee
+SalesWorker extends SalaryWorker
+PartTimeWorker extends Employee
+
+
+Q2. Test02.java
+
+Product 클래스			필드 : String model, int price
+						메소드 : Constructor, getters
+Tv 클래스					필드 : X
+						메소드 : Constructor
+Computer 클래스			필드 : X
+						메소드 : Constructor
+Customer				필드 : int money, int startMoney, Product[] cart, int numOfProduct
+						메소드 : Constructor, buy(Product), output	
+★
+필드는 전부 private
+Tv extends Product		
+Computer extends Product
+buy() -> 상품 구매(소지 금액보다 구매 금액이 큰 경우 예외처리)/구매한 만큼 금액 차감/카트에 상품 추가
+output() -> 구매상품, 금액/처음 소지 금액/총 구매 금액/남은 금액 출력
+
+== 2명의 Customer가 각각 Tv, Computer를 구매 
+						

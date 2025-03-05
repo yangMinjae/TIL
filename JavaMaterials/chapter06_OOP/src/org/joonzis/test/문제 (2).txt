@@ -1,0 +1,41 @@
+Q1. 
+클래스 Circle
+- 필드 : radius, PI, name
+- 메소드 : info
+클래스 CircleMain
+- 메소드 : main
+값을 대입해서 
+반지름, 이름, 크기(PI*R*R), 둘레(2*PI*R) 값 출력
+
+Q2.
+클래스 Rect
+- 필드 : width, height
+- 메소드 : init(너비, 높이 입력), info(너비, 높이), calcArea(w*h, 넓이계산(크기) 출력)
+클래스 RectMain
+- 메소드 : main
+
+Q3. 
+클래스 Triangle 
+- 필드 : width, height
+- 메소드 : init(너비, 높이 입력), info(너비, 높이, 크기 출력), calcArea(w*h/2 넓이계산 후 리턴)
+클래스 TriangleMain
+- 메소드  : main
+값을 입력 받아서 (Scanner) 확인 
+파일을 하나만 사용
+
+
+Q4. 
+클래스 Student
+- 필드 :
+String name, String dept, String score1, String score2
+double average
+boolean isPass(합격 유무) : 평균 점수가 80점 이상 true, 80점 미만 false
+- 메소드 : 
+input : name, dept, score1, score2 콘솔입력, 평균 및 패스 유무 확인
+output : name, dept, average, isPass ("합격","불합격")
+
+클래스 StudentMain
+- 메소드 : main
+
+
+

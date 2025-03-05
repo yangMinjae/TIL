@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      width: 500px;
+      height: 500px;
+      border: 1px solid black;
+    }
+    #box1{
+      background-image: url(./images/hot.jpg);
+      background-size: 500px 500px;
+      opacity: 0.5;
+      /* 투명도 : 값이 낮을수록 투명해짐(0~1) */
+    }
+    #box2{
+      background-image: url(./images/hot.jpg);
+      background-size: cover;
+      /* 비율 유지, 잘릴 수 있음 */
+    }
+    #box3{
+      background-image: url(./images/hot.jpg);
+      background-size: contain;
+      /* 비율유지, 남는 공간 생길 수 있음 */
+    }
+    #box4 {
+      /* 한 박스에 여러 이미지 넣기 */
+      background-image: url(./images/firefox.png),
+              url(./images/logo.png),
+                  linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));
+         background-repeat: no-repeat, no-repeat, no-repeat;
+        background-position: bottom right, left, top;
+        /* 마지막 항목이 가장 아래깔림 */
+    }
+  </style>
+</head>
+<body>
+  <div id="box1">박스1</div>    <!-- div 크기는 브라우저 크기만큼(블록레벨이므로) -->
+  <br><br>                      <!-- 인라인은 콘텐츠 크기만큼의 영역을 차지하므로 크기를 임의로 부여할 수 없음-->
+  <div id="box2">박스2</div>
+  <br><br>
+  <div id="box3">박스3</div>
+  <br><br>
+  <div id="box4">박스4</div>
+  <br><br>
+</body>
+</html>

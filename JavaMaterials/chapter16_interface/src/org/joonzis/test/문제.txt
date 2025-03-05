@@ -1,0 +1,26 @@
+Q1. Test01.java
+스마트폰 => 전화기 + 컴퓨터 
+
+class Phone 				필드 : String owner
+							메소드 : Constructor, sendCall(), receiveCall()
+interface Computable		메소드 : connectInternet(), playApp()
+class SmartPhone 			Phone 상속, Computable 구현
+
+
+Q2. Test02.java
+interface Providable		메소드: sightseeing(), leisure(), food()
+class KoreaTour				메소드 : Providable 구현을 통해생성
+class GuamTour				메소드 : Providable 구현을 통해생성
+class TourGuide				필드 : Providable tour
+							메소드 : Constructor, sightseeing(), leisure(), food()
+★ KoreaTour / GuamTour -  Providable 구현
+  
+					
+						
+Q3. Test03.java
+파일로 나눠서 실행해보자!!
+Animal.java(인터페이스)		메소드 : move()
+Dog.java(Animal 구현)	
+
+
+							

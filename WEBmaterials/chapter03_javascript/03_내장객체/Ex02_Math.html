@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+	/*
+		Math
+		- 수학에 관련된 여러 정보를 담고있는 객체
+	*/
+	console.log(`파이 : ${Math.PI} `);
+	console.log(`제곱 : ${Math.pow(2,3)} `);
+	console.log(`제곱 : ${2 ** 3} `);
+	console.log(`절대값 : ${Math.abs(-10)} `);
+	console.log(`루트 : ${Math.sqrt(4)} `);
+	console.log(`최대값 : ${ Math.max(1, 2, 3, 4, 5)} `);
+	console.log(`최소값 : ${ Math.min(1, 2, 3, 4, 5)} `);
+	console.log(`정수로 반올림 : ${ Math.round(123.456)} `);
+	console.log(`소수 1자리 남기고 반올림 : ${(Math.round(123.456 * 10) / 10)} `);
+	console.log(`소수 2자리 남기고 반올림 : ${(Math.round(123.456 * 100) / 100)} `);
+	console.log(`올림 : ${ Math.ceil(123.456)} `);
+	console.log(`내림 : ${ Math.floor(123.456)} `);
+
+	/*
+		Random
+		- 난수를 추출하는 객체
+	*/
+	console.log(`0 ~ 1 사이 난수 : ${Math.random()}`);
+	// 0 ~ 9 사이의 난수를 1개 출력하시오.
+	console.log(`0 ~ 9 사이 난수 : ${Math.floor(Math.random() * 10)} `);
+	// 1 ~ 10 사이의 난수를 1개 출력하시오.
+	console.log(`1 ~ 10 사이 난수 : ${Math.floor(Math.random() * 10)+1} `);
+</script>
+</html>

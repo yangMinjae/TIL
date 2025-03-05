@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./js/jquery-3.4.1.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <p id="pa">아이디 p 태그</p>
+  <p class="pb">클래스 p 태그</p>
+  <button id="idBtn">아이디 숨기기 버튼</button>
+  <button class="classBtn">클래스 숨기기 버튼</button>
+  <button id="targetBtn">태그 숨기기 버튼</button>
+</body>
+<script>
+  /*
+    제이쿼리(jQuery)
+    - 자바스크립트 라이브러리 중 하나로,
+    html 문서를 탐색하고 조작하기 쉬운 API를 제고
+
+    사용방법
+    1. 오프라인에 jquery.js 파일 추가
+    2. 온라인 CDN 이용
+
+    형식
+    - $(선택자).action();
+    1. $기호 : jQuery를 정의하고, jQuery를 호출
+    2. 선택자 : HTML 요소를 찾는 역할
+    3. action() : 선택된 요소가 행하는 동작
+  */
+
+  $('#idBtn').click(function(){
+    $('#pa').hide();      // 요소 숨길때
+    // $('#pa').show();   // 요소 보여줄때
+  });
+  $('.classBtn').click(function(){
+    // 클래스 이름이 pb 인 요소 숨김
+    $('.pb').hide();
+  });
+  $('#targetBtn').click(function(){
+    // 태그 이름이 p 인 요소들 숨김
+    $('p').hide();
+  });
+</script>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #box{
+    background-color: aquamarine;
+    display: flex;
+    width: 150px;
+    height: 80px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+</style>
+<body>
+  <div id="box">마우스 올리기</div>
+  <div id="click"><span>target</span></div>
+  <form action="#">
+    <input type="text">
+    <div id="content"></div>
+  </form>
+  <h2 id="count">0</h2>
+  <div>
+    <button id="increase">+1</button>
+    <button id="decrease">-1</button>
+  </div>
+</body>
+<script>
+  // 해당 요소에 마우스를 올리면 "안녕하세요"
+  // 마우스가 벗어나면 "안녕히 가세요"로 해당요소의 내부값을 변경
+  const box = document.querySelector('#box');
+  box.onmouseout = function(){
+    this.innerHTML="안녕히 가세요";
+    box.style['background-color']='yellow';
+  }
+  box.onmouseover = function(){
+    this.innerHTML="안녕하세요";
+    box.style['background-color']='blue';
+  }
+  const click = document.querySelector('#click');
+  click.addEventListener(`click`, (e)=>{
+    alert('실행')
+    console.log(this);
+    console.log('target', e.target);                      // 실제 사용자가 클릭한 요소
+    console.log('currentTarget', e.currentTarget);        // 이벤트 리스너가 연결된 요소
+    
+  });
+  // 해당 input에 키보드를 이용하여 값을 입력하면
+  // 입력한 키보드의 키 코드 값을 div 요소 안에 표시
+  // *키 코드 : event.keyCode;
+  const input = document.querySelector('input[type="text"]');
+  const content = document.querySelector('#content');
+  input.addEventListener('keydown',(e)=>{
+    content.innerHTML+=' '+e.keyCode;
+  });
+
+  const increase = document.querySelector('#increase');
+  const decrease = document.querySelector('#decrease');
+  const count = document.querySelector('#count');
+  increase.addEventListener('click',function(){
+    let a = (Number(count.innerHTML));
+    count.innerHTML=++a;
+  })
+  decrease.addEventListener('click',function(){
+    count.innerHTML=(Number(count.innerHTML))-1;
+  })
+
+</script>
+</html>
