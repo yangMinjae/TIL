@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/pagemove")
+// 이름을 파일 이름과 다르게 한다면 url 경로가 localhost:9090/파일이름/pagemove와 같이 표시된다
 public class Ex06_servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -29,8 +30,7 @@ public class Ex06_servlet extends HttpServlet {
 		request.setAttribute("id", id);
 		request.setAttribute("pw", pw);
 		
-		request.getRequestDispatcher("Ex06_output.jsp")
-			.forward(request, response);
+		request.getRequestDispatcher("Ex06_output.jsp").forward(request, response);
 		
 	}
 
