@@ -11,11 +11,6 @@
     <%
         String id = (String) session.getAttribute("id");
         String pw = (String) session.getAttribute("pw");
-
-        if (id == null || pw == null) {
-            response.sendRedirect("/chapter03_servlet/login/loginPage.jsp");
-            return;
-        }
     %>
 
     <p>아이디: <%= id %></p>
