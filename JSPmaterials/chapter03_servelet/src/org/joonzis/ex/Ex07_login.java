@@ -23,7 +23,7 @@ public class Ex07_login extends HttpServlet {
 		session.setAttribute("id", id);
 		session.setAttribute("pw", pw);
 		
-		response.sendRedirect("/chapter03_servlet/login/showUserInfo.jsp");
+		response.sendRedirect("/chapter03_servlet/private/showUserInfo");
 		
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

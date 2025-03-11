@@ -28,7 +28,7 @@ public class LoginFilter implements Filter{
 		String id = (String)session.getAttribute("id");
 		String pw = (String)session.getAttribute("pw");
 		
-		if(id != null && pw != null) {
+		if(id != null && pw != null && id!=""&pw!="") {
 			chain.doFilter(request, response);
 		}else {
 			HttpServletResponse rep = (HttpServletResponse)response;

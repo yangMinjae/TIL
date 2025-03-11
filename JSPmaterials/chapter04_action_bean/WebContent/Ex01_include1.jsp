@@ -16,6 +16,7 @@
 	<%@ include file="Ex01_include2.jsp" %>
 	
 	<!-- 2. include 액션 태그 -->
+	
 	<jsp:include page="Ex01_include2.jsp">
 		<jsp:param name="name" value="김씨" />
 		<jsp:param name="age" value="20" />
