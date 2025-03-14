@@ -21,6 +21,12 @@ public class EncodingFilter implements Filter{
 		if(request.getCharacterEncoding() == null) {
 			request.setCharacterEncoding(encoding);
 		}
+		/*
+		 * request.setCharacterEncoding(encoding);  // UTF-8 설정
+		 * response.setCharacterEncoding(encoding);
+		 * response.setContentType("text/html; charset=" + encoding);
+		 * 모든 경우에 대해 적용하기 위해서는 이렇게 해야함.
+		 * */
 		chain.doFilter(request, response);
 	}
 	
