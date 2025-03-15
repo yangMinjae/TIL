@@ -10,8 +10,7 @@
 	<%
 		String[] arr = {"노래", "춤", "음주"};
 		request.setAttribute("HOBBIES", arr);
-		request.getRequestDispatcher("Ex06_EL2.jsp")
-			.forward(request, response);
+		request.getRequestDispatcher("Ex06_EL2.jsp").forward(request, response);
 	
 	%>
 </body>

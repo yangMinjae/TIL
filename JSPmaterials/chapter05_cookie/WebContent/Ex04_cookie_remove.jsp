@@ -16,10 +16,8 @@
 		if(cookieBox != null && cookieBox.length > 0){
 			for(int i=0; i<cookieBox.length; i++){
 				if(cookieBox[i].getName().equals("name")){
-					//cookieBox[i].setMaxAge(0);
 					
-					Cookie bisket = new Cookie(
-					"name", "");
+					Cookie bisket = new Cookie("name", "");
 					bisket.setMaxAge(0);
 					response.addCookie(bisket);
 					out.print("쿠키를 삭제했습니다.");
