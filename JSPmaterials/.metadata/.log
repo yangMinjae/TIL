@@ -3962,6 +3962,7 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.wst.html.ui 1 1 2025-03-15 13:30:36.122
 !MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+<<<<<<< HEAD
 
 !ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2025-03-17 09:11:32.598
 !MESSAGE Connection to http://jope.ow2.org/update/jope/site.xml failed on 알려진 호스트가 없습니다 (jope.ow2.org). Retry attempt 0 started
@@ -4082,3 +4083,5 @@ Caused by: java.net.ConnectException: Connection refused: connect
 
 !ENTRY org.eclipse.wst.html.ui 1 1 2025-03-17 09:19:34.415
 !MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+=======
+>>>>>>> 72210130b51b66eb2a8b1f97c215dfdba12ced1b
