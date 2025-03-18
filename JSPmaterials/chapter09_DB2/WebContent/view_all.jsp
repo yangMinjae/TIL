@@ -81,5 +81,16 @@
       }
       
    %>
+   <script type="text/javascript">
+   let delete_ = <%=request.getAttribute("delete")%>;
+   if(delete_!=null){
+	   if(delete_==true){
+		   alert("삭제 성공");
+	   }else{
+		   alert("삭제 실패");
+	   }
+   }
+	</script>
 </body>
+
 </html>

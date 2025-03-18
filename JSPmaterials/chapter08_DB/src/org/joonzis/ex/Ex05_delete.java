@@ -25,8 +25,13 @@ public static void main(String[] args) {
 			}else {
 				System.out.println("데이터 삭제 실패!");
 			}
+			conn.commit();
 		} catch (Exception e) {
-			e.printStackTrace();
+			try {
+				if(conn!=null)conn.rollback();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
 		} finally {
 			try {
 				if(ps != null) {ps.close();}

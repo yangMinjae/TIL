@@ -1,7 +1,7 @@
-<%@page import="java.sql.ResultSet"%>
 <%@page import="org.joonzis.db.DBConnect"%>
-<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,10 +12,10 @@
 </head>
 <body>
 	<jsp:include page="index.jsp"/>
-
-	<br> <br> <hr>
-	
-	<table>
+	<br> <hr> <br>
+	<h2>데이터 수정</h2>
+	<form action="update.jsp">
+		<table>
 		<thead> 
 			<tr> 
 				<td>회원번호</td>
@@ -32,25 +32,28 @@
 				<%
 					request.setCharacterEncoding("utf-8");
 					String id = request.getParameter("id");
+					String pw = request.getParameter("pw");
 					Connection conn = null;
 					PreparedStatement ps = null;
 					ResultSet rs = null;
 					try{
 						conn=DBConnect.getConnection();
-						String sql = "select * from member where id = ?";
+						String sql = "select * from member where id = ? and pw = ?";
 						ps=conn.prepareStatement(sql);
 						ps.setString(1, id);
+						ps.setString(2, pw);
 						rs=ps.executeQuery();
 						if(!rs.next()){%>
 							<td colspan="7">데이터 없음</td>
 						<%}else{%>
 			               <td><%=rs.getInt(1) %></td>
 			               <td><%=rs.getString(2) %></td>
-			               <td><%=rs.getString(3) %></td>
-			               <td><%=rs.getString(4) %></td>
-			               <td><%=rs.getInt(5) %></td>
-			               <td><%=rs.getString(6) %></td>
-			               <td><%=rs.getDate(7) %></td>
+			               <td> <input type="text" name="pw"> </td>
+			               <td> <input type="text" name="name"> </td>
+			               <td> <input type="text" name="age"> </td>
+			               <td> <input type="text" name="addr"> </td>
+			               <td> <%=rs.getString(7) %> </td>
+			               <td hidden="true"> <input type="hidden" name="idx" value="<%=rs.getInt(1) %>">  </td>
 						<%}
 					}catch(Exception e){
 						e.printStackTrace();
@@ -66,7 +69,24 @@
 				%>
 			</tr>
 		</tbody>
+		<tfoot>
+            <tr>
+               <th colspan="7">
+                  <input type="button" value="수정" onclick="update(this.form)">&nbsp;&nbsp;
+                  <input type="reset" value="다시 작성">
+               </th>
+            </tr>
+		</tfoot>
 	</table>
-
+	</form>
 </body>
+	<script type="text/javascript">
+		function update(f){
+			if(f.pw.value || f.name.value || f.age.value || f.addr.value){
+				f.submit();
+			}else{
+				alert("최소 한개 필드의 값을 입력하세요");
+			}
+		}
+	</script>
 </html>
