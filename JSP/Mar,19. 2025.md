@@ -7,8 +7,8 @@
 - Java 코드와 JSP 코드가 섞여 있어 가독성이 떨어짐  
 
 ```
-┌───────┐         요청/응답
-│Browser          │ <────────> JSP <────────> Service, JavaBean
+┌───────┐  요청/응답
+│Browser│ <────────> JSP <────────> Service, JavaBean
 └───────┘
 ```
 
@@ -18,9 +18,9 @@
 - 웹 브라우저의 요청을 **하나의 서블릿이 처리** (단일 진입점)  
 
 ```
-      요청
+            요청
 ┌───────┐ ──────────> Servlet <────> Logic Class  
-│Browser          │    응답                          ↓ 
+│Browser│    응답      ↓ 
 └───────┘<──────────  JSP <────────> Service, JavaBean  
 ```
 
@@ -56,9 +56,9 @@ JSP → Controller → Model(Action) → DAO → Mapper → DTO → Controller �
 ```
 
 ```
-      요청                   로직 처리
+            요청                   로직 처리
 ┌───────┐ ──────────> Controller <────────> Model 
-│Browser          │            응답                   ↓
+│Browser│   응답         ↓
 └───────┘<──────────   View 
 ```
 
