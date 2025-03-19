@@ -6,9 +6,8 @@
     pageEncoding="UTF-8"%>
 <%
 	MemberDAO dao = MemberDAO.getInstance();
-	String id = request.getParameter("id");
-	MemberVO vo = dao.getUserInfoByid(id); 
-	pageContext.setAttribute("vo", vo);
+	List<MemberVO> list = dao.getAllList(); 
+	pageContext.setAttribute("list", list);
 %>
 <!DOCTYPE html>
 <html>
@@ -34,21 +33,23 @@
       </thead>
       <tbody>
       	<c:choose>
-      		<c:when test="${vo==null}">
+      		<c:when test="${empty list }">
       			<tr>
             		<td colspan="7">member 데이터가 없습니다. </td>
          		</tr>
       		</c:when>
       		<c:otherwise>
-            	<tr>
-               		<td>${vo.idx }</td>
-			        <td>${vo.id }</td>
-			        <td>${vo.pw }</td>
-			        <td>${vo.name }</td>
-			        <td>${vo.age }</td>
-			        <td>${vo.addr }</td>
-			        <td>${vo.regdate }</td>
-          		</tr>	
+      			<c:forEach var="vo" items="${list }"> 
+            		<tr>
+               			<td>${vo.idx }</td>
+			            <td>${vo.id }</td>
+			            <td>${vo.pw }</td>
+			            <td>${vo.name }</td>
+			            <td>${vo.age }</td>
+			            <td>${vo.addr }</td>
+			            <td>${vo.regdate }</td>
+          			</tr>
+      			</c:forEach>
       		</c:otherwise>
       	</c:choose>
 

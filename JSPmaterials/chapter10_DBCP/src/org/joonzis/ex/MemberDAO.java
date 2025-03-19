@@ -36,7 +36,7 @@ public class MemberDAO {
 			Context context = new InitialContext();
 			ds = (DataSource)context.lookup("java:comp/env/jdbc/oracle");
 			// java:comp/env : 톰캣
-			// jdbc/oracle : Resource name 을 찾아서 ds에 전달
+			// jdbc/oracle : Resource name 을 찾아서 ds에 전달 (context.xmls에 존재)
 		}catch(NamingException e) {
 			e.printStackTrace();
 		}

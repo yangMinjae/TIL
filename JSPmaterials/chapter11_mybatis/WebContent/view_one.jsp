@@ -7,7 +7,9 @@
 <%
 	MemberDAO dao = MemberDAO.getInstance();
 	String id = request.getParameter("id");
-	MemberVO vo = dao.getUserInfoByid(id); 
+	MemberVO vo1 = new MemberVO();
+	vo1.setId(id);
+	MemberVO vo = dao.getUserInfoByid(vo1); 
 	pageContext.setAttribute("vo", vo);
 %>
 <!DOCTYPE html>
