@@ -13,20 +13,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="select_dynamic" parameterType="Map" resultType="org.joonzis.vo.EmployeeVO">
-		select* from employees
+		select* from employees where
 		
 		<choose>
 			<when test="column == 1">
-				where employee_id = #{val}
+				 employee_id = #{val}
 			</when>
 			<when test="column == 2">
-				where first_name = #{val}
+				 first_name = #{val}
 			</when>
 			<when test="column == 3">
-				where last_name = #{val}
+				 last_name = #{val}
 			</when>
 			<when test="column == 4">
-				where department_id = #{val}
+				 department_id = #{val}
 			</when>
 		</choose>
 		
