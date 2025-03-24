@@ -19,6 +19,7 @@ location.href = 'viewone.jsp?id=' + form.id.value;
 
 GET 방식으로 직접 URL을 조작해서 파라미터 전달  
 폼을 제출하지 않아도 원하는 페이지로 이동 가능
+<hr>
 
 ### 2. JSP에서 contextPath 주의
 
@@ -33,6 +34,7 @@ JSP에서 forward로 이동한 경우,
 ```
 
 항상 contextPath를 기준으로 경로를 잡아야 안정적
+<hr>
 
 ### 3. JS파일과 HTML/JSP 파일 분리 시 EL 사용 불가
 
@@ -59,6 +61,7 @@ JSP에서 값은 JS 함수의 파라미터로 넘겨주는 방식
 ```javascript
 let userId = document.getElementById("userId").value;
 ```
+<hr>
 
 ### 4. fetch() 함수는 비동기 요청을 보낼 때 사용
 
@@ -76,6 +79,7 @@ fetch("CommentController?writer=홍길동&content=댓글입니다")
 주소는 서블릿 URL이 들어감  
 GET 또는 POST 요청 가능  
 응답은 JSON 형태로 받아 처리 가능
+    <hr>
 
 ### 5. 비동기 방식은 이런 상황에 적합
 
