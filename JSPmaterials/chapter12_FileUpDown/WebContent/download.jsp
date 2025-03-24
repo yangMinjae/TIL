@@ -63,7 +63,7 @@
 		try{
 			if(bos != null) bos.close();
 			if(bis != null) bis.close();
-			if(fis != null) bis.close();
+			if(fis != null) fis.close();
 		}catch(Exception e){
 			
 		}

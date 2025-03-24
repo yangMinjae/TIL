@@ -30,7 +30,8 @@
                   <c:forEach varStatus="vs" var="bvo" items="${list }">
                      <tr>
                         <td>${bvo.b_idx }</td>
-                        <td>${bvo.title }</td>
+                        <td> <a href="BBSController?cmd=view=${bvo.b_idx }">${bvo.title }</a> 
+                        </td>
                         <td>${bvo.writer }</td>
                         <td>${bvo.reg_date }</td>
                         <td>${bvo.hit }</td>

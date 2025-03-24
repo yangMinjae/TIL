@@ -1,5 +1,7 @@
 package org.joonzis.dao;
 
-public interface CDao {
+import org.joonzis.vo.CVO;
 
+public interface CDao {
+	public int insertComment(CVO cvo);
 }

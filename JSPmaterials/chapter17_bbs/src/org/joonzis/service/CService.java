@@ -1,5 +1,7 @@
 package org.joonzis.service;
 
-public interface CService {
+import org.joonzis.vo.CVO;
 
+public interface CService {
+	public int insertComment(CVO cvo);
 }

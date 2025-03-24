@@ -3,12 +3,14 @@ package org.joonzis.vo;
 import java.sql.Date;
 
 public class BVO {
-	private String title, content, pw, ip, filename;
-	private int hit;
+	private String writer, title, content, pw, ip, filename;
+	private int hit, b_idx;
 	private Date reg_date;
 	public BVO() {}
-	public BVO(String title, String content, String pw, int hit, String ip, String filename,  Date reg_date) {
+	public BVO(String wrtier, String title, String content,int b_idx, String pw, int hit, String ip, String filename,  Date reg_date) {
 		super();
+		this.b_idx=b_idx;
+		this.writer=writer;
 		this.title = title;
 		this.content = content;
 		this.pw = pw;
@@ -72,6 +74,18 @@ public class BVO {
 
 	public void setReg_date(Date reg_date) {
 		this.reg_date = reg_date;
+	}
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+	public int getB_idx() {
+		return b_idx;
+	}
+	public void setB_idx(int b_idx) {
+		this.b_idx = b_idx;
 	}
 	
 	
