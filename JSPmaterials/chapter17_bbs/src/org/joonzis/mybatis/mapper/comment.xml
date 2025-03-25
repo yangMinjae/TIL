@@ -15,6 +15,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{b_idx}
 		)
 	</insert>
+	<select id="select_comment" parameterType="int" resultType="org.joonzis.vo.CVO">
+		select * from comment_t where b_idx=#{b_idx} order by c_idx
+	</select>
+	<delete id="delete_commentByIdx" parameterType="int">
+		delete from comment_t where b_idx=#{b_idx}
+	</delete>
+	<delete id="delete_comment" parameterType="int">
+		delete from comment_t where c_idx=#{c_idx}
+	</delete>
 </mapper>
 
 

@@ -1,5 +1,7 @@
 package org.joonzis.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.joonzis.mybatis.config.DBService;
 import org.joonzis.vo.CVO;
@@ -28,6 +30,20 @@ public class CDaoImpl implements CDao{
 	@Override
 	public int insertComment(CVO cvo) {
 		int result = getSqlSession().insert("insert_comment", cvo);
+		if(result>0) {
+			getSqlSession().commit();
+		}
+		return result;
+	}
+	@Override
+	public List<CVO> getCommList(int b_idx) {
+		return getSqlSession().selectList("select_comment",b_idx);
+	}
+
+	@Override
+	public int removeComment(int c_idx) {
+		int result = 0;	
+		result= getSqlSession().delete("delete_comment", c_idx);
 		if(result>0) {
 			getSqlSession().commit();
 		}

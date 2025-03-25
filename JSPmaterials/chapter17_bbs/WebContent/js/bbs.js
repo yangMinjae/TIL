@@ -62,3 +62,14 @@ function update(f, pw){
 	f.action="BBSController";
 	f.submit();
 }
+// 페이지 버튼 클릭 이벤트
+let aEles = document.querySelectorAll(".page-nation li a");
+aEles.forEach(aEle=>{
+	aEle.addEventListener('click',function(e){
+		e.preventDefault();
+		
+		let pageNum = this.getAttribute('href');
+		let sendData = `cmd=allList&pageNum=${pageNum}&amount=5`;
+		location.href = "BBSController?"+sendData;
+	})
+})

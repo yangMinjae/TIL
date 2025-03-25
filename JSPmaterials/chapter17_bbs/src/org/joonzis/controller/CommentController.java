@@ -3,6 +3,7 @@ package org.joonzis.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Inet4Address;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -43,6 +44,7 @@ public class CommentController extends HttpServlet {
 		
 		// 응답 객체에 보내줄 객체
 		JSONObject obj = new JSONObject();
+		int b_idx = 0;
 		
 		// DB 데이터 다루기 위한 객체
 		CVO cvo = null;
@@ -58,9 +60,30 @@ public class CommentController extends HttpServlet {
 			cvo.setB_idx(Integer.parseInt(request.getParameter("b_idx")));
 			
 			result = cservice.insertComment(cvo);
-			System.out.println("result : "+result);
+			if(result>0) {
+				obj.put("result","success");
+			}else {
+				obj.put("result","fail");
+			}
 			break;
+		case "commList" :
+			b_idx=Integer.parseInt(request.getParameter("b_idx"));
+			List<CVO> cList = cservice.getCommList(b_idx);
+			objectMapper = new ObjectMapper();
+			jsonString = objectMapper.writeValueAsString(cList);
+			obj.put("cList", jsonString);
+			
+			break;
+		case "removeComment":
+			int c_idx = Integer.parseInt(request.getParameter("c_idx"));
+			result = cservice.removeComment(c_idx);
+			if(result>0) {
+				obj.put("result","success");
+			}else {
+				obj.put("result","fail");
+			}
 		}
+		out.print(obj);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
