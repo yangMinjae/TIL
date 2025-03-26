@@ -2,7 +2,14 @@ function moveInsertPage(){
 	location.href="BBSController?cmd=insertBBSPage";	
 }
 function view_all(){
-	location.href="BBSController?cmd=allList";
+	const params = new URLSearchParams(location.search);
+	const pageNum = params.get("pageNum");
+	const amount  = params.get("amount");
+	let sendData = '';
+	if(pageNum && amount){
+	sendData = `&pageNum=${pageNum}&amount=${amount}`;
+	}
+	location.href="BBSController?cmd=allList"+sendData;
 }
 function insert(f){
 	if(!f.writer.value){
@@ -35,7 +42,14 @@ function removeBBS(i){
 	}
 }
 function updatePage(){
-	location.href="BBSController?cmd=updatePage";
+	const params = new URLSearchParams(location.search);
+	const pageNum = params.get("pageNum");
+	const amount  = params.get("amount");
+	let sendData = '';
+	if(pageNum && amount){
+	sendData = `&pageNum=${pageNum}&amount=${amount}`;
+	}
+	location.href="BBSController?cmd=updatePage"+sendData;
 }
 function update(f, pw){
 	if(!f.title.value){

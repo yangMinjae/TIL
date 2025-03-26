@@ -35,7 +35,9 @@ public class BBSController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
-		
+		String query = request.getQueryString();
+	    System.out.println("Query String : " + query);
+	    System.out.println("====================");
 		// 파일 업로드
 		String realPath = request.getServletContext()
 							.getRealPath("/upload");
@@ -44,7 +46,6 @@ public class BBSController extends HttpServlet {
 		
 		// 분기 판단
 		String cmd = request.getParameter("cmd");
-		System.out.println("test cmd:"+cmd);
 		if(cmd == null) {
 			// 파일 업로드 시 일반 request에서 받아올 수 없기 때문에
 			// mr 객체 생성
@@ -56,19 +57,15 @@ public class BBSController extends HttpServlet {
 				new DefaultFileRenamePolicy()
 			);
 			cmd= mr.getParameter("cmd");
-			System.out.println("mr 생성");
 		}
 		int idx=0;
 		if(cmd.contains("=")) {
 			idx=Integer.parseInt(cmd.substring(cmd.indexOf('=')+1));
 			cmd=cmd.substring(0,cmd.indexOf('='));
-			System.out.println("idx : "+idx);
-			System.out.println("cmd : "+cmd);
 		}
 		// 화면 이동 / 서블릿 요청
 		// 화면으로 즉 jsp파일로 이동하는 경우 forward로,
 		// 서블릿을 태우고 싶은 경우에는 redirect 사용
-		System.out.println("=================");
 		boolean isForward = true;
 		// 이동 경로 path
 		String path = "";
@@ -112,7 +109,6 @@ public class BBSController extends HttpServlet {
 			
 			// 3. 전체 게시글 수 가져오기
 			int total = bservice.getTotalRecordCount();
-			System.out.println("행 개수 : "+total);
 			// 4. pageDTO 객체 만들기
 			PageDTO pdto = new PageDTO(cri,total);
 			
