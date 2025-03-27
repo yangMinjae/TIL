@@ -8,8 +8,10 @@ document.querySelectorAll('button').forEach(btn => {
 			sendData = 'cmd=myPage';
 		}else if(type === 'loginBtn'){
 			sendData = 'cmd=loginPage';
-		}else{
+		}else if(type ==='joinBtn'){
 			sendData = 'cmd=joinPage';
+		}else if(type='logoutBtn'){
+			sendData = 'cmd=logoutPage';
 		}
 		location.href='MemberController?' + sendData;
 	});

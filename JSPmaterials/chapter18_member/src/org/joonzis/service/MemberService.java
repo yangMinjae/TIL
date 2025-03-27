@@ -7,5 +7,5 @@ public interface MemberService {
 	public int validateId(String mId);
 	// 회원 등록
 	public int insertMember(MemberVO mvo);
-	public int login(MemberVO mvo);
+	public MemberVO login(MemberVO mvo);
 }

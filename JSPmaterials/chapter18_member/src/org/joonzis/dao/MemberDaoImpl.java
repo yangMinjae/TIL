@@ -39,7 +39,7 @@ public class MemberDaoImpl implements MemberDao {
 		return result;
 	}
 	@Override
-	public int login(MemberVO mvo) {
+	public MemberVO login(MemberVO mvo) {
 		return getSqlSession().selectOne("login",mvo);
 	}
 }

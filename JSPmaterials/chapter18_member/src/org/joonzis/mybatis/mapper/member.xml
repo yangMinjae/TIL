@@ -21,8 +21,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			sysdate
 		)
 	</insert>
-	<select id="login" parameterType="org.joonzis.vo.MemberVO" resultType="int">
-		SELECT COUNT(*) FROM MEMBER_T WHERE MID=#{mId} and MPW=#{mPw}
+	<select id="login" parameterType="org.joonzis.vo.MemberVO" resultType="org.joonzis.vo.MemberVO">
+		SELECT * FROM MEMBER_T WHERE MID=#{mId} and MPW=#{mPw}
 	</select>
 </mapper>
 

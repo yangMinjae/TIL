@@ -27,8 +27,8 @@ document.querySelectorAll("button").forEach(btn => {
 			join();
 		}else if(type === 'resetBtn'){
 			f.reset();
-			f.mId.removeAttribute("readonly");
-				idCk = pwCk = pwReCk = nameCk = emailCk = false;
+			f.mId.removeAttribute("disabled");
+			idCk = pwCk = pwReCk = nameCk = emailCk = false;
 
 			// 스타일 초기화
 			Initialization(f.mId, mIdValidState);
@@ -108,7 +108,7 @@ function validateId(){
 			if(data.result == 0){
 				validated(target, mIdValidState, '사용 가능한 아이디입니다.');
 				idCk = true;
-				target.setAttribute('readonly', true);
+				target.setAttribute('disabled', true);
 			}else{
 				invalidate(target, mIdValidState, '중복된 아이디입니다.');
 				idCk = false;
@@ -190,7 +190,7 @@ function join(){
 		alert("모든 입력 내용을 확인해주세요");
 		return;
 	}
-	
+	f.mId.removeAttribute("disabled");
 	// post 방식 - json 전달
 	// FormData 객체 생성
 	let formData = new FormData(f);

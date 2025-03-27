@@ -71,7 +71,6 @@ public class MemberAsyncController extends HttpServlet {
 			// json으로 들어오는 cmd를 저장하는 방식
 			cmd = (String)obj.get("cmd");
 		}
-		System.out.println("cmd : " + cmd);
 		
 		// 세션 객체 생성
 		HttpSession session = request.getSession();
@@ -98,7 +97,13 @@ public class MemberAsyncController extends HttpServlet {
 			mvo = new MemberVO();
 			mvo.setmId((String)obj.get("mId"));
 			mvo.setmPw((String)obj.get("mPw"));
-			obj.put("result", mservice.login(mvo));
+			MemberVO vo = mservice.login(mvo);
+			if(vo!=null) {
+				obj.put("result",1);
+				session.setAttribute("member", vo);
+			}else {
+				obj.put("result",0);
+			}
 		}
 		out.print(obj);
 		
