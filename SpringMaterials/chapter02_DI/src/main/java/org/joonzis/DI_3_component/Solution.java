@@ -38,16 +38,18 @@ public class Solution {
         return time_;
     }
     private String toStr(int[] a) {
-    	String result;
+    	String result1, result2, result;
     	if(a[0]<10) {
-    		result = ""+0+a[0]+":"+a[1];    		
+    		result1 = ""+0+a[0];    		
     	}else {
-    		if(a[1]<10) {
-    			result = ""+a[0]+":0"+a[1];  
-    		}else {
-    			result=""+a[0]+":"+a[1];    			
-    		}
+    		result1 = ""+a[0];
     	}
+		if(a[1]<10) {
+			result2 = "0"+a[1];  
+		}else {
+			result2=""+a[1];    			
+		}
+		result = result1+":"+result2;
     	return result;
     }
     private boolean isInOp(String inp){
@@ -60,6 +62,7 @@ public class Solution {
     
     private int[] commCond() {
     	int[] result = toIntArr(pos);
+
     	if(isInOp(pos)) {
     		result = toIntArr(op_end);
     	}
@@ -71,19 +74,22 @@ public class Solution {
     				result[0]+=1;
     				result[1]=result[1]-50;
     			}
-    			if(compare(video_len,toStr(result))==-1) {
-    				result=toIntArr(video_len);
-    			}
     		}else {
-    			if(result[0]<10) {
-    				result[1]=0;
-    				if(result[1]>0) {
+    			if(result[1]<10) {
+    				result[1]+=50;
+    				if(result[0]>0) {
     					result[0]-=1;    					
+    				}else {
+    					result[1]=0;
+    					result[0]=0;
     				}
     			}else {
-    				result[0]-=10;
+    				result[1]-=10;
     			}
     		}
+			if(compare(video_len,toStr(result))==-1) {
+				result=toIntArr(video_len);
+			}
     	}
     	if(isInOp(toStr(result))) {
     		result=toIntArr(op_end);
@@ -92,6 +98,6 @@ public class Solution {
     }
     public static void main(String[] args) {
 		Solution sol = new Solution();
-		System.out.println("결과 : "+sol.solution("34:33","13:00","00:55","02:55",new String[]{"next","prev"}));
+		System.out.println("결과 : "+sol.solution("6:55","00:16","00:15","06:55",new String[]{"prev","next","next"}));
 	}
 }
