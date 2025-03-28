@@ -1,5 +1,4 @@
 # 2025/03/28
-# 스프링 프레임워크 정리
 
 ## 1. 스프링 프레임워크란
 - **프레임워크와 라이브러리의 차이**  
@@ -75,9 +74,6 @@
 - 상단 window 메뉴 → Web Browser → Chrome으로 브라우저 변경 가능
 - `sendRedirect`: 서블릿에서 사용
 - `forward`: JSP 내부 이동에서 사용
-
-# 2025/03/28
-# 어노테이션 및 테스트 정리
 
 ## 6. @Configuration, @Bean
 - XML 없이 Bean 관리 가능
@@ -161,13 +157,14 @@ public String goResult1(Model model, StudentDto sDto) {
     return "result";
 }
 ```
+- dto객체를 매개변수로 넣으면, 자동으로 이전 뷰에서 전달된 폼내부의 값들이 dto에 매핑되어 전달된다
 - 또는 `@ModelAttribute("이름")` 사용하여 자동 매핑
 ```java
 public String goResult2(@ModelAttribute("s") StudentDto dto) {
     return "result";
 }
 ```
-
+- 이 방식은 addAttribute를 생략할 수 있으며, 결과 반환 view에서 ${s.속성명}과 같이 사용할 수 있다
 ---
 
 ## 10. 테스트
@@ -219,5 +216,6 @@ public class DataSourceTest {
     }
 }
 ```
-- `@Autowired`: 컨테이너에서 Bean을 자동 주입
+- `@Autowired`: 컨테이너에서 Bean을 자동 주입, new를 통해 객체생성할 필요 없음
 - `@RunWith`, `@ContextConfiguration`: 스프링 테스트 환경 설정
+- `@ContextConfiguration`의 괄호에는 스프링 컨테이너의 주소가 들어감
