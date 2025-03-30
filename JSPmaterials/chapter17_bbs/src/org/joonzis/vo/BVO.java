@@ -7,7 +7,7 @@ public class BVO {
 	private int hit, b_idx;
 	private Date reg_date;
 	public BVO() {}
-	public BVO(String wrtier, String title, String content,int b_idx, String pw, int hit, String ip, String filename,  Date reg_date) {
+	public BVO(String writer, String title, String content,int b_idx, String pw, int hit, String ip, String filename,  Date reg_date) {
 		super();
 		this.b_idx=b_idx;
 		this.writer=writer;
