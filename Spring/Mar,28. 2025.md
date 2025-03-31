@@ -165,6 +165,7 @@ public String goResult2(@ModelAttribute("s") StudentDto dto) {
 }
 ```
 - 이 방식은 addAttribute를 생략할 수 있으며, 결과 반환 view에서 ${s.속성명}과 같이 사용할 수 있다
+- 이전 요청에서 받아온 정보를 그대로 넘길때 주로 사용
 ---
 
 ## 10. 테스트
@@ -218,4 +219,8 @@ public class DataSourceTest {
 ```
 - `@Autowired`: 컨테이너에서 Bean을 자동 주입, new를 통해 객체생성할 필요 없음
 - `@RunWith`, `@ContextConfiguration`: 스프링 테스트 환경 설정
+<<<<<<< HEAD
 - `@ContextConfiguration`의 괄호에는 스프링 컨테이너의 주소가 들어감. 테스트 경로에서만 사용(일반 클래스들에서는 없어도 등록된 bean들에 대해서는autowired가 작동한다.)
+=======
+- `@ContextConfiguration`의 괄호에는 스프링 컨테이너의 주소가 들어감
+>>>>>>> 005b60fed7e1e57365bbd094090eec63c848ed8a
