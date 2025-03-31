@@ -165,6 +165,7 @@ public String goResult2(@ModelAttribute("s") StudentDto dto) {
 }
 ```
 - 이 방식은 addAttribute를 생략할 수 있으며, 결과 반환 view에서 ${s.속성명}과 같이 사용할 수 있다
+- 이전 요청에서 받아온 정보를 그대로 넘길때 주로 사용
 ---
 
 ## 10. 테스트
