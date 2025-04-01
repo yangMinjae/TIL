@@ -3,6 +3,7 @@ package org.joonzis.mapper;
 import java.util.List;
 
 import org.joonzis.domain.BoardVO;
+import org.joonzis.domain.Criteria;
 
 public interface BoardMapper {
 	// 전체 리스트
@@ -16,8 +17,14 @@ public interface BoardMapper {
 	public BoardVO read(int bno);
 	
 	// 데이터 삭제
-	public int delete(double bno);
+	public int delete(int bno);
 	
 	// 게시글 수정
 	public int update(BoardVO vo);
+	
+	// 총 레코드 개수
+	public int getTotal();
+	
+	// 페이징 적용 레코드 반환
+	public List<BoardVO> getListByPage(Criteria cri);
 }

@@ -10,5 +10,24 @@ document.head.appendChild(linkEle);
 
 // 게시글 등록 버튼
 document.querySelector("#registerBtn").addEventListener('click', ()=>{
-  location.href="/board/register"
+  location.href=`/board/register`;
+})
+let pageDiv = document.querySelector("#page-data");
+let amount = pageDiv.getAttribute("amount");
+let pageNum = pageDiv.getAttribute("pageNum");
+document.querySelectorAll(".aTitle").forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    let bno = e.currentTarget.getAttribute("href");
+    location.href=`/board/get?bno=${bno}&pageNum=${pageNum}&amount=${amount}`;
+  })
+})
+document.querySelectorAll(".page-wrap a").forEach(a=>{
+  a.addEventListener('click', e=>{
+    e.preventDefault();
+    let pageNum = e.target.getAttribute("href");
+    console.log("href : "+ pageNum);
+    console.log("amount : "+ amount);
+    location.href = `/board/list?pageNum=${pageNum}&amount=${amount}`;
+  })
 })

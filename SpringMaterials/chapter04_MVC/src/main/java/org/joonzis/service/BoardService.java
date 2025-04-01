@@ -3,6 +3,7 @@ package org.joonzis.service;
 import java.util.List;
 
 import org.joonzis.domain.BoardVO;
+import org.joonzis.domain.Criteria;
 
 public interface BoardService {
 	// 전체 리스트
@@ -19,4 +20,9 @@ public interface BoardService {
 	
 	// 게시글 수정
 	public boolean modify(BoardVO vo);
+	
+	// 총 레코드 갯수
+	public int getTotal();
+	
+	public List<BoardVO> getListByPage(Criteria cri);
 }
