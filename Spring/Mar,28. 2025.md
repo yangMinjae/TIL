@@ -223,4 +223,3 @@ public class DataSourceTest {
 - `@ContextConfiguration`의 괄호에는 스프링 컨테이너의 주소가 들어감. 테스트 경로에서만 사용(일반 클래스들에서는 없어도 등록된 bean들에 대해서는autowired가 작동한다.)
 =======
 - `@ContextConfiguration`의 괄호에는 스프링 컨테이너의 주소가 들어감
->>>>>>> 005b60fed7e1e57365bbd094090eec63c848ed8a
