@@ -4,7 +4,7 @@
 ## 1. pom.xml 설정
 1. `java-version` → 11로 변경
 2. `springframework-version` → 5.0.7.RELEASE로 변경
-3. log4j의 `<scope>runtime</scope>` 주석 처리
+3. dependency의 <groupId>log4j</groupId>의 `<scope>runtime</scope>` 주석 처리
 4. `javax.servlet` → version 3.1.0, `artifactId`는 `javax.servlet-api`로 변경
 5. `junit` → version 4.12로 변경
 6. plugin 내 `source`와 `target` → 11로 변경
