@@ -5,15 +5,15 @@
 1. `java-version` → 11로 변경
 2. `springframework-version` → 5.0.7.RELEASE로 변경
 3. dependency의 <groupId>log4j</groupId>의 `<scope>runtime</scope>` 주석 처리
-4. `javax.servlet` → version 3.1.0, `artifactId`는 `javax.servlet-api`로 변경
+4. `javax.servlet(artifactId가 servlet-api인것)` → version 3.1.0, `artifactId`는 `javax.servlet-api`로 변경
 5. `junit` → version 4.12로 변경
 6. plugin 내 `source`와 `target` → 11로 변경
 - 설정 후: 프로젝트 우클릭 → Maven → update Project
 
 ---
 
-## 2. web.xml 설정
-### 📌 `<servlet-mapping>` 아래에 다음 내용 추가:
+## 2. web.xml 추가 인코딩 설정
+### 📌 `<web-app>안, </web-app><servlet-mapping>` 아래에 다음 내용 추가:
 ```xml
 <filter>
     <filter-name>encodingFilter</filter-name>

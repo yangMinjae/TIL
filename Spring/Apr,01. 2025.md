@@ -104,8 +104,8 @@ let { pageNum, amount } = getStorageData();
 
 | 어노테이션 | 설명 |
 |------------|------|
-| `@RestController` | 뷰가 아닌 JSON 등 데이터 응답을 위한 컨트롤러 |
-| `@ResponseBody` | 데이터를 그대로 클라이언트에 반환 |
-| `@PathVariable` | URL 경로의 값을 변수로 받음 |
-| `@RequestBody` | JSON 데이터를 객체로 바인딩 |
-| `@CrossOrigin` | CORS (도메인 다를 때) 허용 설정 |
+| `@RestController` | controller가 Rest방식을 처리하기 위한 것을 명시 |
+| `@ResponseBody` | 일반적인 JSP와 같은 뷰로 전달하는것이 아닌 데이터를 전달하기 위한 용도 |
+| `@PathVariable` | URL경로에 있는 값을 파라미터로 추출할 때 사용 |
+| `@RequestBody` | JSON데이터를 원하는 타입으로 바인딩 처리 |
+| `@CrossOrigin` | 크로스 도메인 문제를 해결해주는 어노테이션 |

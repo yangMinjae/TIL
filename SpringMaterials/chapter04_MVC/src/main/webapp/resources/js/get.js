@@ -21,5 +21,22 @@ document.querySelectorAll('.panel-body-btns button').forEach(btn=>{
 	    }
 	  })
 	})
+// -------------------------------댓글 관련 스크립트----------------------------------
+const rs = replyService;
+console.log(rs);
+//rs.add({
+//	reply:"JS TEST",
+//	replyer : "TESTER",
+//	bno:454
+//},function(result){
+//	alert("result : "+result);
+//});
 
+rs.getList(454,function(data){
+	// list 이니까 반복문 통해서 vo 콘솔에 출력
+	data.forEach(a=>{
+		console.log(a);
+	})
+
+})
 	
