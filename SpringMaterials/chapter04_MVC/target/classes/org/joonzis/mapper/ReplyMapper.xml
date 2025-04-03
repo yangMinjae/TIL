@@ -4,7 +4,7 @@
 
 <mapper namespace="org.joonzis.mapper.ReplyMapper">
 	<select id="getList" parameterType="int" resultType="org.joonzis.domain.ReplyVO">
-		SELECT * FROM TBL_REPLY WHERE BNO=#{bno} ORDER BY rno
+		SELECT * FROM TBL_REPLY WHERE BNO=#{bno} ORDER BY replydate desc
 	</select>
 	<select id="get" parameterType="int" resultType="org.joonzis.domain.ReplyVO">
 		SELECT * FROM TBL_REPLY WHERE RNO=#{rno}

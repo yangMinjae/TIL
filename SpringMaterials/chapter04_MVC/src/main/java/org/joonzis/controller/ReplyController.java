@@ -56,10 +56,7 @@ public class ReplyController {
 	
 	// 3. 삭제
 	@DeleteMapping(value = "/{rno}",
-			produces = {
-					MediaType.APPLICATION_XML_VALUE,
-					MediaType.APPLICATION_JSON_VALUE
-			})
+			produces = MediaType.TEXT_PLAIN_VALUE)
 	public ResponseEntity<String> remove(@PathVariable("rno") int rno){
 		log.info("remove..."+rno);
 		int removeCount = service.remove(rno);
@@ -78,7 +75,6 @@ public class ReplyController {
 		vo.setRno(rno);
 		log.info("rno : "+rno);
 		log.info("modify : "+vo);
-		vo.setRno(rno);
 		int modifyCount = service.update(vo);
 		return modifyCount == 1? new ResponseEntity<String>("success",HttpStatus.OK): 
 			new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
