@@ -45,4 +45,9 @@
 		WHERE ROWNUM<=#{pageNum}*#{amount}) WHERE rn>(#{pageNum}-1)*#{amount}
 	]]>
 	</select>
+	<update id="updateReplyCnt">
+		UPDATE TBL_BOARD SET
+		replycnt = replycnt + #{amount}
+		where bno=#{bno}
+	</update>
 </mapper>

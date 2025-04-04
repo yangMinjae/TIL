@@ -29,7 +29,7 @@ public class BoardServiceTest {
 	}
 	//@Test
 	public void getInsert() {
-		BoardVO vo = new BoardVO(0,"졸려","졸립니다.","나",null,null);
+		BoardVO vo = new BoardVO(0,3,"졸려","졸립니다.","나",null,null);
 		boolean result = service.register(vo);
 		log.info("\n=========결과 : "+result+"==========");
 	}
@@ -47,7 +47,7 @@ public class BoardServiceTest {
 	}
 	@Test
 	public void getUpdate() {
-		BoardVO vo = new BoardVO(8,"커피","커피마심","나",null,null);
+		BoardVO vo = new BoardVO(8,3,"커피","커피마심","나",null,null);
 		boolean result = service.modify(vo);
 		log.info("\n=========결과 : "+result+"==========");
 	}

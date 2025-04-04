@@ -55,11 +55,11 @@ public class ReplyController {
 	}
 	
 	// 3. 삭제
-	@DeleteMapping(value = "/{rno}",
+	@DeleteMapping(value = "/{rno}/{bno}",
 			produces = MediaType.TEXT_PLAIN_VALUE)
-	public ResponseEntity<String> remove(@PathVariable("rno") int rno){
+	public ResponseEntity<String> remove(@PathVariable("rno") int rno, @PathVariable("bno") int bno){
 		log.info("remove..."+rno);
-		int removeCount = service.remove(rno);
+		int removeCount = service.remove(bno,rno);
 		return removeCount == 1? new ResponseEntity<String>("success",HttpStatus.OK): 
 			new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}

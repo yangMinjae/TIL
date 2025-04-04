@@ -25,8 +25,8 @@ const replyService = function(){
   }
   
   // 댓글 삭제 함수
-  function remove(rno, callback) {
-    fetch('/reply/'+rno,{method:'delete'})
+  function remove(bno, rno, callback) {
+    fetch('/reply/'+rno+'/'+bno,{method:'delete'})
     .then(response=>response.text())
     .then(data =>{
       callback(data);

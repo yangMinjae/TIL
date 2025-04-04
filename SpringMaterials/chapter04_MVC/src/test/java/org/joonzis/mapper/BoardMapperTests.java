@@ -28,7 +28,7 @@ public class BoardMapperTests {
 	}
 	@Test
 	public void getInsert() {
-		BoardVO vo = new BoardVO(0,"졸려","졸립니다.","나",null,null);
+		BoardVO vo = new BoardVO(0,3,"졸려","졸립니다.","나",null,null);
 		int result = mapper.insert(vo);
 		log.info("\n=========결과 : "+result+"==========");
 	}
@@ -46,7 +46,7 @@ public class BoardMapperTests {
 	}
 	//@Test
 	public void getUpdate() {
-		BoardVO vo = new BoardVO(9,"커피","커피마심","나",null,null);
+		BoardVO vo = new BoardVO(9,3,"커피","커피마심","나",null,null);
 		int result = mapper.update(vo);
 		log.info("\n=========결과 : "+result+"==========");
 	}

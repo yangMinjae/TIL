@@ -12,7 +12,7 @@ public interface ReplyService {
 	// 댓글 읽기
 	public ReplyVO get(int rno);
 	// 댓글 삭제
-	public int remove(int rno);
+	public int remove(int bno, int rno);
 	// 댓글 수정- reply, updatedate, rno
 	public int update(ReplyVO vo);
 }

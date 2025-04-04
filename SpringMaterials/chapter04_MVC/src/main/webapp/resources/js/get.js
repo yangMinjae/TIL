@@ -168,7 +168,7 @@ function modifyReply(){
 function removeReply() {
 
 	if(rno||rno==0){
-		rs.remove(rno,result=>{
+		rs.remove(f.bno.value, rno,result=>{
 			alert(result);
 			closeModal();
 			showList();
