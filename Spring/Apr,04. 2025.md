@@ -30,7 +30,7 @@
 execution(* org.joonzis.service.SampleService*.doAdd(String, String)) && args(str1, str2)
 ```
 - `args`: 메서드에서 전달받은 인자를 AOP에서 참조할 수 있게 해줌
-- 인자명은 실제 메서드 매개변수 이름과 같아야 함
+- 인자명은 어드바이스의 매개변수 이름과 같아야 함
 
 ---
 
