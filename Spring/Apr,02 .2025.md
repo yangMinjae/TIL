@@ -4,8 +4,8 @@
 - 비동기에서 사용
 ## 1) @GetMapping(value = "/getText", produces = "text/plain; charset=utf-8")
 
-- produces = "text/plain; charset=utf-8" 의미는 함수가 리턴하는 값이 주소가 아닌 문자열임을 나타냄  
-- 클라이언트가 브라우저일 경우, produces를 명시하지 않으면 브라우저가 HTML로 오해하고 뷰 이름으로 처리할 수 있음  
+- produces = "text/plain; charset=utf-8" 의미는 문자열을 리턴할 것을 의미
+- 한글깨짐을 방지하기 위함
 
 ```java
 @GetMapping(value = "/getText", produces = "text/plain; charset=utf-8")
