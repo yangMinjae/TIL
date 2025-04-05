@@ -1,10 +1,10 @@
 # 2025/04/02
 # 1. @RestController
-
+- RestController는 컨트롤러와 달리 데이터를 리턴
+- 비동기에서 사용
 ## 1) @GetMapping(value = "/getText", produces = "text/plain; charset=utf-8")
 
 - produces = "text/plain; charset=utf-8" 의미는 함수가 리턴하는 값이 주소가 아닌 문자열임을 나타냄  
-- 디폴트값(입력 안 했을 시)은 text/html이고 주소로 인식  
 - 클라이언트가 브라우저일 경우, produces를 명시하지 않으면 브라우저가 HTML로 오해하고 뷰 이름으로 처리할 수 있음  
 
 ```java
