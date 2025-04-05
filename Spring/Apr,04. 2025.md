@@ -64,7 +64,7 @@ for (let i = 0; i < files.length; i++) {
 }
 ```
 - 동일한 이름으로 `append`해도 덮어쓰기 되지 않음
-- `multiple` 속성과 함께 동작
+- `multiple` 속성처럼 동작
 
 ---
 
