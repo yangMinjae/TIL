@@ -24,7 +24,7 @@
 - 다음과 같이 필요한 속성만 작성 가능:
 
 ```javascript
-{ method: 'delete' }
+fetch('/reply/'+rno+'/'+bno,{method:'delete'})
 ```
 
 ---
