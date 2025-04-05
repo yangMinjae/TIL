@@ -21,6 +21,7 @@ public String getText() {
 - 클라이언트가 JSON을 원하면 JSON으로 응답 주고  
 - 클라이언트가 XML을 원하면 XML로 응답  
 - 기본은 xml이고, json 형식을 원하면 `~~~/getObject.json`처럼 뒤에 `.json`을 붙이면 json 형식으로 출력  
+- 혹은 fetch시 headers 의 'Accept' 속성을 application/json으로 설정
 - 파라미터가 있을 경우에는 다음과 같이 입력 `/getObject.json?age=15`  
 - Accept 헤더에 따라 응답 형식이 결정됨 (MIME 타입: `application/json`, `application/xml`)  
 
