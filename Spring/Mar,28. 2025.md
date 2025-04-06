@@ -117,7 +117,7 @@ System.out.println("취미 : " + person1.getHobbies());
 
 ## 7. @Component("id")
 - `src/main/resources`에 Spring Bean 설정 XML 파일 생성
-- `<context:component-scan base-package="org.joonzis.DI_3_component"/>` 사용
+- `root-context.xml에 <context:component-scan base-package="org.joonzis.DI_3_component"/>` 추가하여 사용
 ### ✅ 사용법
 ```java
 AbstractApplicationContext ctx = new GenericXmlApplicationContext("applicationContext3.xml");
@@ -127,6 +127,7 @@ tv.powerOff();
 tv.volumeUp();
 tv.volumeDown();
 ```
+- applicationContext3.xml은 new-others-spring bean configuration file로 만들어진 파일이다.
 
 ---
 
