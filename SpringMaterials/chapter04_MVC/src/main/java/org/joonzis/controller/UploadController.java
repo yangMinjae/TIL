@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-import org.joonzis.domain.AttachFileDTO;
+import org.joonzis.domain.BoardAttachVO;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -52,10 +52,10 @@ public class UploadController {
 	@PostMapping(value = "uploadAsyncAction",
 			produces = MediaType.APPLICATION_JSON_UTF8_VALUE
 			)
-	public ResponseEntity<List<AttachFileDTO>> uploadAsyncPost(MultipartFile[] uploadFile) {
+	public ResponseEntity<List<BoardAttachVO>> uploadAsyncPost(MultipartFile[] uploadFile) {
 		log.info("upload async post...");
 		
-		List<AttachFileDTO> list = new ArrayList<AttachFileDTO>();
+		List<BoardAttachVO> list = new ArrayList<BoardAttachVO>();
 		
 		String uploadFolder ="C:\\upload";
 		// 폴더 만들어주기
@@ -67,7 +67,7 @@ public class UploadController {
 		}
 		for(MultipartFile multipartFile:uploadFile) {
 			// 파일 정보를 담을 AttachFileDTO 객체 생성
-			AttachFileDTO attachDTO = new AttachFileDTO();
+			BoardAttachVO boardAttachVo = new BoardAttachVO();
 			log.info("--------------------------------");
 			log.info("Upload File Name : "+multipartFile.getOriginalFilename());
 			log.info("Upload File size : "+multipartFile.getSize());
@@ -83,15 +83,15 @@ public class UploadController {
 				File saveFile = new File(uploadPath, uploadFileName);
 				multipartFile.transferTo(saveFile);
 				
-				attachDTO.setUuid(uuid.toString());
-				attachDTO.setFileName(multipartFile.getOriginalFilename());
-				attachDTO.setUploadPath(getFolder());
-				list.add(attachDTO);
+				boardAttachVo.setUuid(uuid.toString());
+				boardAttachVo.setFileName(multipartFile.getOriginalFilename());
+				boardAttachVo.setUploadPath(getFolder());
+				list.add(boardAttachVo);
 			} catch (Exception e) {
 				log.error(e.getMessage());
 			}
 		}
-		return new ResponseEntity<List<AttachFileDTO>>(list,HttpStatus.OK);
+		return new ResponseEntity<List<BoardAttachVO>>(list,HttpStatus.OK);
 	}
 	
 	@GetMapping(value = "/download",produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)

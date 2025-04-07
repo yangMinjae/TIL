@@ -1,7 +1,7 @@
 # 2025/03/28
 # Spring 프로젝트 환경 설정 정리
 
-## 1. pom.xml 설정
+## 1. pom.xml 기본 설정
 1. `java-version` → 11로 변경
 2. `springframework-version` → 5.0.7.RELEASE로 변경
 3. dependency의 <groupId>log4j</groupId>의 `<scope>runtime</scope>` 주석 처리
@@ -79,8 +79,8 @@
 
 ---
 
-## 7. 수업자료
-- `log4jdbc.log4j2.properties` 파일을 `src/main/resources`에 넣기
+## 7. DB연결시
+- 수업자료의 `log4jdbc.log4j2.properties` 파일을 `src/main/resources`에 넣기
 
 ---
 
@@ -89,7 +89,7 @@
 
 ---
 
-## 9. HikariCP 설정
+## 9. HikariCP 사용시 설정
 ### 📌 root-context.xml에 다음 코드 추가
 ```xml
 <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
@@ -110,3 +110,27 @@
 
 <mybatis-spring:scan base-package="org.joonzis.mapper" />
 ```
+
+## 10. 파일 업 다운 기능 구현시 추가 설정
+### 1.web.xml
+1)web-app태그의 version 속성 3.1로 변경
+2)web-app태그의 xsischmaLocation의 속성 "http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_3_1.xsd"
+	->두번째 url의 web-app_2_5_ -> web-app_3_1_
+
+3)servlet 태그 안, load-on-startup 태그 밑에 다음 복붙
+```xml
+<multipart-config>
+   <location>C:\\upload</location>
+   <max-file-size>20971520</max-file-size>
+   <max-request-size>41943040</max-request-size>
+   <file-size-threshold>20971520</file-size-threshold>
+</multipart-config>
+```
+### 2.servlet-context.xml
+
+최상위 beans 태그 안 다음 추가
+```xml
+<beans:bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
+</beans:bean>
+```
+

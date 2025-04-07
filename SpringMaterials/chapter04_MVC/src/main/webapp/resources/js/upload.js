@@ -1,8 +1,8 @@
 const regex = new RegExp("(.*?)\.(exe|sh|zip|alz)$");
 const MAX_SIZE = 5242880; //5MB
 
-const uploadBtn = document.querySelector('#uploadBtn');
-uploadBtn.addEventListener('click',()=>{
+const fileInput = document.querySelector('input[type="file"]');
+fileInput.addEventListener('change',()=>{
   const formData = new FormData();
   const inputFile = document.querySelector('input[type="file"]');
   const files = inputFile.files;
@@ -51,8 +51,8 @@ function showUploadedFile(uploadResultArr){
   let str = '';
   uploadResultArr.forEach(file => {
     let fileCallPath = encodeURIComponent(file.uploadPath+'/'+file.uuid+'_'+file.fileName);
-    str+=`<li>`;
-    str+=`<a href="download?fileName=${fileCallPath}">${file.fileName}</a>`;
+    str+=`<li path="${file.uploadPath}>" uuid="${file.uuid}" fileName="${file.fileName}"`;
+    str+=`<a>${file.fileName}</a>`;
     str+=`<span data-file=${fileCallPath}> X </span>`;
     str+=`</li>`;
   });
@@ -71,7 +71,8 @@ function showUploadedFile(uploadResultArr){
       .then(response=>response.text())
       .then(result=>{
         alert(result);
-        uploadResult.innerHTML='';
+        let targetLi = e.target.closest('li');
+        targetLi.remove();
       })
       .catch(err=>console.log());
     }

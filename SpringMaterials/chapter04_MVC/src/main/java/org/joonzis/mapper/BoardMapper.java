@@ -31,4 +31,8 @@ public interface BoardMapper {
 	
 	// 댓글 데이터 변경
 	public int updateReplyCnt(@Param("bno") int bno, @Param("amount") int amount);
+	
+	public int getLastBno();
+	
+	public int insertTest(BoardVO vo);
 }

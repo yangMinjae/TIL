@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.joonzis.domain.BoardVO;
 import org.joonzis.domain.Criteria;
+import org.joonzis.mapper.BoardAttachMapper;
 import org.joonzis.mapper.BoardMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import lombok.extern.log4j.Log4j;
 
@@ -15,7 +17,8 @@ import lombok.extern.log4j.Log4j;
 public class BoardServiceImpl implements BoardService{
 	@Autowired
 	private BoardMapper mapper;
-	
+	@Autowired
+	private BoardAttachMapper attachMapper;
 	@Override
 	public List<BoardVO> getList() {
 		log.info("getList...");
@@ -39,11 +42,20 @@ public class BoardServiceImpl implements BoardService{
 			return false;			
 		}
 	}
-	
+	@Transactional
 	@Override
 	public boolean register(BoardVO vo) {
 		log.info("register..."+vo);
-		int result = mapper.insert(vo);
+		// 1. tbl_board 테이블에 게시글 등록
+		int result = mapper.insertTest(vo);
+		int bno = vo.getBno();
+		// 2. 첨부 파일이 존재하면, 파일 테이블에 데이터 등록
+		if(vo.getAttachList()!=null&&vo.getAttachList().size()>0) {
+			vo.getAttachList().forEach(attach->{
+				attach.setBno(bno);
+				attachMapper.insert(attach);
+			});
+		}
 		if(result==1) {
 			return true;
 		}else {

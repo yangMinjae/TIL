@@ -15,7 +15,7 @@
 		#{content},
 		#{writer},
 		sysdate,
-		null)
+		null,0)
 	</insert>
 	<!-- 게시글 상세 -->
 	<select id="read" parameterType="int" resultType="org.joonzis.domain.BoardVO">
@@ -50,4 +50,20 @@
 		replycnt = replycnt + #{amount}
 		where bno=#{bno}
 	</update>
+	<select id="getLastBno" resultType="int">
+		SELECT MAX(BNO) FROM TBL_BOARD
+	</select>
+	<insert id="insertTest" parameterType="org.joonzis.domain.BoardVO">
+		<selectKey keyProperty="bno" resultType="int" order="BEFORE">
+			select seq_board.nextval from dual
+		</selectKey>
+		INSERT INTO TBL_BOARD VALUES(
+			<!--  seq_board.nextval,-->
+			#{bno},
+			#{title},
+			#{content},
+			#{writer},
+			sysdate,
+			null,0)
+	</insert>
 </mapper>
