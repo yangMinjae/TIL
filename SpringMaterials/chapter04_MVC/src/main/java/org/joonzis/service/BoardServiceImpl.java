@@ -34,9 +34,21 @@ public class BoardServiceImpl implements BoardService{
 	
 	
 	@Override
-	public boolean modify(BoardVO vo) {
+	public boolean modify(BoardVO vo, boolean changed) {
 		log.info("modify..."+vo);
 		int result = mapper.update(vo);
+		int bno = vo.getBno();
+		// 2. 첨부 파일이 존재하면, 파일 테이블에 데이터 등록
+		if(changed) {
+			attachMapper.deleteByBno(bno);
+		}
+		if(vo.getAttachList()!=null&&vo.getAttachList().size()>0) {
+			vo.getAttachList().forEach(attach->{
+				log.warn("attach..."+attach.getFileName());
+				attach.setBno(bno);
+				attachMapper.insert(attach);
+			});
+		}
 		if(result==1) {
 			return true;
 		}else {
@@ -46,13 +58,14 @@ public class BoardServiceImpl implements BoardService{
 	@Transactional
 	@Override
 	public boolean register(BoardVO vo) {
-		log.info("register..."+vo);
+		log.warn("register..."+vo.getContent());
 		// 1. tbl_board 테이블에 게시글 등록
 		int result = mapper.insertTest(vo);
 		int bno = vo.getBno();
 		// 2. 첨부 파일이 존재하면, 파일 테이블에 데이터 등록
 		if(vo.getAttachList()!=null&&vo.getAttachList().size()>0) {
 			vo.getAttachList().forEach(attach->{
+				log.warn("attach..."+attach.getFileName());
 				attach.setBno(bno);
 				attachMapper.insert(attach);
 			});
@@ -89,5 +102,9 @@ public class BoardServiceImpl implements BoardService{
 	public List<BoardAttachVO> getAttachList(int bno) {
 		log.info("getAttachList..."+bno);
 		return attachMapper.findByBno(bno);
+	}
+	@Override
+	public void deleteByBno(int bno) {
+		attachMapper.deleteByBno(bno);
 	}
 }

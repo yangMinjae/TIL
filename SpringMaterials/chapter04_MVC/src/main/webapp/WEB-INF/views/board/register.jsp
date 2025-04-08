@@ -9,11 +9,11 @@
 <body>
    <jsp:include page="../layout/header.jsp"/>   
    
+   <form method="POST" enctype="multipart/form-data">
    <div class="page-header">
       <h1>게시판 등록</h1>
    </div>
    <div class="panel-body">
-      <form method="POST">
          <table>
             <tbody>
                <tr>
@@ -32,7 +32,6 @@
                </tr>
             </tbody>
          </table>
-      </form>
    </div>
    <div class="panel-body-btns">
      <div class="file-container">
@@ -51,11 +50,11 @@
          </div>
        </div>
 	 </div>
-	
       <button type="button" class="btn btn-sec" id="registerBtn">새 게시글 등록</button>
       <button type="button" class="btn btn-fir" id="resetBtn">다시 작성</button>
       <button type="button" class="btn btn-fir" id="indexBtn">목록으로 이동</button>
    </div>
+	</form>
    <jsp:include page="../layout/footer.jsp"/>
    <script type="text/javascript" src="/resources/js/register.js"></script>   
    <script type="text/javascript" src="/resources/js/upload.js"></script>   

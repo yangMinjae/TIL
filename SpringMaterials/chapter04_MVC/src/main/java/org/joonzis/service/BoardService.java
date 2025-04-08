@@ -20,7 +20,7 @@ public interface BoardService {
 	public boolean remove(int bno);
 	
 	// 게시글 수정
-	public boolean modify(BoardVO vo);
+	public boolean modify(BoardVO vo, boolean changed);
 	
 	// 총 레코드 갯수
 	public int getTotal();
@@ -29,4 +29,6 @@ public interface BoardService {
 	
 	// 첨부파일 리스트
 	public List<BoardAttachVO> getAttachList(int bno);
+	
+	public void deleteByBno(int bno);
 }

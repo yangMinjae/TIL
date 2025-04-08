@@ -20,6 +20,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -28,80 +29,16 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @Controller
 public class UploadController {
-	@GetMapping("uploadForm")
-	public String uploadForm() {
-		log.info("upload form");
-		return "uploadForm";
-	}
-	
-	@PostMapping("/uploadFormAction")
-	public void uploadFormPost(MultipartFile[] uploadFile, Model model) {
-		for (MultipartFile multipartFile : uploadFile) {
-			log.info("--------------------------------");
-			log.info("Upload File Name : "+multipartFile.getOriginalFilename());
-			log.info("Upload File size : "+multipartFile.getSize());
-		}
-	}
-	
-	@GetMapping("/uploadAsync")
-	public String uploadAsync() {
-		log.info("uploadAsync");
-		return "uploadAsync";
-	}
-	
-	@PostMapping(value = "uploadAsyncAction",
-			produces = MediaType.APPLICATION_JSON_UTF8_VALUE
-			)
-	public ResponseEntity<List<BoardAttachVO>> uploadAsyncPost(MultipartFile[] uploadFile) {
-		log.info("upload async post...");
-		
-		List<BoardAttachVO> list = new ArrayList<BoardAttachVO>();
-		
-		String uploadFolder ="C:\\upload";
-		// 폴더 만들어주기
-		File uploadPath = new File(uploadFolder,getFolder());
-		log.info("uploadPath : "+uploadPath);
-		
-		if(!uploadPath.exists()) {
-			uploadPath.mkdirs();
-		}
-		for(MultipartFile multipartFile:uploadFile) {
-			// 파일 정보를 담을 AttachFileDTO 객체 생성
-			BoardAttachVO boardAttachVo = new BoardAttachVO();
-			log.info("--------------------------------");
-			log.info("Upload File Name : "+multipartFile.getOriginalFilename());
-			log.info("Upload File size : "+multipartFile.getSize());
-			
-			String uploadFileName = multipartFile.getOriginalFilename();
-			uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf("\\")+1);
-			
-			log.info("only file name : "+uploadFileName);
-			
-			UUID uuid = UUID.randomUUID();
-			uploadFileName = uuid.toString() + "_" + uploadFileName;
-			try {
-				File saveFile = new File(uploadPath, uploadFileName);
-				multipartFile.transferTo(saveFile);
-				
-				boardAttachVo.setUuid(uuid.toString());
-				boardAttachVo.setFileName(multipartFile.getOriginalFilename());
-				boardAttachVo.setUploadPath(getFolder());
-				list.add(boardAttachVo);
-			} catch (Exception e) {
-				log.error(e.getMessage());
-			}
-		}
-		return new ResponseEntity<List<BoardAttachVO>>(list,HttpStatus.OK);
-	}
 	
 	@GetMapping(value = "/download",produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
 	// 파일 다운로드 메소드
 	@ResponseBody
-	public ResponseEntity<Resource> downloadFile(String fileName){
+	public ResponseEntity<Resource> downloadFile( @RequestParam("fileName") String fileName){
 		log.info("download file..."+fileName);
 		Resource resource = new FileSystemResource("C:\\upload\\"+fileName);
 		log.info("resource..."+resource);
 		String resourceName = resource.getFilename();
+		resourceName=resourceName.substring(resourceName.indexOf("_")+1);
 		HttpHeaders headers = new HttpHeaders();
 		
 		try {

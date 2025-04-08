@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +14,7 @@
       <h1>게시글 수정&삭제</h1>
    </div>
    <div class="panel-body">
-      <form method="POST">
+      <form method="POST" enctype="multipart/form-data">
          <table>
             <tbody>
                <tr>
@@ -38,12 +39,34 @@
          </table>
          <input type="hidden" name="pageNum" value="${cri.pageNum }" >
          <input type="hidden" name="amount" value="${cri.amount }" >
-      </form>
+   	</div>
+    <div class="file-container">
+   	  <div class="file-header">
+         <div class="file-title">
+           <a>파일 첨부</a>
+         </div>
+   	   </div>
+   	   <div class="file-body">
+         <div class="uploadDiv">
+         	<button id="chooseFile" type="button">파일 선택</button>
+            <input type="file" name="uploadFile" multiple="multiple" hidden>
+         </div>
+
+         <div class="uploadResult">
+           <ul></ul>
+         </div>
+      </div>
    </div>
+      </form>
    <div class="panel-body-btns">
       <button type="button" class="btn btn-sec" id="modifyBtn">수정</button>
       <button type="button" class="btn btn-thi" id="removeBtn">삭제</button>
       <button type="button" class="btn btn-fir" id="indexBtn">목록으로 이동</button>
+   </div>
+   <div>
+   	<c:forEach var="item" items="${attachList }">
+   		<div class="attachItem" hidden uuid="${item.uuid }" uploadPath="${item.uploadPath }" fileName="${item.fileName }"></div>
+   	</c:forEach>
    </div>
    	<div id="page-data" 
      pageNum="${cri.pageNum}" 

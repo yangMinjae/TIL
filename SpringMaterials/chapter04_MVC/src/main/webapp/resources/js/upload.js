@@ -1,30 +1,12 @@
 const regex = new RegExp("(.*?)\.(exe|sh|zip|alz)$");
 const MAX_SIZE = 5242880; //5MB
 
-const fileInput = document.querySelector('input[type="file"]');
-fileInput.addEventListener('change',()=>{
-  const formData = new FormData();
-  const inputFile = document.querySelector('input[type="file"]');
-  const files = inputFile.files;
-  for(let i = 0; i<files.length;i++){
-    if(!checkExtension(files[i].name,files[i].size)){
-      return false;
-    }
-    formData.append("uploadFile", files[i]);
-  }
-  fetch(`/uploadAsyncAction`,{
-    method:'post',
-    body:formData
-  })
-  .then(response => response.json())
-  .then(data =>{
-    console.log(data);
+let fileInput = document.querySelector('input[type="file"]');
+let uploadDiv = document.querySelector('.uploadDiv');
+let cloneObj = uploadDiv.firstElementChild.cloneNode(true);
+let uploadResult = document.querySelector('.uploadResult ul');
+giveListener(fileInput);
 
-    uploadDiv.replaceChild(cloneObj.cloneNode(true),uploadDiv.firstElementChild);
-    showUploadedFile(data);
-  })
-  .catch(err=>console.log(err));
-})
 
 function checkExtension(fileName, fileSize){
 	if(fileSize>=MAX_SIZE){
@@ -38,43 +20,69 @@ function checkExtension(fileName, fileSize){
   return true;
 }
 
-let uploadDiv = document.querySelector('.uploadDiv');
-let cloneObj = uploadDiv.firstElementChild.cloneNode(true);
-
-console.log(cloneObj)
-
-let uploadResult = document.querySelector('.uploadResult ul');
-function showUploadedFile(uploadResultArr){
-  if(!uploadResultArr||uploadResultArr.length==0){
-    return;
-  }
-  let str = '';
-  uploadResultArr.forEach(file => {
-    let fileCallPath = encodeURIComponent(file.uploadPath+'/'+file.uuid+'_'+file.fileName);
-    str+=`<li path="${file.uploadPath}>" uuid="${file.uuid}" fileName="${file.fileName}"`;
-    str+=`<a>${file.fileName}</a>`;
-    str+=`<span data-file=${fileCallPath}> X </span>`;
-    str+=`</li>`;
-  });
-  uploadResult.innerHTML=str;
-  uploadResult.addEventListener('click',function(e){
-    if(e.target.tagName==='SPAN'){
-      let targetFile = e.target.getAttribute('data-file');
-
-      fetch(`/deleteFile`,{
-        method:'post',
-        body:targetFile,
-        headers:{
-          'Content-Type':'text/plain'
-        }
-      })
-      .then(response=>response.text())
-      .then(result=>{
-        alert(result);
-        let targetLi = e.target.closest('li');
-        targetLi.remove();
-      })
-      .catch(err=>console.log());
+function giveListener(enitity){
+	enitity.addEventListener('change',()=>{
+    const inputFile = document.querySelector('input[type="file"]');
+    const files = inputFile.files;
+    let blindFlag = false;
+    for(let i = 0; i<files.length;i++){
+      if(!checkExtension(files[i].name,files[i].size)){
+        blindFlag=true;
+      }
+    }
+    showUploadFile(files);
+    if(blindFlag){
+      uploadDiv.replaceChild(cloneObj.cloneNode(true),uploadDiv.firstElementChild);
+      uploadResult.innerHTML='';
+      giveListener(document.querySelector('input[type="file"]'));
     }
   });
 }
+
+function showUploadFile(fileArr){
+	fileArr=Array.from(fileArr);
+  if(!fileArr||fileArr.size==0){
+    return;
+  }
+  let str = '';
+  fileArr.forEach(file=>{
+    str+=`<li>${file.name}`;
+    str+=`</li>`;
+  })
+  uploadResult.innerHTML=str;
+}
+// 사용하지 않음. 참고용
+function showUploadedFile(uploadResultArr){
+	  if(!uploadResultArr||uploadResultArr.length==0){
+	    return;
+	  }
+	  let str = '';
+	  uploadResultArr.forEach(file => {
+	    let fileCallPath = encodeURIComponent(file.uploadPath+'/'+file.uuid+'_'+file.fileName);
+	    str+=`<li path="${file.uploadPath}" uuid="${file.uuid}" fileName="${file.fileName}"`;
+	    str+=`<a>${file.fileName}</a>`;
+	    str+=`<span data-file=${fileCallPath}> X </span>`;
+	    str+=`</li>`;
+	  });
+	  uploadResult.innerHTML=str;
+	  uploadResult.addEventListener('click',function(e){
+	    if(e.target.tagName==='SPAN'){
+	      let targetFile = e.target.getAttribute('data-file');
+
+	      fetch(`/deleteFile`,{
+	        method:'post',
+	        body:targetFile,
+	        headers:{
+	          'Content-Type':'text/plain'
+	        }
+	      })
+	      .then(response=>response.text())
+	      .then(result=>{
+	        alert(result);
+	        let targetLi = e.target.closest('li');
+	        targetLi.remove();
+	      })
+	      .catch(err=>console.log());
+	    }
+	  });
+	}

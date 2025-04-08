@@ -12,4 +12,7 @@
 	<select id="findByBno" parameterType="int" resultType="org.joonzis.domain.BoardAttachVO">
 		SELECT * FROM TBL_ATTACH WHERE BNO=#{bno}
 	</select>
+	<delete id="deleteByBno" parameterType="int">
+		DELETE FROM TBL_ATTACH WHERE bno=#{bno}
+	</delete>
 </mapper>

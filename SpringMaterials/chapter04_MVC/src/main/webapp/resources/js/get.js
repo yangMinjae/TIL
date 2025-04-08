@@ -180,5 +180,15 @@ function removeReply() {
 
 fetch(`/board/getAttachList/${f.bno.value}`)
 .then(response=>response.json())
-.then(result=>console.log(result))
+.then(result=>showUploadFiles(result))
 .catch(err=>console.log(err));
+const resultUl = document.querySelector(".uploadResult ul");
+function showUploadFiles(resultArr){
+	console.log(resultArr);
+	let str = '';
+	resultArr.forEach(result=>{
+		let fileCallPath = encodeURIComponent(result.uploadPath+'/'+result.uuid+'_'+result.fileName);
+		str+=`<li><a href="/download?fileName=${fileCallPath}">${result.fileName}</a></li>`
+	})
+	resultUl.innerHTML=str;
+}

@@ -35,26 +35,7 @@ function register(){
     f.content.focus();
     return;
   }
-  let uploadResultList=document.querySelectorAll(".uploadResult li");
-  let path;
-  let uuid;
-  let fileName;
-  let str='';
-  uploadResultList.forEach((li,index)=>{
-    path=li.getAttribute('path');
-    uuid=li.getAttribute('uuid');
-    fileName=li.getAttribute('fileName');
-    
-    str +=`<input type="hidden" name="attachList[${index}].fileName" value="${fileName}"/>`;
-    str +=`<input type="hidden" name="attachList[${index}].uuid" value="${uuid}"/>`;
-    str +=`<input type="hidden" name="attachList[${index}].uploadPath" value="${path}"/>`;
-  });
-  //f.innerHTML +=str;
-  f.insertAdjacentHTML('beforeend',str);
-  // 마지막에 HTML데이터 문자열로 삽입
-
   f.action="/board/register";
-  console.log(f.title.value);
   f.submit();
 }
 function goIndex(){
