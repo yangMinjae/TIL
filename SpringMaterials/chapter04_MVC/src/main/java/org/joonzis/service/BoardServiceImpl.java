@@ -2,6 +2,7 @@ package org.joonzis.service;
 
 import java.util.List;
 
+import org.joonzis.domain.BoardAttachVO;
 import org.joonzis.domain.BoardVO;
 import org.joonzis.domain.Criteria;
 import org.joonzis.mapper.BoardAttachMapper;
@@ -82,5 +83,11 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public List<BoardVO> getListByPage(Criteria cri) {
 		return mapper.getListByPage(cri);
+	}
+	
+	@Override
+	public List<BoardAttachVO> getAttachList(int bno) {
+		log.info("getAttachList..."+bno);
+		return attachMapper.findByBno(bno);
 	}
 }

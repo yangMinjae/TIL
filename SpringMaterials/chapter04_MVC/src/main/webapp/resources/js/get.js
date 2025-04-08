@@ -175,3 +175,10 @@ function removeReply() {
 		})
 	}
 }
+
+//-------------------------첨부 파일 스크립트-----------------------
+
+fetch(`/board/getAttachList/${f.bno.value}`)
+.then(response=>response.json())
+.then(result=>console.log(result))
+.catch(err=>console.log(err));

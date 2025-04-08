@@ -28,7 +28,7 @@ uploadDiv.replaceChild(cloneObj.cloneNode(true), uploadDiv.firstElementChild);
 
 - 리턴 값을 HTTP 응답 본문(body)에 그대로 담겠다는 의미
 - `@RestController`에서는 `@ResponseBody` 생략 가능
-
+- 이 어노테이션을 쓰면, 비동기로 동작 가능
 ---
 
 ## 4. 파일 다운로드 컨트롤러

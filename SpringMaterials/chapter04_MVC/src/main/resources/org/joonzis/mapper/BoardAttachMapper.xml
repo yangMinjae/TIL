@@ -10,6 +10,6 @@
 		DELETE FROM TBL_ATTACH WHERE uuid=#{uuid}
 	</delete>
 	<select id="findByBno" parameterType="int" resultType="org.joonzis.domain.BoardAttachVO">
-		SELECT * FROM TBAL_ATTACH WHERE BNO=#{bno}
+		SELECT * FROM TBL_ATTACH WHERE BNO=#{bno}
 	</select>
 </mapper>

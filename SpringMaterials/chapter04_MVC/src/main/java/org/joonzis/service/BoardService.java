@@ -2,6 +2,7 @@ package org.joonzis.service;
 
 import java.util.List;
 
+import org.joonzis.domain.BoardAttachVO;
 import org.joonzis.domain.BoardVO;
 import org.joonzis.domain.Criteria;
 
@@ -25,4 +26,7 @@ public interface BoardService {
 	public int getTotal();
 	
 	public List<BoardVO> getListByPage(Criteria cri);
+	
+	// 첨부파일 리스트
+	public List<BoardAttachVO> getAttachList(int bno);
 }
