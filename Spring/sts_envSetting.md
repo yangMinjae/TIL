@@ -114,7 +114,7 @@
 ## 10. 파일 업 다운 기능 구현시 추가 설정
 ### 1.web.xml
 1)web-app태그의 version 속성 3.1로 변경
-2)web-app태그의 xsischmaLocation의 속성 "http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_3_1.xsd"
+2)web-app태그의 xsi:schemaLocation의 속성 "http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_3_1.xsd"
 	->두번째 url의 web-app_2_5_ -> web-app_3_1_
 
 3)servlet 태그 안, load-on-startup 태그 밑에 다음 복붙

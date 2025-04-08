@@ -22,3 +22,9 @@ java -jar lombok.jar
 ```
 워크스페이스\.metadata\.sts\content
 ```
+
+## 5. spring mvc 만들기
+1) new를 통해 spring legacy project 클릭
+2) 우측하단 파란색 configure templates 클릭
+3) 3개 메뉴중 첫번째, 세번째 삭제
+4) 안나오면 .metadata\.plugins\org.springsource.ide.eclipse.commons.content.core 경로에 https-context.xml 넣기
