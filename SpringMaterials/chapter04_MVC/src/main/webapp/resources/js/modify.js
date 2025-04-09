@@ -23,6 +23,8 @@ let initFlag = true;
 let attachItems = document.querySelectorAll('.attachItem');
 let uploadDiv = document.querySelector('.uploadDiv');
 let cloneObj = uploadDiv.children[1].cloneNode(true);
+let changed=f.changed;
+console.log(changed);
 document.querySelectorAll('.panel-body-btns button').forEach(btn=>{
   btn.addEventListener('click',(e)=>{
     if(e.currentTarget.getAttribute("id")=="modifyBtn"){
@@ -35,7 +37,6 @@ document.querySelectorAll('.panel-body-btns button').forEach(btn=>{
   })
 })
 function modify(){
-  console.log("으아아가");
   if(!f.title.value){
     alert("제목을 입력해주세요");
     f.title.focus();
@@ -45,6 +46,9 @@ function modify(){
     alert("내용을 입력해주세요");
     f.content.focus();
     return;
+  }
+  if(resultUl.children.length===0){
+    changed.value="true";
   }
   f.action="/board/modify";
   f.submit();
@@ -94,7 +98,6 @@ function giveListener(enitity){
     let blindFlag = false;
     for(let i = 0; i<files.length;i++){
       if(!checkExtension(files[i].name,files[i].size)){
-        console.log(files[i].name);
         blindFlag=true;
       }
     }

@@ -96,9 +96,11 @@ public class BoardController {
 	
 	// 게시글 수정
 	@PostMapping("/modify")
-	public String modify(BoardVO vo, Criteria cri, MultipartFile[] uploadFile , @RequestParam("changed")boolean changed, RedirectAttributes rttr) {
+	public String modify(BoardVO vo, Criteria cri, MultipartFile[] uploadFile , @RequestParam(required = false)boolean changed, RedirectAttributes rttr) {
 		log.info("modify..."+vo);	
+
 		if(!uploadFile[0].isEmpty()) {
+			changed= true;
 			List<BoardAttachVO> list=handleMultipart(uploadFile);
 			vo.setAttachList(list);
 		}
@@ -111,7 +113,7 @@ public class BoardController {
 	@PostMapping("/remove")
 	public String remove(@RequestParam("bno") int bno) {
 		log.info("remove..."+bno);
-		boolean result = service.remove(bno);
+		service.remove(bno);
 		return "redirect:/board/list";
 	}
 	

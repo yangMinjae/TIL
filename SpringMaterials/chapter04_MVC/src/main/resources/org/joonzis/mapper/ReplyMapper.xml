@@ -28,4 +28,8 @@
 	<delete id="remove" parameterType="int">
 		DELETE FROM TBL_REPLY WHERE rno=#{rno}
 	</delete>
+	
+	<delete id="removeByBno" parameterType="int">
+		DELETE FROM TBL_REPLY WHERE bno=#{bno}
+	</delete>
 </mapper>

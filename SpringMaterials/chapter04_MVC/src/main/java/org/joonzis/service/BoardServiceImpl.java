@@ -1,5 +1,8 @@
 package org.joonzis.service;
 
+import java.io.File;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import org.joonzis.domain.BoardAttachVO;
@@ -7,6 +10,7 @@ import org.joonzis.domain.BoardVO;
 import org.joonzis.domain.Criteria;
 import org.joonzis.mapper.BoardAttachMapper;
 import org.joonzis.mapper.BoardMapper;
+import org.joonzis.mapper.ReplyMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,6 +24,8 @@ public class BoardServiceImpl implements BoardService{
 	private BoardMapper mapper;
 	@Autowired
 	private BoardAttachMapper attachMapper;
+	@Autowired
+	private ReplyMapper replyMapper;
 	@Override
 	public List<BoardVO> getList() {
 		log.info("getList...");
@@ -32,15 +38,30 @@ public class BoardServiceImpl implements BoardService{
 		return mapper.read(bno);
 	}
 	
-	
+	@Transactional
 	@Override
 	public boolean modify(BoardVO vo, boolean changed) {
 		log.info("modify..."+vo);
 		int result = mapper.update(vo);
 		int bno = vo.getBno();
-		// 2. 첨부 파일이 존재하면, 파일 테이블에 데이터 등록
-		if(changed) {
-			attachMapper.deleteByBno(bno);
+		if(changed) {	// 파일시스템, db에서 파일 삭제
+			List<BoardAttachVO> list = attachMapper.findByBno(bno);
+			for (BoardAttachVO attach : list) {
+				String path = "C:\\upload\\"+attach.getUploadPath()+"\\"+attach.getUuid()+"_"+attach.getFileName();
+				File file = new File(path);
+				if(file.exists()) {
+					file.delete();
+				}else {
+					log.warn("<!!파일이 존재하지 않습니다.!!>");
+				}
+				//--------------------------------------------
+				deleteEmptyFolder(attach.getUploadPath());		
+				//--------------------------------------------
+			}
+			int a =attachMapper.deleteByBno(bno);	//db 삭제
+			if(a==0) {
+				log.warn("db에서 삭제된 파일이 없습니다.");
+			}
 		}
 		if(vo.getAttachList()!=null&&vo.getAttachList().size()>0) {
 			vo.getAttachList().forEach(attach->{
@@ -76,16 +97,25 @@ public class BoardServiceImpl implements BoardService{
 			return false;			
 		}
 	}
-	
+	@Transactional
 	@Override
-	public boolean remove(int bno) {
+	public void remove(int bno) {
 		log.info("remove..."+bno);
-		int result = mapper.delete(bno);
-		if(result==1) {
-			return true;
-		}else {
-			return false;			
+		replyMapper.removeByBno(bno);
+		List<BoardAttachVO> list = attachMapper.findByBno(bno);
+		for (BoardAttachVO attach : list) {
+			String path = "C:\\upload\\"+attach.getUploadPath()+"\\"+attach.getUuid()+"_"+attach.getFileName();
+			File file = new File(path);
+			if(file.exists()) {
+				file.delete();
+			}else {
+				log.warn("<!!파일이 존재하지 않습니다.!!>");
+			}
+			deleteEmptyFolder(attach.getUploadPath());
 		}
+		attachMapper.deleteByBno(bno);
+		mapper.delete(bno);
+
 	}
 	
 	@Override
@@ -106,5 +136,21 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public void deleteByBno(int bno) {
 		attachMapper.deleteByBno(bno);
+	}
+	private void deleteEmptyFolder(String uploadPath) {
+		String[] folderDepth = uploadPath.split("\\\\");
+		String  rootFolder = "C:\\upload\\";
+		String fullPath = rootFolder+uploadPath;
+		String currentPath=new String(fullPath);
+		File file=null;
+		for (int i = 0; i < folderDepth.length; i++) {
+			file=new File(currentPath);
+			if(file.exists()) {
+				if(!file.delete()) {
+					log.warn("폴더 내부에 파일 존재");
+				}
+			}
+			currentPath=currentPath.substring(0,currentPath.lastIndexOf("\\"));
+		}
 	}
 }

@@ -15,4 +15,6 @@ public interface ReplyMapper {
 	public int remove(int rno);
 	// 댓글 수정- reply, updatedate, rno
 	public int update(ReplyVO vo);
+	
+	public void removeByBno(int bno);
 }

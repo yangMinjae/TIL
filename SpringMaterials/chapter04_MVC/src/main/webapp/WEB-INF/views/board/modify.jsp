@@ -39,6 +39,7 @@
          </table>
          <input type="hidden" name="pageNum" value="${cri.pageNum }" >
          <input type="hidden" name="amount" value="${cri.amount }" >
+         <input type="hidden" name="changed" value="false">
    	</div>
     <div class="file-container">
    	  <div class="file-header">
