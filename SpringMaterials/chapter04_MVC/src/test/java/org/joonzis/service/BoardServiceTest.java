@@ -42,8 +42,8 @@ public class BoardServiceTest {
 	}
 	//@Test
 	public void getDelete() {
-		boolean result = service.remove(7);
-		log.info("\n=========결과 : "+result+"==========");
+		//boolean result = service.remove(7);
+		//log.info("\n=========결과 : "+result+"==========");
 	}
 	@Test
 	public void getUpdate() {
