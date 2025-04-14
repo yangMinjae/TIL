@@ -18,3 +18,15 @@ function setStorageData(pageNum,amount){
 function getStorageData(){
   return JSON.parse(localStorage.getItem('page_data'));
 }
+
+let principal;
+async function getPrincipal(){
+  try{
+    const response = await fetch('/api/currentUser.json');
+    const userPrincipal = await response.json();
+    principal = userPrincipal.principal;
+  } catch(e){
+    console.error('에러 : ',e)
+  }
+}
+getPrincipal();

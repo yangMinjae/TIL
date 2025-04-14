@@ -56,6 +56,7 @@ function showList(){
 		document.querySelectorAll(".panel-footer-body li").forEach(
 			a=>{
 				a.addEventListener('click',(e)=>{
+					//if(principal.username==)
 					modifyModalPage(e.currentTarget);
 				})
 			}
@@ -96,7 +97,7 @@ function registerModalPage(){
 	regReplyModalStyle();
 	// input 내용 초기화
 	inputReply.value='';
-	inputReplyer.value='';
+	inputReplyer.value=principal.username;
 }
 function regReplyModalStyle(){
 	modifyReplyBtn.classList.add('hide');
