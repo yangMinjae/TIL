@@ -18,8 +18,8 @@
 				<a href="mainPage">MemberBoard</a>
 			</div>
 			<div class="header-member">
-				<button type="button" class="header-btn" onclick="loginPage()">로그인</button>
-				<button type="button" class="header-btn" onclick="joinPage()">회원가입</button>
+				<button type="button" id="signIn" class="header-btn" onclick="loginPage()">로그인</button>
+				<button type="button" id="signUp" class="header-btn" onclick="joinPage()">회원가입</button>
 			</div>
 			<div class="menu">
 				<a href="boardList">게시판</a>

@@ -129,12 +129,8 @@
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-sec" id="addReplyBtn">등록</button>
-            <sec:authorize access="isAuthenticated()">
-            	<c:if test="${pinfo.username eq vo.writer }">
-         	    	<button type="button" class="btn btn-thi" id="modifyReplyBtn">수정</button>
-            		<button type="button" class="btn btn-fou" id="removeReplyBtn">삭제</button>
-         		</c:if>
-            </sec:authorize>
+         	<button type="button" class="btn btn-thi" id="modifyReplyBtn">수정</button>
+            <button type="button" class="btn btn-fou" id="removeReplyBtn">삭제</button>
             <button type="button" class="btn btn-fir" id="closeModalBtn">취소</button>
          </div>
       </div>

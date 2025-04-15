@@ -34,6 +34,7 @@ document.querySelectorAll('button').forEach(btn=>{
 	})
 // -------------------------------댓글 관련 스크립트----------------------------------
 const rs = replyService;
+let isEqual=false;
 // 댓글 목록 가져오기
 showList();
 function showList(){
@@ -56,8 +57,17 @@ function showList(){
 		document.querySelectorAll(".panel-footer-body li").forEach(
 			a=>{
 				a.addEventListener('click',(e)=>{
-					//if(principal.username==)
-					modifyModalPage(e.currentTarget);
+					const li = e.currentTarget;
+					const strongText = li.querySelector("strong").textContent;
+					console.log(strongText);
+					console.log("username : "+principal.username);
+					if(principal!="anonymousUser"&&userPrincipal.authenticated){
+						if(strongText==principal.username){
+							isEqual=true;
+						}
+						console.log("isEqual : "+isEqual);
+						modifyModalPage(e.currentTarget);	
+					}
 				})
 			}
 		)
@@ -89,6 +99,7 @@ function openModal(){
 	modal.style.display="block";
 }
 function closeModal(){
+	isEqual=false;
 	modal.style.display="none";
 }
 function registerModalPage(){
@@ -100,7 +111,7 @@ function registerModalPage(){
 	inputReplyer.value=principal.username;
 }
 function regReplyModalStyle(){
-	modifyReplyBtn.classList.add('hide');
+	modifyReplyBtn.classList.add('hide');		
 	removeReplyBtn.classList.add('hide');
 	inputReplydate.closest("div").classList.add('hide');
 	inputReplyer.removeAttribute('readonly');
@@ -140,8 +151,12 @@ function modifyModalPage(li){
 }
 function modifyReplyModalStyle(){
 	inputReplydate.closest("div").classList.remove('hide');
-	modifyReplyBtn.classList.remove('hide');
-	removeReplyBtn.classList.remove('hide');
+	modifyReplyBtn.classList.add('hide');				
+	removeReplyBtn.classList.add('hide');		
+	if(isEqual){
+		modifyReplyBtn.classList.remove('hide');				
+		removeReplyBtn.classList.remove('hide');			
+	}
 	addReplyBtn.classList.add('hide');
 	inputReplyer.setAttribute('readonly',true);
 	inputReplydate.setAttribute('readonly',true);

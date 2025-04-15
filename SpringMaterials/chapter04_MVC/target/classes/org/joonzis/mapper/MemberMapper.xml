@@ -27,4 +27,7 @@
 		WHERE 
 			mem.userId=#{userId}
 	</select>
+	<select id="getTupleById" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM TBL_MEMBER WHERE USERID=#{userId}
+	</select>
 </mapper>
