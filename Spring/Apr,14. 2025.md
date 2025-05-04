@@ -294,7 +294,7 @@ public class CustomUserDetailService implements UserDetailsService {
 		- 사용자가 /customLogin페이지에 로그인 하면 username과 password가 Spring Security에 전달
 2. CustomUserDetailService.loadUserByUsername()호출
 3. 2번의 함수가 mapper 인터페이스의 read 메서드 호출
-4. read를 통해 받은 vo를 통해 CustomUser 생성
+4. read를 통해 받은 vo를 통해 CustomUser 생성.
 5. 로그인정보가 session에 저장되고 jstl의 sec 태그를 통해 접근가능하다.
 
 ---
