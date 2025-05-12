@@ -59,9 +59,11 @@
 
 - `xsi:schemaLocation` 속성에서 아래와 같이 수정:  
   ```xml
-  http://www.springframework.org/schema/security/spring-security-5.0.xd http://www.springframework.org/schema/security/spring-security.xsd
+  http://www.springframework.org/schema/security/spring-security-5.0.xd 
+  ->
+  http://www.springframework.org/schema/security/spring-security.xsd
   ```
-
+- 두번째 url에서 '-5.0'을 지워준다.
 ---
 
 ### 3. `web.xml` 설정

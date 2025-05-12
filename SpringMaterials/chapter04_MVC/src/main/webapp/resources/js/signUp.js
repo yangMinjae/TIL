@@ -80,6 +80,7 @@ submit.addEventListener('click',()=>{
       alert("아이디 중복 확인을 해주세요");
       return;
     }
+    f.submit;
 })
 
 

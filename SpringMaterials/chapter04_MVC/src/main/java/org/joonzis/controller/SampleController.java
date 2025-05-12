@@ -63,4 +63,5 @@ public class SampleController {
 	public String validateId(@RequestBody String userId){
 		return service.getTupleById(userId)==0? "Available":"Taken";
 	}
+	
 }
