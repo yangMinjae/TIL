@@ -270,6 +270,10 @@ public class CustomUserDetailService implements UserDetailsService {
 
 ### 8-4. JSTL에서 sec 태그 사용
 
+- 다음 태그 추가
+```jsp
+<%@ taglib uri = "http://www.springframework.org/security/tags" prefix = "sec" %>
+```
 #### 1) 로그인 정보 출력
 
 ```jsp
