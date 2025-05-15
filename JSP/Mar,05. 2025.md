@@ -6,7 +6,7 @@ Eclipse에서 JSP 파일을 UTF-8 인코딩으로 설정하는 방법:
 1. **Windows** → **Preferences** 이동
 2. 검색창에 **"encod"** 입력 후 아래 설정 변경:
    - **Content Types**, **Workspace**, **CSS Files**, **HTML Files**, **JSP Files** → UTF-8로 설정
-3. **Content-Types**는 직접 입력 가능
+3. **Content-Types**는 직접 입력 가능.
 
 ## 🚀 톰캣 주소 할당 방법
 1. **Servers** 탭에서 **Tomcat** 더블 클릭.
