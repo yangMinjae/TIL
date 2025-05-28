@@ -113,7 +113,7 @@ public ResponseEntity<Resource> downloadFile(String fileName) {
 </insert>
 ```
 
-- `mapper.xml`에서 VO를 통해 `bno`가 안 들어온 상황
+- `mapper.xml`에서 VO를 통해 `bno`가 안 들어온 상황.
 - `selectKey`로 insert 전에 시퀀스 실행
 - `keyProperty`: parameterType으로 받은 VO의 해당 필드(`bno`)에 쿼리 결과 저장
 - 서비스에서는 이후 `vo.getBno()` 가능
