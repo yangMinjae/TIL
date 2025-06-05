@@ -97,3 +97,13 @@ npm install
 - 따라서 `package.json`의 정보를 기반으로 모든 라이브러리 재설치
 
 <br>
+
+## 6. 초기 설정
+- index.js에서 아래와 같이 <React.StrictMode> 주석 처리 -> 주석 처리를 해야 콘솔이 한번씩 찍힌다.
+```
+root.render(
+  // <React.StrictMode>
+    <App />
+  // </React.StrictMode>
+);
+```

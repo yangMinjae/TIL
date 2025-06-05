@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 const Counter = () => {
   // let count = 0;
   const handlePrintCount = ()=>{
@@ -8,6 +8,13 @@ const Counter = () => {
   }
 
   const[count, setCount] = useState(0);
+
+  useEffect(()=>{
+    console.log('렌더링 완료');
+    return () =>{
+      console.log('clean up')
+    }
+  })
   return (
     <div>
       <p>{count}번 클릭!!</p>
