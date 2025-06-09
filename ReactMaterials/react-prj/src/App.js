@@ -1,12 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
-import CounterTest from './components/CounterTest';
-import RefTest from './components/RefTest';
+import LoginPage from './components/test/LoginPage';
+import ShopList from './components/test/ShopList';
 
 function App() {
   return (
-    <RefTest/>
+    <ShopList/>
   );
 }
 
