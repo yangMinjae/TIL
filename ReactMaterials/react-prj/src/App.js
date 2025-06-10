@@ -1,10 +1,17 @@
+import { createContext, useState } from 'react';
 import './App.css';
-import LoginPage from './components/test/LoginPage';
-import ShopList from './components/test/ShopList';
+import Parent from './components/Parent';
 
+export const MyContext = createContext();
 function App() {
+  let str = 'hello';
+  const [number, setNumber] = useState(0);
   return (
-    <ShopList/>
+    <div>
+      <MyContext.Provider value={{str, number, setNumber, str1:'하하하'}}>
+        <Parent/>
+      </MyContext.Provider>
+    </div>
   );
 }
 
