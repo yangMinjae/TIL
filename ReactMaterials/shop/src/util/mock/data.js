@@ -9,7 +9,7 @@ let data = [
     },
     {
         id : 2,
-        title : "다섯가지 야채 새우 볶음밥",
+        title : "다섯가지 야채 새우 볶음밥???????",
         content : "새우, 닭가슴살, 야채 듬뿍",
         price : 35400,
         main : "5vege.jpg",

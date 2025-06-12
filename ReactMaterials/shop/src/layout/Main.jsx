@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ProductList from '../components/product/product/ProductList';
+import ProductList from '../components/product/ProductList';
 
 const Wrapper = styled.div``;
 const MainBG = styled.div`

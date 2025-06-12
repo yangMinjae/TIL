@@ -19,7 +19,7 @@ const DetailHeadArea = styled.div`
 const DetailMainImg = styled.div`
     flex : 1;
     height : 500px;
-    background-image: url(/images/product/${props => props.image});
+    background-image: url(/images/product/${props => props.$image});
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -79,7 +79,7 @@ const BuyButton = styled.button`
 const DetailHead = ({data}) => {
   return (
     <DetailHeadArea>
-      <DetailMainImg image={data.main}/>
+      <DetailMainImg $image={data.main}/>
       <Description>
         <Title>{data.title}</Title>
         <PriceTitle>

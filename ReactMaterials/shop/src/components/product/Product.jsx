@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import formatKoreanCurrency from '../../../util/display/display';
+import formatKoreanCurrency from '../../util/display/display';
 
 const Item = styled.div`
     color: black;

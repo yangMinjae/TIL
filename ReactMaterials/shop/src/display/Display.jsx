@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../layout/Header';
 import styled from 'styled-components';
 import Main from '../layout/Main';
 import { Routes, Route } from 'react-router-dom';
 import data from '../util/mock/data';
 import Detail from '../components/detail/Detail';
+import axios from 'axios';
 
 const Container = styled.div`
     width: 100%;
@@ -19,7 +20,7 @@ const HeaderArea = styled.div`
     background-color : white;
     position : sticky;
     top : 0;
-      z-index : 9999;
+    z-index : 9999;
 `;
 const Body = styled.div`
     width: 100%;
@@ -29,7 +30,17 @@ const Body = styled.div`
 const Display = () => {
 
   const [products, setProducts] = useState(data);
-  
+
+  useEffect(()=>{
+    run3();
+  },[]);
+
+  const run3 = ()=>{
+    axios.get('/api/products')
+    .then(response=>
+      setProducts(response.data)
+    );
+  }
   return (
   <Container>
     <HeaderArea>
