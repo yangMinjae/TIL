@@ -91,8 +91,20 @@ const DetailHead = ({data}) => {
       price : data.price,
       quantity : 1
     };
-    dispatch(addItem(obj));
+    console.log(cart.findIndex(ele=>ele.id==obj.id));
+    if(cart.findIndex(ele=>ele.id==obj.id)!=-1){
+      console.log('???');
+      // eslint-disable-next-line no-restricted-globals
+      if(confirm('이미 추가된 아이템입니다. 하나 더 담으시겠습니까?')){
+        dispatch(addItem(obj));
+      }
+    }else{
+      dispatch(addItem(obj));
+    }
 
+    // 1. 메세지 없이 개수 증가
+    // 2. 장바구니에 이미 담겨져있다는 메세지를 알리고, 개수 증가
+    // 3. 장바구니에 이미 담겨져있다는 메세지를 알리고, 담지x
 
     // eslint-disable-next-line no-restricted-globals
     if(confirm('장바구니에 추가하였습니다. 장바구니로 이동하시겠습니까?'))
