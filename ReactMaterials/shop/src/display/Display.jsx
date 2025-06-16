@@ -3,9 +3,10 @@ import Header from '../layout/Header';
 import styled from 'styled-components';
 import Main from '../layout/Main';
 import { Routes, Route } from 'react-router-dom';
-import data from '../util/mock/data';
+
 import Detail from '../components/detail/Detail';
 import axios from 'axios';
+import Cart from '../components/cart/Cart';
 
 const Container = styled.div`
     width: 100%;
@@ -29,7 +30,7 @@ const Body = styled.div`
 
 const Display = () => {
 
-  const [products, setProducts] = useState(data);
+  const [products, setProducts] = useState([]);
 
   useEffect(()=>{
     run3();
@@ -52,6 +53,9 @@ const Display = () => {
         <Route 
           path='/detail/:pId'
           element = {<Detail data={products}/>}/>
+        <Route 
+          path='/cart'
+          element = {<Cart/>}/>
       </Routes>
     </Body>
   </Container>

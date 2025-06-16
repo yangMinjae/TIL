@@ -21,11 +21,25 @@ public class ReactTest {
 	        new ProductVO(3, "코코넛 닭가슴살 커리", "코코넛 커리로 특별하게", 39200, "coconut.jpg", "coconut-info.jpg"),
 	        new ProductVO(4, "통단호박 크랜베리 콕콕 샐러드", "단호박 고유의 맛을 그대로", 22200, "cranberry.jpg", "cranberry-info.jpg"),
 	        new ProductVO(5, "갈비맛 빅볼 닭가슴살", "균형잡힌 구성으로 제대로 된 한끼!", 35400, "galbi.jpg", "galbi-info.jpg"),
-	        new ProductVO(6, "갈릭 케이준 치킨 샐러드", "with 홀그레인 머스타드 드레싱", 32400, "garlic.jpg", "garlic-info.jpg")
+	        new ProductVO(6, "갈릭 케이준 치킨 샐러드", "with 홀그레인 머스타드 드레싱", 32400, "garlic.jpg", "garlic-info.jpg"),
+	        new ProductVO(7, "갈릭 케이준 치킨 샐러드", "with 홀그레인 머스타드 드레싱", 32400, "garlic.jpg", "garlic-info.jpg"),
+	        new ProductVO(8, "갈릭 케이준 치킨 샐러드", "with 홀그레인 머스타드 드레싱", 32400, "garlic.jpg", "garlic-info.jpg"),
+	        new ProductVO(9, "갈릭 케이준 치킨 샐러드", "with 홀그레인 머스타드 드레싱", 32400, "garlic.jpg", "garlic-info.jpg"),
+	        new ProductVO(10, "갈릭 케이준 치킨 샐러드", "with 홀그레인 머스타드 드레싱", 32400, "garlic.jpg", "garlic-info.jpg"),
+	        new ProductVO(11, "갈릭 케이준 치킨 샐러드", "with 홀그레인 머스타드 드레싱", 32400, "garlic.jpg", "garlic-info.jpg"),
+	        new ProductVO(12, "갈릭 케이준 치킨 샐러드", "with 홀그레인 머스타드 드레싱", 32400, "garlic.jpg", "garlic-info.jpg"),
+	        new ProductVO(13, "갈릭 케이준 치킨 샐러드", "with 홀그레인 머스타드 드레싱", 32400, "garlic.jpg", "garlic-info.jpg"),
+	        new ProductVO(14, "갈릭 케이준 치킨 샐러드", "with 홀그레인 머스타드 드레싱", 32400, "garlic.jpg", "garlic-info.jpg"),
+	        new ProductVO(15, "갈릭 케이준 치킨 샐러드", "with 홀그레인 머스타드 드레싱", 32400, "garlic.jpg", "garlic-info.jpg")
 	    };
 
 	@GetMapping(value="/api/products", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ProductVO[] getProducts() {
+//		try {
+//			Thread.sleep(5000);			
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//		}
 		return data;
 	}
 	    
