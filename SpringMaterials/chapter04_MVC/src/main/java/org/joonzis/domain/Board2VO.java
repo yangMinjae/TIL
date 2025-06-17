@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Board2VO {
 	private int idx;
-	private String writher;
+	private String writer;
 	private String content;
 	private String title;
 	private Date regdate;

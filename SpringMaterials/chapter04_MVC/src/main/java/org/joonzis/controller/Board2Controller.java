@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
-@CrossOrigin(origins="*")
+@CrossOrigin(origins="http://localhost:3000")
 public class Board2Controller {
 
     @Autowired
