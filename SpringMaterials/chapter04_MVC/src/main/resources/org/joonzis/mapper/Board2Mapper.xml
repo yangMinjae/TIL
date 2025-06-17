@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="org.joonzis.mapper.Board2Mapper">
+
+	<select id="getAllList" resultType="org.joonzis.domain.Board2VO">
+       SELECT * FROM board
+    </select>
+ 
+     <select id="getBoard" resultType="org.joonzis.domain.Board2VO">
+       SELECT * FROM board WHERE IDX=#{idx}
+    </select>
+
+    <insert id="register" parameterType="org.joonzis.domain.Board2VO">
+        INSERT INTO Board
+        VALUES(
+            seq_bd.nextval,
+            #{writer},
+            #{content},
+            #{title},
+            sysdate
+        )
+    </insert>
+
+    <delete id="remove">
+        DELETE FROM BOARD WHERE IDX = #{idx}
+    </delete>
+
+    <update id="update" parameterType="org.joonzis.domain.Board2VO">
+        UPDATE BOARD
+        SET
+            TITLE=#{title},
+            CONTENT=#{content},
+            WRITER=#{writer}
+        WHERE
+            IDX=#{idx}
+    </update>
+</mapper>
