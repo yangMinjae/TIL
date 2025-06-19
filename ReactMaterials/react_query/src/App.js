@@ -3,7 +3,8 @@ import './App.css';
 import Example from './components/Example';
 import PostListExample from './components/PostListExample';
 import BoardRegister from './components/BoardRegister';
-import InfinifeExample from './components/InfinifeExample';
+import InfiniteExample from './components/InfiniteExample';
+import InfiniteScrollExample from './components/InfiniteScrollExample'
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
 
       {/* <BoardRegister/> */}
 
-      <InfinifeExample/>
+      {/* <InfiniteExample/> */}
+      <InfiniteScrollExample/>
     </div>
   );
 }
