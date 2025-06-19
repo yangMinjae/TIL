@@ -50,9 +50,28 @@ const InfiniteScrollExample = () => {
       if(currentTarget) observer.unobserve(currentTarget);
     }
   },[hasNextPage, isFetchingNextPage, fetchNextPage]);
+
+  if(isLoading) return <div>loading....</div>
+  if(isError) return <div>error....</div>
+
   return (
     <div>
-    
+      {
+        data.pages.map((page,pageIndex)=>{
+          return page.map(post=>{
+           return <div key={post.id} style={{border : '1px solid #ccc', marginBottom : '10px', padding: '10px'}}>
+              <h4>{post.id} / {post.title}</h4>
+              <p>{post.body}</p>
+            </div>
+          })
+        })
+      }
+      
+      <div 
+        ref={observerRef}
+        style={{height:'20px', margin : '10px'}}></div>
+      {isFetchingNextPage && <p>불러오는 중...</p>}
+      {!hasNextPage && <p>더 이상 데이터가 없습니다.</p>}
     </div>
   );
 };

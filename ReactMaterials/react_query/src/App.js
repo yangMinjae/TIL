@@ -16,8 +16,9 @@ function App() {
 
       {/* <BoardRegister/> */}
 
-      {/* <InfiniteExample/> */}
-      <InfiniteScrollExample/>
+      <InfiniteExample/>
+      
+      {/* <InfiniteScrollExample/> */}
     </div>
   );
 }
