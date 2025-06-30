@@ -110,8 +110,20 @@
 
 <mybatis-spring:scan base-package="org.joonzis.mapper" />
 ```
+## 10. Transaction 사용시 추가 설정
+### root-context.xml
+1) Namespaces에서 aop, tx 체크
+2) 다음의 태그들 추가
+```xml
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
 
-## 10. 파일 업 다운 기능 구현시 추가 설정
+	<tx:annotation-driven />
+```
+
+## 11. 파일 업 다운 기능 구현시 추가 설정
 ### 1.web.xml
 1)web-app태그의 version 속성 3.1로 변경
 2)web-app태그의 xsi:schemaLocation의 속성 "http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_3_1.xsd"

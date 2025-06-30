@@ -5,6 +5,7 @@ import PostListExample from './components/PostListExample';
 import BoardRegister from './components/BoardRegister';
 import InfiniteExample from './components/InfiniteExample';
 import InfiniteScrollExample from './components/InfiniteScrollExample'
+import SideBarFrame from './components/test/SideBarFrame';
 
 function App() {
   return (
@@ -16,9 +17,11 @@ function App() {
 
       {/* <BoardRegister/> */}
 
-      <InfiniteExample/>
+      {/* <InfiniteExample/> */}
       
       {/* <InfiniteScrollExample/> */}
+
+      <SideBarFrame/>
     </div>
   );
 }
