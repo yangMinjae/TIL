@@ -125,7 +125,7 @@ public <T> T getEndpointInstance(Class<T> endpointClass) throws InstantiationExc
 ✅ 사용 전제
 ----------------------------------------------------------
 @ServerEndpoint(value="/ws", configurator=CustomSpringConfigurator.class)
-이렇게 WebSocket 클래스에 Configurator로 지정해줘야 작동함.
+이렇게 WebSocket 클래스에 Configurator로 지정해줘야 작동함
 
 ----------------------------------------------------------
 🧠 한 줄 요약
